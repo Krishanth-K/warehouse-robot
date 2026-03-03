@@ -1,0 +1,1772 @@
+#VRML_SIM R2025a utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/floors/protos/RectangleArena.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/Parquetry.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/factory/containers/protos/CardboardBox.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/robots/softbank/nao/protos/Shelves.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/samples/contests/rockin/protos/RoCKInShelf.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/factory/containers/protos/PlasticFruitBox.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/factory/containers/protos/MetalStorageBox.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/factory/containers/protos/WoodenBox.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/tables/protos/Table.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/humans/pedestrian/protos/Pedestrian.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/robots/kuka/youbot/protos/Youbot.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/robots/clearpath/pr2/protos/Pr2.proto"
+
+WorldInfo {
+}
+Viewpoint {
+  orientation -0.40785284186033427 -0.14346200505293413 0.901706555644707 3.7558762304029534
+  position 5.451880296806815 4.800665389175059 8.865409853107924
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+RectangleArena {
+  floorSize 15 15
+  floorAppearance Parquetry {
+    type "light strip"
+  }
+  wallHeight 2
+}
+Pr2 {
+  rotation 0 0 1 1.5708
+  controller "pr2_py_controller"
+  supervisor TRUE
+  selfCollision TRUE
+}
+MetalStorageBox {
+  name "metal storage box(7)"
+  translation -4.3 2.43 0
+}
+MetalStorageBox {
+  name "metal storage box(5)"
+  translation 4.35 -3.52 0
+}
+Pedestrian {
+  translation -0.45 -2.62 1.27
+  rotation 0 0 1 -1.5707953071795862
+  shirtColor 1 0.937255 0.0823529
+  pantsColor 0.0313726 0.666667 0.0509804
+  shoesColor 1 0 0
+  skinColor 0.666667 0.333333 0
+  enableBoundingObject TRUE
+}
+Pedestrian {
+  translation 5.43 -4.5 1.27
+  rotation 0 0 1 1.5708
+  name "pedestrian(3)"
+  shirtColor 1 0.937255 0.0823529
+  pantsColor 0.0313726 0.666667 0.0509804
+  shoesColor 1 0 0
+  skinColor 1 1 0.498039
+  enableBoundingObject TRUE
+}
+Pedestrian {
+  translation -2.14 5.16 1.26
+  rotation 0 0 1 1.5708
+  name "pedestrian_1"
+  shirtColor 1 0.937255 0.0823529
+  pantsColor 0.0313726 0.666667 0.0509804
+  shoesColor 1 0 0
+  enableBoundingObject TRUE
+}
+Table {
+  translation 5.94 6.21 0
+  rotation 0 0 1 -1.5707953071795862
+}
+Table {
+  translation -0.039997 -3.63 0
+  rotation 0 0 1 -1.5707953071795862
+  name "table(1)"
+}
+PlasticFruitBox {
+  name "plastic fruit box(8)"
+  translation -0.03 -3.64 0.77
+}
+MetalStorageBox {
+  name "metal storage box(3)"
+  translation -4.3 -1.57 0
+}
+MetalStorageBox {
+  name "metal storage box(6)"
+  translation -4.3 -3.28 0
+}
+MetalStorageBox {
+  name "metal storage box(4)"
+  translation -4.3 0.45 0
+}
+MetalStorageBox {
+  name "metal storage box(2)"
+  translation -4.27 -5.46 0
+}
+MetalStorageBox {
+  name "metal storage box(1)"
+  translation 4.1 -5.46 0
+}
+Youbot {
+  translation 2.92 -4.41 0.120001
+  rotation 0 1 0 4.692820414042842e-06
+  controller "<none>"
+  numberOfArms 2
+}
+DEF wooden_boxes Solid {
+  translation 0 0.03 0
+  children [
+    WoodenBox {
+      translation -6.69 5.13 0.3
+      name "wooden box(5)"
+    }
+    WoodenBox {
+      translation -4.38 6.11 0.3
+      name "wooden box(4)"
+    }
+    WoodenBox {
+      translation -6.48 6.39 0.3
+      rotation 0 0 1 0.523599
+      name "wooden box(3)"
+    }
+    WoodenBox {
+      translation -4.91 5.13 0.3
+      name "wooden box(2)"
+    }
+    WoodenBox {
+      translation -5.61 6.5 0.3
+      name "wooden box(1)"
+    }
+    WoodenBox {
+      translation -5.67 5.13 0.3
+      rotation 0 0 1 0.261799
+    }
+  ]
+  name "solid(2)"
+}
+DEF shelf_rows Solid {
+  children [
+    DEF row Solid {
+      translation 0.529963 6.70001 0
+      rotation 0 0 -1 -5.307179586466759e-06
+      children [
+        DEF shelf1 Solid {
+          translation -2.07 0.13 0
+          rotation 0 0 1 -1.5707953071795862
+          children [
+            CardboardBox {
+              translation 0.04 0.18 1.17
+              name "cardboard box(4)"
+              size 0.3 0.3 0.2
+            }
+            CardboardBox {
+              translation 0.02 -0.17 1.21
+              name "cardboard box(3)"
+              size 0.3 0.3 0.3
+            }
+            CardboardBox {
+              translation 0.04 -0.1 0.59
+              name "cardboard box(2)"
+              size 0.3 0.4 0.2
+            }
+            CardboardBox {
+              translation 0.04 0.18 0.22
+              name "cardboard box(1)"
+              size 0.3 0.3 0.2
+            }
+            CardboardBox {
+              translation 0.04 -0.17 0.22
+              size 0.3 0.3 0.2
+            }
+            Shelves {
+            }
+          ]
+          name "solid(3)"
+        }
+        DEF shelf1 Solid {
+          translation -1.04 0.13 0
+          rotation 0 0 1 -1.5707953071795862
+          children [
+            CardboardBox {
+              translation 0.04 0.18 1.17
+              name "cardboard box(4)"
+              size 0.3 0.3 0.2
+            }
+            CardboardBox {
+              translation 0.02 -0.17 1.21
+              name "cardboard box(3)"
+              size 0.3 0.3 0.3
+            }
+            CardboardBox {
+              translation 0.04 -0.1 0.59
+              name "cardboard box(2)"
+              size 0.3 0.4 0.2
+            }
+            CardboardBox {
+              translation 0.04 0.18 0.22
+              name "cardboard box(1)"
+              size 0.3 0.3 0.2
+            }
+            CardboardBox {
+              translation 0.04 -0.17 0.22
+              size 0.3 0.3 0.2
+            }
+            Shelves {
+            }
+          ]
+          name "solid(2)"
+        }
+        DEF shelf1 Solid {
+          translation 4.49 0.13 0
+          rotation 0 0 1 -1.5707953071795862
+          name "solid(7)"
+        }
+        DEF shelf1 Solid {
+          translation -4.1 0.13 0
+          rotation 0 0 1 -1.5707953071795862
+          children [
+            CardboardBox {
+              translation 0.04 0.18 1.17
+              name "cardboard box(4)"
+              size 0.3 0.3 0.2
+            }
+            CardboardBox {
+              translation 0.02 -0.17 1.21
+              name "cardboard box(3)"
+              size 0.3 0.3 0.3
+            }
+            CardboardBox {
+              translation 0.04 -0.1 0.59
+              name "cardboard box(2)"
+              size 0.3 0.4 0.2
+            }
+            CardboardBox {
+              translation 0.04 0.18 0.22
+              name "cardboard box(1)"
+              size 0.3 0.3 0.2
+            }
+            CardboardBox {
+              translation 0.04 -0.17 0.22
+              size 0.3 0.3 0.2
+            }
+            Shelves {
+            }
+          ]
+          name "solid(9)"
+        }
+        DEF shelf1 Solid {
+          translation -0.0400001 0.13 0
+          rotation 0 0 1 -1.5707953071795862
+          children [
+            CardboardBox {
+              translation 0.04 0.18 1.17
+              name "cardboard box(4)"
+              size 0.3 0.3 0.2
+            }
+            CardboardBox {
+              translation 0.02 -0.17 1.21
+              name "cardboard box(3)"
+              size 0.3 0.3 0.3
+            }
+            CardboardBox {
+              translation 0.04 -0.1 0.59
+              name "cardboard box(2)"
+              size 0.3 0.4 0.2
+            }
+            CardboardBox {
+              translation 0.04 0.18 0.22
+              name "cardboard box(1)"
+              size 0.3 0.3 0.2
+            }
+            CardboardBox {
+              translation 0.04 -0.17 0.22
+              size 0.3 0.3 0.2
+            }
+            Shelves {
+            }
+          ]
+        }
+        DEF shelf2 Solid {
+          translation 2.71 0 0
+          children [
+            CardboardBox {
+              translation 0.98 0.06 0.07
+              name "cardboard box(5)"
+              size 0.3 0.2 0.1
+            }
+            CardboardBox {
+              translation 0.9 0.06 0.24
+              name "cardboard box(4)"
+              size 0.3 0.2 0.1
+            }
+            CardboardBox {
+              translation 0.99 -0.01 0.41
+              name "cardboard box(3)"
+              size 0.1 0.1 0.1
+            }
+            CardboardBox {
+              translation 1.13 0 0.41
+              name "cardboard box(2)"
+              size 0.1 0.1 0.1
+            }
+            CardboardBox {
+              translation 0.86 -0.01 0.41
+              name "cardboard box(1)"
+              size 0.1 0.1 0.1
+            }
+            CardboardBox {
+              translation 0.86 0.1 0.62
+              size 0.3 0.3 0.2
+            }
+            RoCKInShelf {
+              translation 0.96 0.1 0
+              rotation 0 0 1 -1.5707953071795862
+            }
+          ]
+          name "solid(6)"
+        }
+        DEF shelf2 Solid {
+          translation 1.92 0 0
+          children [
+            CardboardBox {
+              translation 0.98 0.06 0.07
+              name "cardboard box(5)"
+              size 0.3 0.2 0.1
+            }
+            CardboardBox {
+              translation 0.9 0.06 0.24
+              name "cardboard box(4)"
+              size 0.3 0.2 0.1
+            }
+            CardboardBox {
+              translation 0.99 -0.01 0.41
+              name "cardboard box(3)"
+              size 0.1 0.1 0.1
+            }
+            CardboardBox {
+              translation 1.13 0 0.41
+              name "cardboard box(2)"
+              size 0.1 0.1 0.1
+            }
+            CardboardBox {
+              translation 0.86 -0.01 0.41
+              name "cardboard box(1)"
+              size 0.1 0.1 0.1
+            }
+            CardboardBox {
+              translation 0.86 0.1 0.62
+              size 0.3 0.3 0.2
+            }
+            RoCKInShelf {
+              translation 0.96 0.1 0
+              rotation 0 0 1 -1.5707953071795862
+            }
+          ]
+          name "solid(5)"
+        }
+        DEF shelf2 Solid {
+          children [
+            CardboardBox {
+              translation 0.98 0.06 0.07
+              name "cardboard box(5)"
+              size 0.3 0.2 0.1
+            }
+            CardboardBox {
+              translation 0.9 0.06 0.24
+              name "cardboard box(4)"
+              size 0.3 0.2 0.1
+            }
+            CardboardBox {
+              translation 0.99 -0.01 0.41
+              name "cardboard box(3)"
+              size 0.1 0.1 0.1
+            }
+            CardboardBox {
+              translation 1.13 0 0.41
+              name "cardboard box(2)"
+              size 0.1 0.1 0.1
+            }
+            CardboardBox {
+              translation 0.86 -0.01 0.41
+              name "cardboard box(1)"
+              size 0.1 0.1 0.1
+            }
+            CardboardBox {
+              translation 0.86 0.1 0.62
+              size 0.3 0.3 0.2
+            }
+            RoCKInShelf {
+              translation 0.96 0.1 0
+              rotation 0 0 1 -1.5707953071795862
+            }
+          ]
+          name "solid(1)"
+        }
+        DEF shelf2 Solid {
+          translation -4.07 0 0
+          children [
+            CardboardBox {
+              translation 0.98 0.06 0.07
+              name "cardboard box(5)"
+              size 0.3 0.2 0.1
+            }
+            CardboardBox {
+              translation 0.9 0.06 0.24
+              name "cardboard box(4)"
+              size 0.3 0.2 0.1
+            }
+            CardboardBox {
+              translation 0.99 -0.01 0.41
+              name "cardboard box(3)"
+              size 0.1 0.1 0.1
+            }
+            CardboardBox {
+              translation 1.13 0 0.41
+              name "cardboard box(2)"
+              size 0.1 0.1 0.1
+            }
+            CardboardBox {
+              translation 0.86 -0.01 0.41
+              name "cardboard box(1)"
+              size 0.1 0.1 0.1
+            }
+            CardboardBox {
+              translation 0.86 0.1 0.62
+              size 0.3 0.3 0.2
+            }
+            RoCKInShelf {
+              translation 0.96 0.1 0
+              rotation 0 0 1 -1.5707953071795862
+            }
+          ]
+          name "solid(8)"
+        }
+        DEF shelf1 Solid {
+          translation 1.93 0.13 0
+          rotation 0 0 1 -1.5707953071795862
+          children [
+            CardboardBox {
+              translation 0.04 0.18 1.17
+              name "cardboard box(4)"
+              size 0.3 0.3 0.2
+            }
+            CardboardBox {
+              translation 0.02 -0.17 1.21
+              name "cardboard box(3)"
+              size 0.3 0.3 0.3
+            }
+            CardboardBox {
+              translation 0.04 -0.1 0.59
+              name "cardboard box(2)"
+              size 0.3 0.4 0.2
+            }
+            CardboardBox {
+              translation 0.04 0.18 0.22
+              name "cardboard box(1)"
+              size 0.3 0.3 0.2
+            }
+            CardboardBox {
+              translation 0.04 -0.17 0.22
+              size 0.3 0.3 0.2
+            }
+            Shelves {
+            }
+          ]
+          name "solid(4)"
+        }
+      ]
+      name "solid(5)"
+    }
+    DEF row Solid {
+      translation 2.16 -0.609979 0
+      rotation 0 0 1 1.5708
+      children [
+        DEF shelf1 Solid {
+          translation -2.07 0.13 0
+          rotation 0 0 1 -1.5707953071795862
+          children [
+            CardboardBox {
+              translation 0.04 0.18 1.17
+              name "cardboard box(4)"
+              size 0.3 0.3 0.2
+            }
+            CardboardBox {
+              translation 0.02 -0.17 1.21
+              name "cardboard box(3)"
+              size 0.3 0.3 0.3
+            }
+            CardboardBox {
+              translation 0.04 -0.1 0.59
+              name "cardboard box(2)"
+              size 0.3 0.4 0.2
+            }
+            CardboardBox {
+              translation 0.04 0.18 0.22
+              name "cardboard box(1)"
+              size 0.3 0.3 0.2
+            }
+            CardboardBox {
+              translation 0.04 -0.17 0.22
+              size 0.3 0.3 0.2
+            }
+            Shelves {
+            }
+          ]
+          name "solid(3)"
+        }
+        DEF shelf1 Solid {
+          translation -1.04 0.13 0
+          rotation 0 0 1 -1.5707953071795862
+          children [
+            CardboardBox {
+              translation 0.04 0.18 1.17
+              name "cardboard box(4)"
+              size 0.3 0.3 0.2
+            }
+            CardboardBox {
+              translation 0.02 -0.17 1.21
+              name "cardboard box(3)"
+              size 0.3 0.3 0.3
+            }
+            CardboardBox {
+              translation 0.04 -0.1 0.59
+              name "cardboard box(2)"
+              size 0.3 0.4 0.2
+            }
+            CardboardBox {
+              translation 0.04 0.18 0.22
+              name "cardboard box(1)"
+              size 0.3 0.3 0.2
+            }
+            CardboardBox {
+              translation 0.04 -0.17 0.22
+              size 0.3 0.3 0.2
+            }
+            Shelves {
+            }
+          ]
+          name "solid(2)"
+        }
+        DEF shelf1 Solid {
+          translation 4.49 0.13 0
+          rotation 0 0 1 -1.5707953071795862
+          name "solid(7)"
+        }
+        DEF shelf1 Solid {
+          translation -4.1 0.13 0
+          rotation 0 0 1 -1.5707953071795862
+          children [
+            CardboardBox {
+              translation 0.04 0.18 1.17
+              name "cardboard box(4)"
+              size 0.3 0.3 0.2
+            }
+            CardboardBox {
+              translation 0.02 -0.17 1.21
+              name "cardboard box(3)"
+              size 0.3 0.3 0.3
+            }
+            CardboardBox {
+              translation 0.04 -0.1 0.59
+              name "cardboard box(2)"
+              size 0.3 0.4 0.2
+            }
+            CardboardBox {
+              translation 0.04 0.18 0.22
+              name "cardboard box(1)"
+              size 0.3 0.3 0.2
+            }
+            CardboardBox {
+              translation 0.04 -0.17 0.22
+              size 0.3 0.3 0.2
+            }
+            Shelves {
+            }
+          ]
+          name "solid(9)"
+        }
+        DEF shelf1 Solid {
+          translation -0.0400001 0.13 0
+          rotation 0 0 1 -1.5707953071795862
+          children [
+            CardboardBox {
+              translation 0.04 0.18 1.17
+              name "cardboard box(4)"
+              size 0.3 0.3 0.2
+            }
+            CardboardBox {
+              translation 0.02 -0.17 1.21
+              name "cardboard box(3)"
+              size 0.3 0.3 0.3
+            }
+            CardboardBox {
+              translation 0.04 -0.1 0.59
+              name "cardboard box(2)"
+              size 0.3 0.4 0.2
+            }
+            CardboardBox {
+              translation 0.04 0.18 0.22
+              name "cardboard box(1)"
+              size 0.3 0.3 0.2
+            }
+            CardboardBox {
+              translation 0.04 -0.17 0.22
+              size 0.3 0.3 0.2
+            }
+            Shelves {
+            }
+          ]
+        }
+        DEF shelf2 Solid {
+          translation 2.71 0 0
+          children [
+            CardboardBox {
+              translation 0.98 0.06 0.07
+              name "cardboard box(5)"
+              size 0.3 0.2 0.1
+            }
+            CardboardBox {
+              translation 0.9 0.06 0.24
+              name "cardboard box(4)"
+              size 0.3 0.2 0.1
+            }
+            CardboardBox {
+              translation 0.99 -0.01 0.41
+              name "cardboard box(3)"
+              size 0.1 0.1 0.1
+            }
+            CardboardBox {
+              translation 1.13 0 0.41
+              name "cardboard box(2)"
+              size 0.1 0.1 0.1
+            }
+            CardboardBox {
+              translation 0.86 -0.01 0.41
+              name "cardboard box(1)"
+              size 0.1 0.1 0.1
+            }
+            CardboardBox {
+              translation 0.86 0.1 0.62
+              size 0.3 0.3 0.2
+            }
+            RoCKInShelf {
+              translation 0.96 0.1 0
+              rotation 0 0 1 -1.5707953071795862
+            }
+          ]
+          name "solid(6)"
+        }
+        DEF shelf2 Solid {
+          translation 1.92 0 0
+          children [
+            CardboardBox {
+              translation 0.98 0.06 0.07
+              name "cardboard box(5)"
+              size 0.3 0.2 0.1
+            }
+            CardboardBox {
+              translation 0.9 0.06 0.24
+              name "cardboard box(4)"
+              size 0.3 0.2 0.1
+            }
+            CardboardBox {
+              translation 0.99 -0.01 0.41
+              name "cardboard box(3)"
+              size 0.1 0.1 0.1
+            }
+            CardboardBox {
+              translation 1.13 0 0.41
+              name "cardboard box(2)"
+              size 0.1 0.1 0.1
+            }
+            CardboardBox {
+              translation 0.86 -0.01 0.41
+              name "cardboard box(1)"
+              size 0.1 0.1 0.1
+            }
+            CardboardBox {
+              translation 0.86 0.1 0.62
+              size 0.3 0.3 0.2
+            }
+            RoCKInShelf {
+              translation 0.96 0.1 0
+              rotation 0 0 1 -1.5707953071795862
+            }
+          ]
+          name "solid(5)"
+        }
+        DEF shelf2 Solid {
+          children [
+            CardboardBox {
+              translation 0.98 0.06 0.07
+              name "cardboard box(5)"
+              size 0.3 0.2 0.1
+            }
+            CardboardBox {
+              translation 0.9 0.06 0.24
+              name "cardboard box(4)"
+              size 0.3 0.2 0.1
+            }
+            CardboardBox {
+              translation 0.99 -0.01 0.41
+              name "cardboard box(3)"
+              size 0.1 0.1 0.1
+            }
+            CardboardBox {
+              translation 1.13 0 0.41
+              name "cardboard box(2)"
+              size 0.1 0.1 0.1
+            }
+            CardboardBox {
+              translation 0.86 -0.01 0.41
+              name "cardboard box(1)"
+              size 0.1 0.1 0.1
+            }
+            CardboardBox {
+              translation 0.86 0.1 0.62
+              size 0.3 0.3 0.2
+            }
+            RoCKInShelf {
+              translation 0.96 0.1 0
+              rotation 0 0 1 -1.5707953071795862
+            }
+          ]
+          name "solid(1)"
+        }
+        DEF shelf2 Solid {
+          translation -4.07 0 0
+          children [
+            CardboardBox {
+              translation 0.98 0.06 0.07
+              name "cardboard box(5)"
+              size 0.3 0.2 0.1
+            }
+            CardboardBox {
+              translation 0.9 0.06 0.24
+              name "cardboard box(4)"
+              size 0.3 0.2 0.1
+            }
+            CardboardBox {
+              translation 0.99 -0.01 0.41
+              name "cardboard box(3)"
+              size 0.1 0.1 0.1
+            }
+            CardboardBox {
+              translation 1.13 0 0.41
+              name "cardboard box(2)"
+              size 0.1 0.1 0.1
+            }
+            CardboardBox {
+              translation 0.86 -0.01 0.41
+              name "cardboard box(1)"
+              size 0.1 0.1 0.1
+            }
+            CardboardBox {
+              translation 0.86 0.1 0.62
+              size 0.3 0.3 0.2
+            }
+            RoCKInShelf {
+              translation 0.96 0.1 0
+              rotation 0 0 1 -1.5707953071795862
+            }
+          ]
+          name "solid(8)"
+        }
+        DEF shelf1 Solid {
+          translation 1.93 0.13 0
+          rotation 0 0 1 -1.5707953071795862
+          children [
+            CardboardBox {
+              translation 0.04 0.18 1.17
+              name "cardboard box(4)"
+              size 0.3 0.3 0.2
+            }
+            CardboardBox {
+              translation 0.02 -0.17 1.21
+              name "cardboard box(3)"
+              size 0.3 0.3 0.3
+            }
+            CardboardBox {
+              translation 0.04 -0.1 0.59
+              name "cardboard box(2)"
+              size 0.3 0.4 0.2
+            }
+            CardboardBox {
+              translation 0.04 0.18 0.22
+              name "cardboard box(1)"
+              size 0.3 0.3 0.2
+            }
+            CardboardBox {
+              translation 0.04 -0.17 0.22
+              size 0.3 0.3 0.2
+            }
+            Shelves {
+            }
+          ]
+          name "solid(4)"
+        }
+      ]
+      name "solid(4)"
+    }
+    DEF row Solid {
+      translation -2.43 -1.24999 0
+      rotation 0 0 1 -1.5707953071795862
+      children [
+        DEF shelf1 Solid {
+          translation -1.04 0.13 0
+          rotation 0 0 1 -1.5707953071795862
+          children [
+            CardboardBox {
+              translation 0.04 0.18 1.17
+              name "cardboard box(4)"
+              size 0.3 0.3 0.2
+            }
+            CardboardBox {
+              translation 0.02 -0.17 1.21
+              name "cardboard box(3)"
+              size 0.3 0.3 0.3
+            }
+            CardboardBox {
+              translation 0.04 -0.1 0.59
+              name "cardboard box(2)"
+              size 0.3 0.4 0.2
+            }
+            CardboardBox {
+              translation 0.04 0.18 0.22
+              name "cardboard box(1)"
+              size 0.3 0.3 0.2
+            }
+            CardboardBox {
+              translation 0.04 -0.17 0.22
+              size 0.3 0.3 0.2
+            }
+            Shelves {
+            }
+          ]
+          name "solid(2)"
+        }
+        DEF shelf1 Solid {
+          translation 4.49 0.13 0
+          rotation 0 0 1 -1.5707953071795862
+          name "solid(7)"
+        }
+        DEF shelf1 Solid {
+          translation -4.1 0.13 0
+          rotation 0 0 1 -1.5707953071795862
+          children [
+            CardboardBox {
+              translation 0.04 0.18 1.17
+              name "cardboard box(4)"
+              size 0.3 0.3 0.2
+            }
+            CardboardBox {
+              translation 0.02 -0.17 1.21
+              name "cardboard box(3)"
+              size 0.3 0.3 0.3
+            }
+            CardboardBox {
+              translation 0.04 -0.1 0.59
+              name "cardboard box(2)"
+              size 0.3 0.4 0.2
+            }
+            CardboardBox {
+              translation 0.04 0.18 0.22
+              name "cardboard box(1)"
+              size 0.3 0.3 0.2
+            }
+            CardboardBox {
+              translation 0.04 -0.17 0.22
+              size 0.3 0.3 0.2
+            }
+            Shelves {
+            }
+          ]
+          name "solid(9)"
+        }
+        DEF shelf1 Solid {
+          translation -0.0400001 0.13 0
+          rotation 0 0 1 -1.5707953071795862
+          children [
+            CardboardBox {
+              translation 0.04 0.18 1.17
+              name "cardboard box(4)"
+              size 0.3 0.3 0.2
+            }
+            CardboardBox {
+              translation 0.02 -0.17 1.21
+              name "cardboard box(3)"
+              size 0.3 0.3 0.3
+            }
+            CardboardBox {
+              translation 0.04 -0.1 0.59
+              name "cardboard box(2)"
+              size 0.3 0.4 0.2
+            }
+            CardboardBox {
+              translation 0.04 0.18 0.22
+              name "cardboard box(1)"
+              size 0.3 0.3 0.2
+            }
+            CardboardBox {
+              translation 0.04 -0.17 0.22
+              size 0.3 0.3 0.2
+            }
+            Shelves {
+            }
+          ]
+        }
+        DEF shelf2 Solid {
+          translation 2.71 0 0
+          children [
+            CardboardBox {
+              translation 0.98 0.06 0.07
+              name "cardboard box(5)"
+              size 0.3 0.2 0.1
+            }
+            CardboardBox {
+              translation 0.9 0.06 0.24
+              name "cardboard box(4)"
+              size 0.3 0.2 0.1
+            }
+            CardboardBox {
+              translation 0.99 -0.01 0.41
+              name "cardboard box(3)"
+              size 0.1 0.1 0.1
+            }
+            CardboardBox {
+              translation 1.13 0 0.41
+              name "cardboard box(2)"
+              size 0.1 0.1 0.1
+            }
+            CardboardBox {
+              translation 0.86 -0.01 0.41
+              name "cardboard box(1)"
+              size 0.1 0.1 0.1
+            }
+            CardboardBox {
+              translation 0.86 0.1 0.62
+              size 0.3 0.3 0.2
+            }
+            RoCKInShelf {
+              translation 0.96 0.1 0
+              rotation 0 0 1 -1.5707953071795862
+            }
+          ]
+          name "solid(6)"
+        }
+        DEF shelf2 Solid {
+          translation 1.92 0 0
+          children [
+            CardboardBox {
+              translation 0.98 0.06 0.07
+              name "cardboard box(5)"
+              size 0.3 0.2 0.1
+            }
+            CardboardBox {
+              translation 0.9 0.06 0.24
+              name "cardboard box(4)"
+              size 0.3 0.2 0.1
+            }
+            CardboardBox {
+              translation 0.99 -0.01 0.41
+              name "cardboard box(3)"
+              size 0.1 0.1 0.1
+            }
+            CardboardBox {
+              translation 1.13 0 0.41
+              name "cardboard box(2)"
+              size 0.1 0.1 0.1
+            }
+            CardboardBox {
+              translation 0.86 -0.01 0.41
+              name "cardboard box(1)"
+              size 0.1 0.1 0.1
+            }
+            CardboardBox {
+              translation 0.86 0.1 0.62
+              size 0.3 0.3 0.2
+            }
+            RoCKInShelf {
+              translation 0.96 0.1 0
+              rotation 0 0 1 -1.5707953071795862
+            }
+          ]
+          name "solid(5)"
+        }
+        DEF shelf2 Solid {
+          children [
+            CardboardBox {
+              translation 0.98 0.06 0.07
+              name "cardboard box(5)"
+              size 0.3 0.2 0.1
+            }
+            CardboardBox {
+              translation 0.9 0.06 0.24
+              name "cardboard box(4)"
+              size 0.3 0.2 0.1
+            }
+            CardboardBox {
+              translation 0.99 -0.01 0.41
+              name "cardboard box(3)"
+              size 0.1 0.1 0.1
+            }
+            CardboardBox {
+              translation 1.13 0 0.41
+              name "cardboard box(2)"
+              size 0.1 0.1 0.1
+            }
+            CardboardBox {
+              translation 0.86 -0.01 0.41
+              name "cardboard box(1)"
+              size 0.1 0.1 0.1
+            }
+            CardboardBox {
+              translation 0.86 0.1 0.62
+              size 0.3 0.3 0.2
+            }
+            RoCKInShelf {
+              translation 0.96 0.1 0
+              rotation 0 0 1 -1.5707953071795862
+            }
+          ]
+          name "solid(1)"
+        }
+        DEF shelf2 Solid {
+          translation -4.07 0 0
+          children [
+            CardboardBox {
+              translation 0.98 0.06 0.07
+              name "cardboard box(5)"
+              size 0.3 0.2 0.1
+            }
+            CardboardBox {
+              translation 0.9 0.06 0.24
+              name "cardboard box(4)"
+              size 0.3 0.2 0.1
+            }
+            CardboardBox {
+              translation 0.99 -0.01 0.41
+              name "cardboard box(3)"
+              size 0.1 0.1 0.1
+            }
+            CardboardBox {
+              translation 1.13 0 0.41
+              name "cardboard box(2)"
+              size 0.1 0.1 0.1
+            }
+            CardboardBox {
+              translation 0.86 -0.01 0.41
+              name "cardboard box(1)"
+              size 0.1 0.1 0.1
+            }
+            CardboardBox {
+              translation 0.86 0.1 0.62
+              size 0.3 0.3 0.2
+            }
+            RoCKInShelf {
+              translation 0.96 0.1 0
+              rotation 0 0 1 -1.5707953071795862
+            }
+          ]
+          name "solid(8)"
+        }
+        DEF shelf1 Solid {
+          translation 1.93 0.13 0
+          rotation 0 0 1 -1.5707953071795862
+          children [
+            CardboardBox {
+              translation 0.04 0.18 1.17
+              name "cardboard box(4)"
+              size 0.3 0.3 0.2
+            }
+            CardboardBox {
+              translation 0.02 -0.17 1.21
+              name "cardboard box(3)"
+              size 0.3 0.3 0.3
+            }
+            CardboardBox {
+              translation 0.04 -0.1 0.59
+              name "cardboard box(2)"
+              size 0.3 0.4 0.2
+            }
+            CardboardBox {
+              translation 0.04 0.18 0.22
+              name "cardboard box(1)"
+              size 0.3 0.3 0.2
+            }
+            CardboardBox {
+              translation 0.04 -0.17 0.22
+              size 0.3 0.3 0.2
+            }
+            Shelves {
+            }
+          ]
+          name "solid(4)"
+        }
+      ]
+      name "solid(3)"
+    }
+    DEF row Solid {
+      translation -6.55 -0.610007 0
+      rotation 0 0 1 1.5708
+      children [
+        DEF shelf1 Solid {
+          translation -2.07 0.13 0
+          rotation 0 0 1 -1.5707953071795862
+          children [
+            CardboardBox {
+              translation 0.04 0.18 1.17
+              name "cardboard box(4)"
+              size 0.3 0.3 0.2
+            }
+            CardboardBox {
+              translation 0.02 -0.17 1.21
+              name "cardboard box(3)"
+              size 0.3 0.3 0.3
+            }
+            CardboardBox {
+              translation 0.04 -0.1 0.59
+              name "cardboard box(2)"
+              size 0.3 0.4 0.2
+            }
+            CardboardBox {
+              translation 0.04 0.18 0.22
+              name "cardboard box(1)"
+              size 0.3 0.3 0.2
+            }
+            CardboardBox {
+              translation 0.04 -0.17 0.22
+              size 0.3 0.3 0.2
+            }
+            Shelves {
+            }
+          ]
+          name "solid(3)"
+        }
+        DEF shelf1 Solid {
+          translation -1.04 0.13 0
+          rotation 0 0 1 -1.5707953071795862
+          children [
+            CardboardBox {
+              translation 0.04 0.18 1.17
+              name "cardboard box(4)"
+              size 0.3 0.3 0.2
+            }
+            CardboardBox {
+              translation 0.02 -0.17 1.21
+              name "cardboard box(3)"
+              size 0.3 0.3 0.3
+            }
+            CardboardBox {
+              translation 0.04 -0.1 0.59
+              name "cardboard box(2)"
+              size 0.3 0.4 0.2
+            }
+            CardboardBox {
+              translation 0.04 0.18 0.22
+              name "cardboard box(1)"
+              size 0.3 0.3 0.2
+            }
+            CardboardBox {
+              translation 0.04 -0.17 0.22
+              size 0.3 0.3 0.2
+            }
+            Shelves {
+            }
+          ]
+          name "solid(2)"
+        }
+        DEF shelf1 Solid {
+          translation 4.49 0.13 0
+          rotation 0 0 1 -1.5707953071795862
+          name "solid(7)"
+        }
+        DEF shelf1 Solid {
+          translation -4.1 0.13 0
+          rotation 0 0 1 -1.5707953071795862
+          children [
+            CardboardBox {
+              translation 0.04 0.18 1.17
+              name "cardboard box(4)"
+              size 0.3 0.3 0.2
+            }
+            CardboardBox {
+              translation 0.02 -0.17 1.21
+              name "cardboard box(3)"
+              size 0.3 0.3 0.3
+            }
+            CardboardBox {
+              translation 0.04 -0.1 0.59
+              name "cardboard box(2)"
+              size 0.3 0.4 0.2
+            }
+            CardboardBox {
+              translation 0.04 0.18 0.22
+              name "cardboard box(1)"
+              size 0.3 0.3 0.2
+            }
+            CardboardBox {
+              translation 0.04 -0.17 0.22
+              size 0.3 0.3 0.2
+            }
+            Shelves {
+            }
+          ]
+          name "solid(9)"
+        }
+        DEF shelf1 Solid {
+          translation -0.0400001 0.13 0
+          rotation 0 0 1 -1.5707953071795862
+          children [
+            CardboardBox {
+              translation 0.04 0.18 1.17
+              name "cardboard box(4)"
+              size 0.3 0.3 0.2
+            }
+            CardboardBox {
+              translation 0.02 -0.17 1.21
+              name "cardboard box(3)"
+              size 0.3 0.3 0.3
+            }
+            CardboardBox {
+              translation 0.04 -0.1 0.59
+              name "cardboard box(2)"
+              size 0.3 0.4 0.2
+            }
+            CardboardBox {
+              translation 0.04 0.18 0.22
+              name "cardboard box(1)"
+              size 0.3 0.3 0.2
+            }
+            CardboardBox {
+              translation 0.04 -0.17 0.22
+              size 0.3 0.3 0.2
+            }
+            Shelves {
+            }
+          ]
+        }
+        DEF shelf2 Solid {
+          translation 2.71 0 0
+          children [
+            CardboardBox {
+              translation 0.98 0.06 0.07
+              name "cardboard box(5)"
+              size 0.3 0.2 0.1
+            }
+            CardboardBox {
+              translation 0.9 0.06 0.24
+              name "cardboard box(4)"
+              size 0.3 0.2 0.1
+            }
+            CardboardBox {
+              translation 0.99 -0.01 0.41
+              name "cardboard box(3)"
+              size 0.1 0.1 0.1
+            }
+            CardboardBox {
+              translation 1.13 0 0.41
+              name "cardboard box(2)"
+              size 0.1 0.1 0.1
+            }
+            CardboardBox {
+              translation 0.86 -0.01 0.41
+              name "cardboard box(1)"
+              size 0.1 0.1 0.1
+            }
+            CardboardBox {
+              translation 0.86 0.1 0.62
+              size 0.3 0.3 0.2
+            }
+            RoCKInShelf {
+              translation 0.96 0.1 0
+              rotation 0 0 1 -1.5707953071795862
+            }
+          ]
+          name "solid(6)"
+        }
+        DEF shelf2 Solid {
+          translation 1.92 0 0
+          children [
+            CardboardBox {
+              translation 0.98 0.06 0.07
+              name "cardboard box(5)"
+              size 0.3 0.2 0.1
+            }
+            CardboardBox {
+              translation 0.9 0.06 0.24
+              name "cardboard box(4)"
+              size 0.3 0.2 0.1
+            }
+            CardboardBox {
+              translation 0.99 -0.01 0.41
+              name "cardboard box(3)"
+              size 0.1 0.1 0.1
+            }
+            CardboardBox {
+              translation 1.13 0 0.41
+              name "cardboard box(2)"
+              size 0.1 0.1 0.1
+            }
+            CardboardBox {
+              translation 0.86 -0.01 0.41
+              name "cardboard box(1)"
+              size 0.1 0.1 0.1
+            }
+            CardboardBox {
+              translation 0.86 0.1 0.62
+              size 0.3 0.3 0.2
+            }
+            RoCKInShelf {
+              translation 0.96 0.1 0
+              rotation 0 0 1 -1.5707953071795862
+            }
+          ]
+          name "solid(5)"
+        }
+        DEF shelf2 Solid {
+          children [
+            CardboardBox {
+              translation 0.98 0.06 0.07
+              name "cardboard box(5)"
+              size 0.3 0.2 0.1
+            }
+            CardboardBox {
+              translation 0.9 0.06 0.24
+              name "cardboard box(4)"
+              size 0.3 0.2 0.1
+            }
+            CardboardBox {
+              translation 0.99 -0.01 0.41
+              name "cardboard box(3)"
+              size 0.1 0.1 0.1
+            }
+            CardboardBox {
+              translation 1.13 0 0.41
+              name "cardboard box(2)"
+              size 0.1 0.1 0.1
+            }
+            CardboardBox {
+              translation 0.86 -0.01 0.41
+              name "cardboard box(1)"
+              size 0.1 0.1 0.1
+            }
+            CardboardBox {
+              translation 0.86 0.1 0.62
+              size 0.3 0.3 0.2
+            }
+            RoCKInShelf {
+              translation 0.96 0.1 0
+              rotation 0 0 1 -1.5707953071795862
+            }
+          ]
+          name "solid(1)"
+        }
+        DEF shelf2 Solid {
+          translation -4.07 0 0
+          children [
+            CardboardBox {
+              translation 0.98 0.06 0.07
+              name "cardboard box(5)"
+              size 0.3 0.2 0.1
+            }
+            CardboardBox {
+              translation 0.9 0.06 0.24
+              name "cardboard box(4)"
+              size 0.3 0.2 0.1
+            }
+            CardboardBox {
+              translation 0.99 -0.01 0.41
+              name "cardboard box(3)"
+              size 0.1 0.1 0.1
+            }
+            CardboardBox {
+              translation 1.13 0 0.41
+              name "cardboard box(2)"
+              size 0.1 0.1 0.1
+            }
+            CardboardBox {
+              translation 0.86 -0.01 0.41
+              name "cardboard box(1)"
+              size 0.1 0.1 0.1
+            }
+            CardboardBox {
+              translation 0.86 0.1 0.62
+              size 0.3 0.3 0.2
+            }
+            RoCKInShelf {
+              translation 0.96 0.1 0
+              rotation 0 0 1 -1.5707953071795862
+            }
+          ]
+          name "solid(8)"
+        }
+        DEF shelf1 Solid {
+          translation 1.93 0.13 0
+          rotation 0 0 1 -1.5707953071795862
+          children [
+            CardboardBox {
+              translation 0.04 0.18 1.17
+              name "cardboard box(4)"
+              size 0.3 0.3 0.2
+            }
+            CardboardBox {
+              translation 0.02 -0.17 1.21
+              name "cardboard box(3)"
+              size 0.3 0.3 0.3
+            }
+            CardboardBox {
+              translation 0.04 -0.1 0.59
+              name "cardboard box(2)"
+              size 0.3 0.4 0.2
+            }
+            CardboardBox {
+              translation 0.04 0.18 0.22
+              name "cardboard box(1)"
+              size 0.3 0.3 0.2
+            }
+            CardboardBox {
+              translation 0.04 -0.17 0.22
+              size 0.3 0.3 0.2
+            }
+            Shelves {
+            }
+          ]
+          name "solid(4)"
+        }
+      ]
+      name "solid(1)"
+    }
+    DEF row Solid {
+      translation 6.37 -0.99 0
+      rotation 0 0 1 -1.5707953071795862
+      children [
+        DEF shelf1 Solid {
+          translation -2.07 0.13 0
+          rotation 0 0 1 -1.5707953071795862
+          children [
+            CardboardBox {
+              translation 0.04 0.18 1.17
+              name "cardboard box(4)"
+              size 0.3 0.3 0.2
+            }
+            CardboardBox {
+              translation 0.02 -0.17 1.21
+              name "cardboard box(3)"
+              size 0.3 0.3 0.3
+            }
+            CardboardBox {
+              translation 0.04 -0.1 0.59
+              name "cardboard box(2)"
+              size 0.3 0.4 0.2
+            }
+            CardboardBox {
+              translation 0.04 0.18 0.22
+              name "cardboard box(1)"
+              size 0.3 0.3 0.2
+            }
+            CardboardBox {
+              translation 0.04 -0.17 0.22
+              size 0.3 0.3 0.2
+            }
+            Shelves {
+            }
+          ]
+          name "solid(3)"
+        }
+        DEF shelf1 Solid {
+          translation -1.04 0.13 0
+          rotation 0 0 1 -1.5707953071795862
+          children [
+            CardboardBox {
+              translation 0.04 0.18 1.17
+              name "cardboard box(4)"
+              size 0.3 0.3 0.2
+            }
+            CardboardBox {
+              translation 0.02 -0.17 1.21
+              name "cardboard box(3)"
+              size 0.3 0.3 0.3
+            }
+            CardboardBox {
+              translation 0.04 -0.1 0.59
+              name "cardboard box(2)"
+              size 0.3 0.4 0.2
+            }
+            CardboardBox {
+              translation 0.04 0.18 0.22
+              name "cardboard box(1)"
+              size 0.3 0.3 0.2
+            }
+            CardboardBox {
+              translation 0.04 -0.17 0.22
+              size 0.3 0.3 0.2
+            }
+            Shelves {
+            }
+          ]
+          name "solid(2)"
+        }
+        DEF shelf1 Solid {
+          translation 4.49 0.13 0
+          rotation 0 0 1 -1.5707953071795862
+          name "solid(7)"
+        }
+        DEF shelf1 Solid {
+          translation -4.1 0.13 0
+          rotation 0 0 1 -1.5707953071795862
+          children [
+            CardboardBox {
+              translation 0.04 0.18 1.17
+              name "cardboard box(4)"
+              size 0.3 0.3 0.2
+            }
+            CardboardBox {
+              translation 0.02 -0.17 1.21
+              name "cardboard box(3)"
+              size 0.3 0.3 0.3
+            }
+            CardboardBox {
+              translation 0.04 -0.1 0.59
+              name "cardboard box(2)"
+              size 0.3 0.4 0.2
+            }
+            CardboardBox {
+              translation 0.04 0.18 0.22
+              name "cardboard box(1)"
+              size 0.3 0.3 0.2
+            }
+            CardboardBox {
+              translation 0.04 -0.17 0.22
+              size 0.3 0.3 0.2
+            }
+            Shelves {
+            }
+          ]
+          name "solid(9)"
+        }
+        DEF shelf1 Solid {
+          translation -0.0400001 0.13 0
+          rotation 0 0 1 -1.5707953071795862
+          children [
+            CardboardBox {
+              translation 0.04 0.18 1.17
+              name "cardboard box(4)"
+              size 0.3 0.3 0.2
+            }
+            CardboardBox {
+              translation 0.02 -0.17 1.21
+              name "cardboard box(3)"
+              size 0.3 0.3 0.3
+            }
+            CardboardBox {
+              translation 0.04 -0.1 0.59
+              name "cardboard box(2)"
+              size 0.3 0.4 0.2
+            }
+            CardboardBox {
+              translation 0.04 0.18 0.22
+              name "cardboard box(1)"
+              size 0.3 0.3 0.2
+            }
+            CardboardBox {
+              translation 0.04 -0.17 0.22
+              size 0.3 0.3 0.2
+            }
+            Shelves {
+            }
+          ]
+        }
+        DEF shelf2 Solid {
+          translation 2.71 0 0
+          children [
+            CardboardBox {
+              translation 0.98 0.06 0.07
+              name "cardboard box(5)"
+              size 0.3 0.2 0.1
+            }
+            CardboardBox {
+              translation 0.9 0.06 0.24
+              name "cardboard box(4)"
+              size 0.3 0.2 0.1
+            }
+            CardboardBox {
+              translation 0.99 -0.01 0.41
+              name "cardboard box(3)"
+              size 0.1 0.1 0.1
+            }
+            CardboardBox {
+              translation 1.13 0 0.41
+              name "cardboard box(2)"
+              size 0.1 0.1 0.1
+            }
+            CardboardBox {
+              translation 0.86 -0.01 0.41
+              name "cardboard box(1)"
+              size 0.1 0.1 0.1
+            }
+            CardboardBox {
+              translation 0.86 0.1 0.62
+              size 0.3 0.3 0.2
+            }
+            RoCKInShelf {
+              translation 0.96 0.1 0
+              rotation 0 0 1 -1.5707953071795862
+            }
+          ]
+          name "solid(6)"
+        }
+        DEF shelf2 Solid {
+          translation 1.92 0 0
+          children [
+            CardboardBox {
+              translation 0.98 0.06 0.07
+              name "cardboard box(5)"
+              size 0.3 0.2 0.1
+            }
+            CardboardBox {
+              translation 0.9 0.06 0.24
+              name "cardboard box(4)"
+              size 0.3 0.2 0.1
+            }
+            CardboardBox {
+              translation 0.99 -0.01 0.41
+              name "cardboard box(3)"
+              size 0.1 0.1 0.1
+            }
+            CardboardBox {
+              translation 1.13 0 0.41
+              name "cardboard box(2)"
+              size 0.1 0.1 0.1
+            }
+            CardboardBox {
+              translation 0.86 -0.01 0.41
+              name "cardboard box(1)"
+              size 0.1 0.1 0.1
+            }
+            CardboardBox {
+              translation 0.86 0.1 0.62
+              size 0.3 0.3 0.2
+            }
+            RoCKInShelf {
+              translation 0.96 0.1 0
+              rotation 0 0 1 -1.5707953071795862
+            }
+          ]
+          name "solid(5)"
+        }
+        DEF shelf2 Solid {
+          children [
+            CardboardBox {
+              translation 0.98 0.06 0.07
+              name "cardboard box(5)"
+              size 0.3 0.2 0.1
+            }
+            CardboardBox {
+              translation 0.9 0.06 0.24
+              name "cardboard box(4)"
+              size 0.3 0.2 0.1
+            }
+            CardboardBox {
+              translation 0.99 -0.01 0.41
+              name "cardboard box(3)"
+              size 0.1 0.1 0.1
+            }
+            CardboardBox {
+              translation 1.13 0 0.41
+              name "cardboard box(2)"
+              size 0.1 0.1 0.1
+            }
+            CardboardBox {
+              translation 0.86 -0.01 0.41
+              name "cardboard box(1)"
+              size 0.1 0.1 0.1
+            }
+            CardboardBox {
+              translation 0.86 0.1 0.62
+              size 0.3 0.3 0.2
+            }
+            RoCKInShelf {
+              translation 0.96 0.1 0
+              rotation 0 0 1 -1.5707953071795862
+            }
+          ]
+          name "solid(1)"
+        }
+        DEF shelf2 Solid {
+          translation -4.07 0 0
+          children [
+            CardboardBox {
+              translation 0.98 0.06 0.07
+              name "cardboard box(5)"
+              size 0.3 0.2 0.1
+            }
+            CardboardBox {
+              translation 0.9 0.06 0.24
+              name "cardboard box(4)"
+              size 0.3 0.2 0.1
+            }
+            CardboardBox {
+              translation 0.99 -0.01 0.41
+              name "cardboard box(3)"
+              size 0.1 0.1 0.1
+            }
+            CardboardBox {
+              translation 1.13 0 0.41
+              name "cardboard box(2)"
+              size 0.1 0.1 0.1
+            }
+            CardboardBox {
+              translation 0.86 -0.01 0.41
+              name "cardboard box(1)"
+              size 0.1 0.1 0.1
+            }
+            CardboardBox {
+              translation 0.86 0.1 0.62
+              size 0.3 0.3 0.2
+            }
+            RoCKInShelf {
+              translation 0.96 0.1 0
+              rotation 0 0 1 -1.5707953071795862
+            }
+          ]
+          name "solid(8)"
+        }
+        DEF shelf1 Solid {
+          translation 1.93 0.13 0
+          rotation 0 0 1 -1.5707953071795862
+          children [
+            CardboardBox {
+              translation 0.04 0.18 1.17
+              name "cardboard box(4)"
+              size 0.3 0.3 0.2
+            }
+            CardboardBox {
+              translation 0.02 -0.17 1.21
+              name "cardboard box(3)"
+              size 0.3 0.3 0.3
+            }
+            CardboardBox {
+              translation 0.04 -0.1 0.59
+              name "cardboard box(2)"
+              size 0.3 0.4 0.2
+            }
+            CardboardBox {
+              translation 0.04 0.18 0.22
+              name "cardboard box(1)"
+              size 0.3 0.3 0.2
+            }
+            CardboardBox {
+              translation 0.04 -0.17 0.22
+              size 0.3 0.3 0.2
+            }
+            Shelves {
+            }
+          ]
+          name "solid(4)"
+        }
+      ]
+      name "solid(2)"
+    }
+  ]
+}

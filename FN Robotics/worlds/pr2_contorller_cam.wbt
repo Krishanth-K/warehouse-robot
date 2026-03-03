@@ -1,0 +1,37 @@
+#VRML_SIM R2025a utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/floors/protos/RectangleArena.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/robots/clearpath/pr2/protos/Pr2.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/factory/containers/protos/WoodenBox.proto"
+
+WorldInfo {
+}
+Viewpoint {
+  orientation 0.30136526695005195 -0.2904715759984983 -0.9081878877264727 4.579649733671584
+  position 1.6391744295377908 -10.653850150983285 9.325008740391704
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+RectangleArena {
+  rotation 0 1 0 4.692820414042842e-06
+  floorSize 25 25
+}
+WoodenBox {
+  translation -3.07 -2.33 0.3
+  name "wooden box(2)"
+}
+WoodenBox {
+  translation 5.7 -1.44 0.3
+  name "wooden box(1)"
+}
+WoodenBox {
+  translation 3.58 -3.58 0.3
+}
+Pr2 {
+  controller "pr2_py_controller"
+  selfCollision TRUE
+}

@@ -1,0 +1,36 @@
+#VRML_SIM R2025a utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/floors/protos/RectangleArena.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/factory/fire_extinguisher/protos/FireExtinguisher.proto"
+
+WorldInfo {
+}
+Viewpoint {
+  orientation -0.44718367592507363 0.5698132858030327 0.6894487503132413 1.6999655989848956
+  position -0.3915449652279282 -1.1330219556270893 2.5975333731805983
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+RectangleArena {
+}
+
+Solid {
+  children [
+    FireExtinguisher {
+    }
+  ]
+
+  boundingObject Transform {
+    translation 0 0.18 0
+    children [
+      Cylinder {
+        height 0.28
+        radius 0.042
+      }
+    ]
+  }
+}

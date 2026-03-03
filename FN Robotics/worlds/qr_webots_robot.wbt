@@ -1,0 +1,5409 @@
+#VRML_SIM R2025a utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/floors/protos/RectangleArena.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/robots/softbank/nao/protos/Shelves.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/factory/containers/protos/CardboardBox.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/tables/protos/Table.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/factory/containers/protos/MetalStorageBox.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/factory/containers/protos/PlasticFruitBox.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/factory/containers/protos/WoodenBox.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/robots/clearpath/pr2/protos/Pr2.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/humans/pedestrian/protos/Pedestrian.proto"
+
+WorldInfo {
+}
+Viewpoint {
+  orientation 0.31793951547370713 -0.18985006142452077 -0.9289087246212354 4.154435846771045
+  position 3.576109042607914 -12.585083890492617 7.730679628629209
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+RectangleArena {
+  floorSize 20 20
+}
+DEF Human_QR_02 Solid {
+  translation 6.05 -1.02 0.05
+  rotation 0 0 1 1.5708
+  children [
+    Pedestrian {
+      name "pedestrian(3)"
+      shirtColor 1 0.937255 0.0823529
+      pantsColor 0.0313726 0.666667 0.0509804
+      shoesColor 1 0 0
+      skinColor 1 1 0.498039
+      enableBoundingObject TRUE
+    }
+    Pose {
+      translation 0.15 0 1.3
+      rotation 0 1 0 1.5708
+      children [
+        Shape {
+          appearance Appearance {
+            texture ImageTexture {
+              url [
+                "../textures/human_02_qr.png"
+              ]
+            }
+          }
+          geometry Plane {
+            size 0.25 0.25
+          }
+        }
+      ]
+    }
+    Pose {
+      translation -0.15 0 1.3
+      rotation 0 1 0 -1.5708
+      children [
+        Shape {
+          appearance Appearance {
+            texture ImageTexture {
+              url [
+                "../textures/human_02_qr_back.png"
+              ]
+            }
+          }
+          geometry Plane {
+            size 0.25 0.25
+          }
+        }
+      ]
+    }
+  ]
+}
+DEF Human_QR_03 Solid {
+  translation 0.34 5.16 0.05
+  rotation 0 0 1 -1.5707953071795862
+  children [
+    Pedestrian {
+      name "pedestrian_1"
+      shirtColor 1 0.937255 0.0823529
+      pantsColor 0.0313726 0.666667 0.0509804
+      shoesColor 1 0 0
+      enableBoundingObject TRUE
+    }
+    Pose {
+      translation 0.15 0 1.3
+      rotation 0 1 0 1.5708
+      children [
+        Shape {
+          appearance Appearance {
+            texture ImageTexture {
+              url [
+                "../textures/human_03_qr.png"
+              ]
+            }
+          }
+          geometry Plane {
+            size 0.25 0.25
+          }
+        }
+      ]
+    }
+    Pose {
+      translation -0.15 0 1.3
+      rotation 0 1 0 -1.5708
+      children [
+        Shape {
+          appearance Appearance {
+            texture ImageTexture {
+              url [
+                "../textures/human_03_qr_back.png"
+              ]
+            }
+          }
+          geometry Plane {
+            size 0.25 0.25
+          }
+        }
+      ]
+    }
+  ]
+}
+Solid {
+  children [
+    Solid {
+      translation -5.24051 12.6965 0
+      rotation 0 0 1 1.5708
+      children [
+        Pose {
+          translation -8.77 3.81 0.43998
+          rotation 0.5773509358560258 -0.577349935856137 0.577349935856137 2.09439
+          children [
+            Shape {
+              appearance Appearance {
+                texture ImageTexture {
+                  url [
+                    "../textures/WoodenBox_06.png"
+                  ]
+                }
+              }
+              geometry Plane {
+                size 0.2 0.2
+              }
+            }
+          ]
+        }
+        WoodenBox {
+          translation -9.090000415418446 4.117366687662714 0.29979934320724766
+          rotation 0.4770177337190911 -1.9321530801161324e-06 -0.8788936691737909 5.32797044240747e-06
+          size 1 0.6 0.6
+          mass 0.6
+        }
+      ]
+      name "wooden_box_qr(5)"
+    }
+    Solid {
+      translation 0.505049 11.2714 0
+      rotation 0 0 -1 -0.7854053071795866
+      children [
+        Pose {
+          translation -8.92 3.81 0.43998
+          rotation 0.5773509358560258 -0.577349935856137 0.577349935856137 2.09439
+          children [
+            Shape {
+              appearance Appearance {
+                texture ImageTexture {
+                  url [
+                    "../textures/WoodenBox_05.png"
+                  ]
+                }
+              }
+              geometry Plane {
+                size 0.2 0.2
+              }
+            }
+          ]
+        }
+        WoodenBox {
+          translation -9.090000415418446 4.117366687662714 0.29979934320724766
+          rotation 0.4770177337190911 -1.9321530801161324e-06 -0.8788936691737909 5.32797044240747e-06
+          mass 0.6
+        }
+      ]
+      name "wooden_box_qr(4)"
+    }
+    Solid {
+      translation 0.503634 4.8613 0
+      rotation 0 0 -1 -5.307179586466759e-06
+      children [
+        Pose {
+          translation -8.92 3.81 0.43998
+          rotation 0.5773509358560258 -0.577349935856137 0.577349935856137 2.09439
+          children [
+            Shape {
+              appearance Appearance {
+                texture ImageTexture {
+                  url [
+                    "../textures/WoodenBox_04.png"
+                  ]
+                }
+              }
+              geometry Plane {
+                size 0.2 0.2
+              }
+            }
+          ]
+        }
+        WoodenBox {
+          translation -9.090000415418446 4.117366687662714 0.29979934320724766
+          rotation 0.4770177337190911 -1.9321530801161324e-06 -0.8788936691737909 5.32797044240747e-06
+          mass 0.6
+        }
+      ]
+      name "wooden_box_qr(3)"
+    }
+    Solid {
+      translation -0.336366 4.8613 0
+      rotation 0 0 -1 -5.307179586466759e-06
+      children [
+        Pose {
+          translation -8.92 3.81 0.43998
+          rotation 0.5773509358560258 -0.577349935856137 0.577349935856137 2.09439
+          children [
+            Shape {
+              appearance Appearance {
+                texture ImageTexture {
+                  url [
+                    "../textures/WoodenBox_03.png"
+                  ]
+                }
+              }
+              geometry Plane {
+                size 0.2 0.2
+              }
+            }
+          ]
+        }
+        WoodenBox {
+          translation -9.090000415418446 4.117366687662714 0.29979934320724766
+          rotation 0.4770177337190911 -1.9321530801161324e-06 -0.8788936691737909 5.32797044240747e-06
+          mass 0.6
+        }
+      ]
+      name "wooden_box_qr(2)"
+    }
+    Solid {
+      translation 0.229374 10.0836 0
+      rotation 0 0 1 0.785402
+      children [
+        Pose {
+          translation -8.92 3.81 0.43998
+          rotation 0.5773509358560258 -0.577349935856137 0.577349935856137 2.09439
+          children [
+            Shape {
+              appearance Appearance {
+                texture ImageTexture {
+                  url [
+                    "../textures/WoodenBox_02.png"
+                  ]
+                }
+              }
+              geometry Plane {
+                size 0.2 0.2
+              }
+            }
+          ]
+        }
+        WoodenBox {
+          translation -9.090000415418446 4.117366687662714 0.29979934320724766
+          rotation 0.4770177337190911 -1.9321530801161324e-06 -0.8788936691737909 5.32797044240747e-06
+          mass 0.6
+        }
+      ]
+      name "wooden_box_qr(1)"
+    }
+    Solid {
+      translation 0.87949 6.09649 0
+      rotation 0 0 1 0.523603
+      children [
+        Pose {
+          translation -8.77 3.81 0.43998
+          rotation 0.5773509358560258 -0.577349935856137 0.577349935856137 2.09439
+          children [
+            Shape {
+              appearance Appearance {
+                texture ImageTexture {
+                  url [
+                    "../textures/WoodenBox_01.png"
+                  ]
+                }
+              }
+              geometry Plane {
+                size 0.2 0.2
+              }
+            }
+          ]
+        }
+        WoodenBox {
+          translation -9.090000415418446 4.117366687662714 0.29979934320724766
+          rotation 0.4770177337190911 -1.9321530801161324e-06 -0.8788936691737909 5.32797044240747e-06
+          size 1 0.6 0.6
+          mass 0.6
+        }
+      ]
+      name "wooden_box_qr"
+    }
+  ]
+  name "wooden_boxes_set"
+}
+Solid {
+  translation 9.55 0 0
+  children [
+    Solid {
+      translation 0 12.92 0
+      children [
+        Pose {
+          translation -4.3 -6.93 0.18
+          rotation 0.5773509358560258 -0.577349935856137 0.577349935856137 2.09439
+          children [
+            Shape {
+              appearance Appearance {
+                texture ImageTexture {
+                  url [
+                    "../textures/MetalStorageBox_14.png"
+                  ]
+                }
+              }
+              geometry Plane {
+                size 0.2 0.2
+              }
+            }
+          ]
+        }
+        MetalStorageBox {
+          name "metal storage box(6)"
+          translation -4.3 -6.44 -7.840229690581069e-06
+          mass 0.5
+        }
+      ]
+      name "container_qr(6)"
+    }
+    Solid {
+      translation 0 11.18 0
+      children [
+        Pose {
+          translation -4.3 -6.93 0.18
+          rotation 0.5773509358560258 -0.577349935856137 0.577349935856137 2.09439
+          children [
+            Shape {
+              appearance Appearance {
+                texture ImageTexture {
+                  url [
+                    "../textures/MetalStorageBox_13.png"
+                  ]
+                }
+              }
+              geometry Plane {
+                size 0.2 0.2
+              }
+            }
+          ]
+        }
+        MetalStorageBox {
+          name "metal storage box(6)"
+          translation -4.3 -6.44 -7.840229690581069e-06
+          mass 0.5
+        }
+      ]
+      name "container_qr(5)"
+    }
+    Solid {
+      translation 0 6.26 0
+      children [
+        Pose {
+          translation -4.3 -6.93 0.18
+          rotation 0.5773509358560258 -0.577349935856137 0.577349935856137 2.09439
+          children [
+            Shape {
+              appearance Appearance {
+                texture ImageTexture {
+                  url [
+                    "../textures/MetalStorageBox_11.png"
+                  ]
+                }
+              }
+              geometry Plane {
+                size 0.2 0.2
+              }
+            }
+          ]
+        }
+        MetalStorageBox {
+          name "metal storage box(6)"
+          translation -4.3 -6.44 -7.840229690581069e-06
+          mass 0.5
+        }
+      ]
+      name "container_qr(3)"
+    }
+    Solid {
+      translation 0 8.56 0
+      children [
+        Pose {
+          translation -4.3 -6.93 0.18
+          rotation 0.5773509358560258 -0.577349935856137 0.577349935856137 2.09439
+          children [
+            Shape {
+              appearance Appearance {
+                texture ImageTexture {
+                  url [
+                    "../textures/MetalStorageBox_12.png"
+                  ]
+                }
+              }
+              geometry Plane {
+                size 0.2 0.2
+              }
+            }
+          ]
+        }
+        MetalStorageBox {
+          name "metal storage box(6)"
+          translation -4.3 -6.44 -7.840229690581069e-06
+          mass 0.5
+        }
+      ]
+      name "container_qr(4)"
+    }
+    Solid {
+      translation 0 3.99 0
+      children [
+        Pose {
+          translation -4.3 -6.93 0.18
+          rotation 0.5773509358560258 -0.577349935856137 0.577349935856137 2.09439
+          children [
+            Shape {
+              appearance Appearance {
+                texture ImageTexture {
+                  url [
+                    "../textures/MetalStorageBox_10.png"
+                  ]
+                }
+              }
+              geometry Plane {
+                size 0.2 0.2
+              }
+            }
+          ]
+        }
+        MetalStorageBox {
+          name "metal storage box(6)"
+          translation -4.3 -6.44 -7.840229690581069e-06
+          mass 0.5
+        }
+      ]
+      name "container_qr(2)"
+    }
+    Solid {
+      translation 0 1.59 0
+      children [
+        Pose {
+          translation -4.3 -6.93 0.18
+          rotation 0.5773509358560258 -0.577349935856137 0.577349935856137 2.09439
+          children [
+            Shape {
+              appearance Appearance {
+                texture ImageTexture {
+                  url [
+                    "../textures/MetalStorageBox_09.png"
+                  ]
+                }
+              }
+              geometry Plane {
+                size 0.2 0.2
+              }
+            }
+          ]
+        }
+        MetalStorageBox {
+          name "metal storage box(6)"
+          translation -4.3 -6.44 -7.840229690581069e-06
+          mass 0.5
+        }
+      ]
+      name "container_qr(1)"
+    }
+    Solid {
+      children [
+        Pose {
+          translation -4.3 -6.93 0.18
+          rotation 0.5773509358560258 -0.577349935856137 0.577349935856137 2.09439
+          children [
+            Shape {
+              appearance Appearance {
+                texture ImageTexture {
+                  url [
+                    "../textures/MetalStorageBox_08.png"
+                  ]
+                }
+              }
+              geometry Plane {
+                size 0.2 0.2
+              }
+            }
+          ]
+        }
+        MetalStorageBox {
+          name "metal storage box(6)"
+          translation -4.3 -6.44 -7.840229690581069e-06
+          mass 0.5
+        }
+      ]
+      name "container_qr"
+    }
+  ]
+  name "container_row(1)"
+}
+PlasticFruitBox {
+  name "plastic fruit box(1)"
+  translation 0.61 -1.94 0.7416136409269135
+  rotation 0.3374245211774766 0.8932791042207666 -0.2969800236896339 2.1537217724520632e-17
+  mass 0.5
+}
+PlasticFruitBox {
+  translation 0.61 2.18 0.7416137999991965
+  rotation 0.9945319889762629 1.1675016798391968e-13 -0.10443238435906076 2.087754544346526e-17
+  mass 0.5
+}
+Solid {
+  children [
+    Solid {
+      translation 0 12.92 0
+      children [
+        Pose {
+          translation -4.3 -6.93 0.18
+          rotation 0.5773509358560258 -0.577349935856137 0.577349935856137 2.09439
+          children [
+            Shape {
+              appearance Appearance {
+                texture ImageTexture {
+                  url [
+                    "../textures/MetalStorageBox_07.png"
+                  ]
+                }
+              }
+              geometry Plane {
+                size 0.2 0.2
+              }
+            }
+          ]
+        }
+        MetalStorageBox {
+          name "metal storage box(6)"
+          translation -4.3 -6.44 -7.840229690581069e-06
+          mass 0.5
+        }
+      ]
+      name "container_qr(6)"
+    }
+    Solid {
+      translation 0 11.18 0
+      children [
+        Pose {
+          translation -4.3 -6.93 0.18
+          rotation 0.5773509358560258 -0.577349935856137 0.577349935856137 2.09439
+          children [
+            Shape {
+              appearance Appearance {
+                texture ImageTexture {
+                  url [
+                    "../textures/MetalStorageBox_06.png"
+                  ]
+                }
+              }
+              geometry Plane {
+                size 0.2 0.2
+              }
+            }
+          ]
+        }
+        MetalStorageBox {
+          name "metal storage box(6)"
+          translation -4.3 -6.44 -7.840229690581069e-06
+          mass 0.5
+        }
+      ]
+      name "container_qr(5)"
+    }
+    Solid {
+      translation 0 6.26 0
+      children [
+        Pose {
+          translation -4.3 -6.93 0.18
+          rotation 0.5773509358560258 -0.577349935856137 0.577349935856137 2.09439
+          children [
+            Shape {
+              appearance Appearance {
+                texture ImageTexture {
+                  url [
+                    "../textures/MetalStorageBox_04.png"
+                  ]
+                }
+              }
+              geometry Plane {
+                size 0.2 0.2
+              }
+            }
+          ]
+        }
+        MetalStorageBox {
+          name "metal storage box(6)"
+          translation -4.3 -6.44 -7.840229690581069e-06
+          mass 0.5
+        }
+      ]
+      name "container_qr(3)"
+    }
+    Solid {
+      translation 0 8.56 0
+      children [
+        Pose {
+          translation -4.3 -6.93 0.18
+          rotation 0.5773509358560258 -0.577349935856137 0.577349935856137 2.09439
+          children [
+            Shape {
+              appearance Appearance {
+                texture ImageTexture {
+                  url [
+                    "../textures/MetalStorageBox_05.png"
+                  ]
+                }
+              }
+              geometry Plane {
+                size 0.2 0.2
+              }
+            }
+          ]
+        }
+        MetalStorageBox {
+          name "metal storage box(6)"
+          translation -4.3 -6.44 -7.840229690581069e-06
+          mass 0.5
+        }
+      ]
+      name "container_qr(4)"
+    }
+    Solid {
+      translation 0 3.99 0
+      children [
+        Pose {
+          translation -4.3 -6.93 0.18
+          rotation 0.5773509358560258 -0.577349935856137 0.577349935856137 2.09439
+          children [
+            Shape {
+              appearance Appearance {
+                texture ImageTexture {
+                  url [
+                    "../textures/MetalStorageBox_03.png"
+                  ]
+                }
+              }
+              geometry Plane {
+                size 0.2 0.2
+              }
+            }
+          ]
+        }
+        MetalStorageBox {
+          name "metal storage box(6)"
+          translation -4.3 -6.44 -7.840229690581069e-06
+          mass 0.5
+        }
+      ]
+      name "container_qr(2)"
+    }
+    Solid {
+      translation 0 1.59 0
+      children [
+        Pose {
+          translation -4.3 -6.93 0.18
+          rotation 0.5773509358560258 -0.577349935856137 0.577349935856137 2.09439
+          children [
+            Shape {
+              appearance Appearance {
+                texture ImageTexture {
+                  url [
+                    "../textures/MetalStorageBox_02.png"
+                  ]
+                }
+              }
+              geometry Plane {
+                size 0.2 0.2
+              }
+            }
+          ]
+        }
+        MetalStorageBox {
+          name "metal storage box(6)"
+          translation -4.3 -6.44 -7.840229690581069e-06
+          mass 0.5
+        }
+      ]
+      name "container_qr(1)"
+    }
+    Solid {
+      children [
+        Pose {
+          translation -4.3 -6.93 0.18
+          rotation 0.5773509358560258 -0.577349935856137 0.577349935856137 2.09439
+          children [
+            Shape {
+              appearance Appearance {
+                texture ImageTexture {
+                  url [
+                    "../textures/MetalStorageBox_01.png"
+                  ]
+                }
+              }
+              geometry Plane {
+                size 0.2 0.2
+              }
+            }
+          ]
+        }
+        MetalStorageBox {
+          name "metal storage box(6)"
+          translation -4.3 -6.44 -7.840229690581069e-06
+          mass 0.5
+        }
+      ]
+      name "container_qr"
+    }
+  ]
+  name "container_row"
+}
+Table {
+  translation 0.710002 -2 0
+  rotation 0 0 1 1.5708
+  name "table(1)"
+}
+Table {
+  translation 0.709989 2.19 0
+  rotation 0 0 1 1.5708
+}
+Solid {
+  translation -0.0300003 8.69 0
+  rotation 0 0 1 -1.5707953071795862
+  children [
+    Solid {
+      translation 0 6.61 0
+      children [
+        Pose {
+          translation -0.15 -0.2 0.91
+          rotation 0 1 0 -1.5707953071795862
+          children [
+            Shape {
+              appearance Appearance {
+                texture ImageTexture {
+                  url [
+                    "../textures/Shelves_49.png"
+                  ]
+                }
+              }
+              geometry Plane {
+                size 0.2 0.2
+              }
+            }
+          ]
+        }
+        Shelves {
+        }
+        Solid {
+          children [
+            CardboardBox {
+              translation 0.009963462867942141 0.16000000000000014 0.24978706533706577
+              rotation 1.5721258313941189e-09 -0.9999999999999999 0 3.3277870818092346e-09
+              name "cardboard box(6)"
+              size 0.2 0.3 0.3
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009963448698059096 -0.1900000000000004 0.1997869503017629
+              rotation -1.1531016723672332e-08 -1 0 2.134325214552293e-09
+              name "cardboard box(5)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009960758740369613 0.20000000000000018 0.5817869406934342
+              rotation 2.5494577768409296e-08 -0.9999999999999808 1.9474815528313008e-07 1.7102442223564348e-09
+              name "cardboard box(4)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009960898774870941 -0.16999999999999815 0.5817869567563235
+              rotation 3.829506898578874e-09 -1 0 1.3661972916770035e-09
+              name "cardboard box(3)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009958778578562644 -0.10999999999999854 0.9147870358225009
+              rotation -4.776251052075017e-10 -1 0 3.328109046862593e-09
+              name "cardboard box(2)"
+              size 0.2 0.4 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009957008801764644 0.16000000000000192 1.1597878196440108
+              rotation 1.5437234280710494e-08 -1 0 1.0984060944682997e-09
+              name "cardboard box(1)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009956768695733587 -0.1900000000000004 1.1597856442782746
+              rotation 2.6113880608502626e-08 -0.9999999999999996 0 2.159374625639862e-09
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+          ]
+          name "box"
+        }
+      ]
+      name "shelf(11)"
+    }
+    Solid {
+      translation 0 5.53 0
+      children [
+        Pose {
+          translation -0.15 -0.2 0.91
+          rotation 0 1 0 -1.5707953071795862
+          children [
+            Shape {
+              appearance Appearance {
+                texture ImageTexture {
+                  url [
+                    "../textures/Shelves_50.png"
+                  ]
+                }
+              }
+              geometry Plane {
+                size 0.2 0.2
+              }
+            }
+          ]
+        }
+        Shelves {
+        }
+        Solid {
+          children [
+            CardboardBox {
+              translation 0.009963462867942141 0.16000000000000014 0.24978706533706577
+              rotation 1.5721258313941189e-09 -0.9999999999999999 0 3.3277870818092346e-09
+              name "cardboard box(6)"
+              size 0.2 0.3 0.3
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009963448698059096 -0.18999999999999861 0.1997869503017629
+              rotation -1.1531016723672332e-08 -1 0 2.134325214552293e-09
+              name "cardboard box(5)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009960758740369613 0.1999999999999984 0.5817869406934342
+              rotation 2.5494577768409296e-08 -0.9999999999999808 1.9474815528313008e-07 1.7102442223564348e-09
+              name "cardboard box(4)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009960898774874494 -0.16999999999999815 0.5817869567563235
+              rotation 3.829506898578874e-09 -1 0 1.3661972916770035e-09
+              name "cardboard box(3)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009958778578562644 -0.10999999999999854 0.9147870358225009
+              rotation -4.776251052075017e-10 -1 0 3.328109046862593e-09
+              name "cardboard box(2)"
+              size 0.2 0.4 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009957008801764644 0.16000000000000014 1.1597878196440108
+              rotation 1.5437234280710494e-08 -1 0 1.0984060944682997e-09
+              name "cardboard box(1)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009956768695733587 -0.1900000000000004 1.1597856442782746
+              rotation 2.6113880608502626e-08 -0.9999999999999996 0 2.159374625639862e-09
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+          ]
+          name "box"
+        }
+      ]
+      name "shelf(10)"
+    }
+    Solid {
+      translation 0 4.56 0
+      children [
+        Pose {
+          translation -0.15 -0.2 0.91
+          rotation 0 1 0 -1.5707953071795862
+          children [
+            Shape {
+              appearance Appearance {
+                texture ImageTexture {
+                  url [
+                    "../textures/Shelves_51.png"
+                  ]
+                }
+              }
+              geometry Plane {
+                size 0.2 0.2
+              }
+            }
+          ]
+        }
+        Shelves {
+        }
+        Solid {
+          children [
+            CardboardBox {
+              translation 0.009963462867942141 0.16000000000000192 0.24978706533706577
+              rotation 1.5721258313941189e-09 -0.9999999999999999 0 3.3277870818092346e-09
+              name "cardboard box(6)"
+              size 0.2 0.3 0.3
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009963448698059096 -0.1900000000000004 0.1997869503017629
+              rotation -1.1531016723672332e-08 -1 0 2.134325214552293e-09
+              name "cardboard box(5)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009960758740373166 0.20000000000000018 0.5817869406934342
+              rotation 2.5494577768409296e-08 -0.9999999999999808 1.9474815528313008e-07 1.7102442223564348e-09
+              name "cardboard box(4)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009960898774874494 -0.16999999999999815 0.5817869567563235
+              rotation 3.829506898578874e-09 -1 0 1.3661972916770035e-09
+              name "cardboard box(3)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009958778578562644 -0.10999999999999854 0.9147870358225009
+              rotation -4.776251052075017e-10 -1 0 3.328109046862593e-09
+              name "cardboard box(2)"
+              size 0.2 0.4 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009957008801764644 0.16000000000000192 1.1597878196440108
+              rotation 1.5437234280710494e-08 -1 0 1.0984060944682997e-09
+              name "cardboard box(1)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009956768695733587 -0.1900000000000004 1.1597856442782746
+              rotation 2.6113880608502626e-08 -0.9999999999999996 0 2.159374625639862e-09
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+          ]
+          name "box"
+        }
+      ]
+      name "shelf(9)"
+    }
+    Solid {
+      translation 0 -6.66 0
+      children [
+        Pose {
+          translation -0.15 -0.2 0.91
+          rotation 0 1 0 -1.5707953071795862
+          children [
+            Shape {
+              appearance Appearance {
+                texture ImageTexture {
+                  url [
+                    "../textures/Shelves_60.png"
+                  ]
+                }
+              }
+              geometry Plane {
+                size 0.2 0.2
+              }
+            }
+          ]
+        }
+        Shelves {
+        }
+        Solid {
+          children [
+            CardboardBox {
+              translation 0.009963462867942141 0.16000000000000014 0.24978706533706577
+              rotation 1.5721258313941189e-09 -0.9999999999999999 0 3.3277870818092346e-09
+              name "cardboard box(6)"
+              size 0.2 0.3 0.3
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009963448698059096 -0.1900000000000004 0.1997869503017629
+              rotation -1.1531016723672332e-08 -1 0 2.134325214552293e-09
+              name "cardboard box(5)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009960758740373166 0.20000000000000018 0.5817869406934342
+              rotation 2.5494577768409296e-08 -0.9999999999999808 1.9474815528313008e-07 1.7102442223564348e-09
+              name "cardboard box(4)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009960898774874494 -0.16999999999999815 0.5817869567563235
+              rotation 3.829506898578874e-09 -1 0 1.3661972916770035e-09
+              name "cardboard box(3)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009958778578562644 -0.10999999999999854 0.9147870358225009
+              rotation -4.776251052075017e-10 -1 0 3.328109046862593e-09
+              name "cardboard box(2)"
+              size 0.2 0.4 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009957008801764644 0.16000000000000014 1.1597878196440108
+              rotation 1.5437234280710494e-08 -1 0 1.0984060944682997e-09
+              name "cardboard box(1)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009956768695733587 -0.1899999999999995 1.1597856442782746
+              rotation 2.6113880608502626e-08 -0.9999999999999996 0 2.159374625639862e-09
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+          ]
+          name "box"
+        }
+      ]
+      name "shelf(8)"
+    }
+    Solid {
+      translation 0 -5.7 0
+      children [
+        Pose {
+          translation -0.15 -0.2 0.91
+          rotation 0 1 0 -1.5707953071795862
+          children [
+            Shape {
+              appearance Appearance {
+                texture ImageTexture {
+                  url [
+                    "../textures/Shelves_59.png"
+                  ]
+                }
+              }
+              geometry Plane {
+                size 0.2 0.2
+              }
+            }
+          ]
+        }
+        Shelves {
+        }
+        Solid {
+          children [
+            CardboardBox {
+              translation 0.009963462867942141 0.16000000000000192 0.24978706533706577
+              rotation 1.5721258313941189e-09 -0.9999999999999999 0 3.3277870818092346e-09
+              name "cardboard box(6)"
+              size 0.2 0.3 0.3
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009963448698059096 -0.1900000000000004 0.1997869503017629
+              rotation -1.1531016723672332e-08 -1 0 2.134325214552293e-09
+              name "cardboard box(5)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009960758740369613 0.20000000000000018 0.5817869406934342
+              rotation 2.5494577768409296e-08 -0.9999999999999808 1.9474815528313008e-07 1.7102442223564348e-09
+              name "cardboard box(4)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009960898774874494 -0.16999999999999815 0.5817869567563235
+              rotation 3.829506898578874e-09 -1 0 1.3661972916770035e-09
+              name "cardboard box(3)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009958778578562644 -0.10999999999999854 0.9147870358225009
+              rotation -4.776251052075017e-10 -1 0 3.328109046862593e-09
+              name "cardboard box(2)"
+              size 0.2 0.4 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009957008801764644 0.16000000000000192 1.1597878196440108
+              rotation 1.5437234280710494e-08 -1 0 1.0984060944682997e-09
+              name "cardboard box(1)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009956768695733587 -0.1900000000000004 1.1597856442782746
+              rotation 2.6113880608502626e-08 -0.9999999999999996 0 2.159374625639862e-09
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+          ]
+          name "box"
+        }
+      ]
+      name "shelf(7)"
+    }
+    Solid {
+      translation 0 -4.71 0
+      children [
+        Pose {
+          translation -0.15 -0.2 0.91
+          rotation 0 1 0 -1.5707953071795862
+          children [
+            Shape {
+              appearance Appearance {
+                texture ImageTexture {
+                  url [
+                    "../textures/Shelves_58.png"
+                  ]
+                }
+              }
+              geometry Plane {
+                size 0.2 0.2
+              }
+            }
+          ]
+        }
+        Shelves {
+        }
+        Solid {
+          children [
+            CardboardBox {
+              translation 0.009963462867938588 0.15999999999999837 0.24978706533706577
+              rotation 1.5721258313941189e-09 -0.9999999999999999 0 3.3277870818092346e-09
+              name "cardboard box(6)"
+              size 0.2 0.3 0.3
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009963448698055544 -0.1900000000000004 0.1997869503017629
+              rotation -1.1531016723672332e-08 -1 0 2.134325214552293e-09
+              name "cardboard box(5)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009960758740369613 0.1999999999999984 0.5817869406934342
+              rotation 2.5494577768409296e-08 -0.9999999999999808 1.9474815528313008e-07 1.7102442223564348e-09
+              name "cardboard box(4)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009960898774870941 -0.16999999999999993 0.5817869567563235
+              rotation 3.829506898578874e-09 -1 0 1.3661972916770035e-09
+              name "cardboard box(3)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009958778578562644 -0.11000000000000032 0.9147870358225009
+              rotation -4.776251052075017e-10 -1 0 3.328109046862593e-09
+              name "cardboard box(2)"
+              size 0.2 0.4 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009957008801761091 0.15999999999999837 1.1597878196440108
+              rotation 1.5437234280710494e-08 -1 0 1.0984060944682997e-09
+              name "cardboard box(1)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009956768695730034 -0.19000000000000217 1.1597856442782746
+              rotation 2.6113880608502626e-08 -0.9999999999999996 0 2.159374625639862e-09
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+          ]
+          name "box"
+        }
+      ]
+      name "shelf(6)"
+    }
+    Solid {
+      translation 0 -2.52 0
+      children [
+        Pose {
+          translation -0.15 -0.2 0.91
+          rotation 0 1 0 -1.5707953071795862
+          children [
+            Shape {
+              appearance Appearance {
+                texture ImageTexture {
+                  url [
+                    "../textures/Shelves_57.png"
+                  ]
+                }
+              }
+              geometry Plane {
+                size 0.2 0.2
+              }
+            }
+          ]
+        }
+        Shelves {
+        }
+        Solid {
+          children [
+            CardboardBox {
+              translation 0.009963462867942141 0.16000000000000014 0.24978706533706577
+              rotation 1.5721258313941189e-09 -0.9999999999999999 0 3.3277870818092346e-09
+              name "cardboard box(6)"
+              size 0.2 0.3 0.3
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009963448698059096 -0.18999999999999906 0.1997869503017629
+              rotation -1.1531016723672332e-08 -1 0 2.134325214552293e-09
+              name "cardboard box(5)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009960758740373166 0.20000000000000062 0.5817869406934342
+              rotation 2.5494577768409296e-08 -0.9999999999999808 1.9474815528313008e-07 1.7102442223564348e-09
+              name "cardboard box(4)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009960898774874494 -0.16999999999999993 0.5817869567563235
+              rotation 3.829506898578874e-09 -1 0 1.3661972916770035e-09
+              name "cardboard box(3)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009958778578562644 -0.10999999999999988 0.9147870358225009
+              rotation -4.776251052075017e-10 -1 0 3.328109046862593e-09
+              name "cardboard box(2)"
+              size 0.2 0.4 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009957008801764644 0.16000000000000103 1.1597878196440108
+              rotation 1.5437234280710494e-08 -1 0 1.0984060944682997e-09
+              name "cardboard box(1)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009956768695733587 -0.18999999999999906 1.1597856442782746
+              rotation 2.6113880608502626e-08 -0.9999999999999996 0 2.159374625639862e-09
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+          ]
+          name "box"
+        }
+      ]
+      name "shelf(5)"
+    }
+    Solid {
+      translation 0 -1.54 0
+      children [
+        Pose {
+          translation -0.15 -0.2 0.91
+          rotation 0 1 0 -1.5707953071795862
+          children [
+            Shape {
+              appearance Appearance {
+                texture ImageTexture {
+                  url [
+                    "../textures/Shelves_56.png"
+                  ]
+                }
+              }
+              geometry Plane {
+                size 0.2 0.2
+              }
+            }
+          ]
+        }
+        Shelves {
+        }
+        Solid {
+          children [
+            CardboardBox {
+              translation 0.009963462867942141 0.16000000000000014 0.24978706533706577
+              rotation 1.5721258313941189e-09 -0.9999999999999999 0 3.3277870818092346e-09
+              name "cardboard box(6)"
+              size 0.2 0.3 0.3
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009963448698059096 -0.1899999999999995 0.1997869503017629
+              rotation -1.1531016723672332e-08 -1 0 2.134325214552293e-09
+              name "cardboard box(5)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009960758740369613 0.2000000000000004 0.5817869406934342
+              rotation 2.5494577768409296e-08 -0.9999999999999808 1.9474815528313008e-07 1.7102442223564348e-09
+              name "cardboard box(4)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009960898774870941 -0.16999999999999993 0.5817869567563235
+              rotation 3.829506898578874e-09 -1 0 1.3661972916770035e-09
+              name "cardboard box(3)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009958778578562644 -0.10999999999999965 0.9147870358225009
+              rotation -4.776251052075017e-10 -1 0 3.328109046862593e-09
+              name "cardboard box(2)"
+              size 0.2 0.4 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009957008801764644 0.16000000000000036 1.1597878196440108
+              rotation 1.5437234280710494e-08 -1 0 1.0984060944682997e-09
+              name "cardboard box(1)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009956768695733587 -0.18999999999999972 1.1597856442782746
+              rotation 2.6113880608502626e-08 -0.9999999999999996 0 2.159374625639862e-09
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+          ]
+          name "box"
+        }
+      ]
+      name "shelf(4)"
+    }
+    Solid {
+      translation 0 2.37 0
+      children [
+        Pose {
+          translation -0.15 -0.2 0.91
+          rotation 0 1 0 -1.5707953071795862
+          children [
+            Shape {
+              appearance Appearance {
+                texture ImageTexture {
+                  url [
+                    "../textures/Shelves_52.png"
+                  ]
+                }
+              }
+              geometry Plane {
+                size 0.2 0.2
+              }
+            }
+          ]
+        }
+        Shelves {
+        }
+        Solid {
+          children [
+            CardboardBox {
+              translation 0.009963462867938588 0.16000000000000014 0.24978706533706577
+              rotation 1.5721258313941189e-09 -0.9999999999999999 0 3.3277870818092346e-09
+              name "cardboard box(6)"
+              size 0.2 0.3 0.3
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009963448698055544 -0.18999999999999995 0.1997869503017629
+              rotation -1.1531016723672332e-08 -1 0 2.134325214552293e-09
+              name "cardboard box(5)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009960758740369613 0.19999999999999973 0.5817869406934342
+              rotation 2.5494577768409296e-08 -0.9999999999999808 1.9474815528313008e-07 1.7102442223564348e-09
+              name "cardboard box(4)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009960898774870941 -0.16999999999999993 0.5817869567563235
+              rotation 3.829506898578874e-09 -1 0 1.3661972916770035e-09
+              name "cardboard box(3)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009958778578562644 -0.10999999999999988 0.9147870358225009
+              rotation -4.776251052075017e-10 -1 0 3.328109046862593e-09
+              name "cardboard box(2)"
+              size 0.2 0.4 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009957008801761091 0.16000000000000014 1.1597878196440108
+              rotation 1.5437234280710494e-08 -1 0 1.0984060944682997e-09
+              name "cardboard box(1)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009956768695730034 -0.18999999999999995 1.1597856442782746
+              rotation 2.6113880608502626e-08 -0.9999999999999996 0 2.159374625639862e-09
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+          ]
+          name "box"
+        }
+      ]
+      name "shelf(3)"
+    }
+    Solid {
+      translation 0 -0.59 0
+      children [
+        Pose {
+          translation -0.15 -0.2 0.91
+          rotation 0 1 0 -1.5707953071795862
+          children [
+            Shape {
+              appearance Appearance {
+                texture ImageTexture {
+                  url [
+                    "../textures/Shelves_55.png"
+                  ]
+                }
+              }
+              geometry Plane {
+                size 0.2 0.2
+              }
+            }
+          ]
+        }
+        Shelves {
+        }
+        Solid {
+          children [
+            CardboardBox {
+              translation 0.009963462867942141 0.1600000000000001 0.24978706533706577
+              rotation 1.5721258313941189e-09 -0.9999999999999999 0 3.3277870818092346e-09
+              name "cardboard box(6)"
+              size 0.2 0.3 0.3
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009963448698055544 -0.18999999999999984 0.1997869503017629
+              rotation -1.1531016723672332e-08 -1 0 2.134325214552293e-09
+              name "cardboard box(5)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009960758740369613 0.20000000000000023 0.5817869406934342
+              rotation 2.5494577768409296e-08 -0.9999999999999808 1.9474815528313008e-07 1.7102442223564348e-09
+              name "cardboard box(4)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009960898774870941 -0.1699999999999996 0.5817869567563235
+              rotation 3.829506898578874e-09 -1 0 1.3661972916770035e-09
+              name "cardboard box(3)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009958778578562644 -0.10999999999999976 0.9147870358225009
+              rotation -4.776251052075017e-10 -1 0 3.328109046862593e-09
+              name "cardboard box(2)"
+              size 0.2 0.4 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009957008801764644 0.15999999999999998 1.1597878196440108
+              rotation 1.5437234280710494e-08 -1 0 1.0984060944682997e-09
+              name "cardboard box(1)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009956768695730034 -0.19000000000000006 1.1597856442782746
+              rotation 2.6113880608502626e-08 -0.9999999999999996 0 2.159374625639862e-09
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+          ]
+          name "box"
+        }
+      ]
+      name "shelf(2)"
+    }
+    Solid {
+      translation 0 1.37 0
+      children [
+        Pose {
+          translation -0.15 -0.2 0.91
+          rotation 0 1 0 -1.5707953071795862
+          children [
+            Shape {
+              appearance Appearance {
+                texture ImageTexture {
+                  url [
+                    "../textures/Shelves_53.png"
+                  ]
+                }
+              }
+              geometry Plane {
+                size 0.2 0.2
+              }
+            }
+          ]
+        }
+        Shelves {
+        }
+        Solid {
+          children [
+            CardboardBox {
+              translation 0.009963462867942141 0.16000000000000014 0.24978706533706577
+              rotation 1.5721258313941189e-09 -0.9999999999999999 0 3.3277870818092346e-09
+              name "cardboard box(6)"
+              size 0.2 0.3 0.3
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009963448698059096 -0.18999999999999995 0.1997869503017629
+              rotation -1.1531016723672332e-08 -1 0 2.134325214552293e-09
+              name "cardboard box(5)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009960758740373166 0.19999999999999996 0.5817869406934342
+              rotation 2.5494577768409296e-08 -0.9999999999999808 1.9474815528313008e-07 1.7102442223564348e-09
+              name "cardboard box(4)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009960898774874494 -0.16999999999999993 0.5817869567563235
+              rotation 3.829506898578874e-09 -1 0 1.3661972916770035e-09
+              name "cardboard box(3)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009958778578562644 -0.10999999999999965 0.9147870358225009
+              rotation -4.776251052075017e-10 -1 0 3.328109046862593e-09
+              name "cardboard box(2)"
+              size 0.2 0.4 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009957008801764644 0.16000000000000036 1.1597878196440108
+              rotation 1.5437234280710494e-08 -1 0 1.0984060944682997e-09
+              name "cardboard box(1)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009956768695733587 -0.19000000000000017 1.1597856442782746
+              rotation 2.6113880608502626e-08 -0.9999999999999996 0 2.159374625639862e-09
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+          ]
+          name "box"
+        }
+      ]
+      name "shelf(1)"
+    }
+    Solid {
+      translation 0 0.37 0
+      children [
+        Pose {
+          translation -0.15 -0.2 0.91
+          rotation 0 1 0 -1.5707953071795862
+          children [
+            Shape {
+              appearance Appearance {
+                texture ImageTexture {
+                  url [
+                    "../textures/Shelves_54.png"
+                  ]
+                }
+              }
+              geometry Plane {
+                size 0.2 0.2
+              }
+            }
+          ]
+        }
+        Shelves {
+        }
+        Solid {
+          children [
+            CardboardBox {
+              translation 0.009963462867938588 0.1599999999999998 0.24978706533706577
+              rotation 1.5721258313941189e-09 -0.9999999999999999 0 3.3277870818092346e-09
+              name "cardboard box(6)"
+              size 0.2 0.3 0.3
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009963448698055544 -0.18999999999999995 0.1997869503017629
+              rotation -1.1531016723672332e-08 -1 0 2.134325214552293e-09
+              name "cardboard box(5)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009960758740369613 0.19999999999999996 0.5817869406934342
+              rotation 2.5494577768409296e-08 -0.9999999999999808 1.9474815528313008e-07 1.7102442223564348e-09
+              name "cardboard box(4)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009960898774870941 -0.16999999999999996 0.5817869567563235
+              rotation 3.829506898578874e-09 -1 0 1.3661972916770035e-09
+              name "cardboard box(3)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009958778578562644 -0.1099999999999999 0.9147870358225009
+              rotation -4.776251052075017e-10 -1 0 3.328109046862593e-09
+              name "cardboard box(2)"
+              size 0.2 0.4 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009957008801761091 0.16000000000000003 1.1597878196440108
+              rotation 1.5437234280710494e-08 -1 0 1.0984060944682997e-09
+              name "cardboard box(1)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009956768695730034 -0.19000000000000009 1.1597856442782746
+              rotation 2.6113880608502626e-08 -0.9999999999999996 0 2.159374625639862e-09
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+          ]
+          name "box"
+        }
+      ]
+      name "shelf"
+    }
+  ]
+  name "shelf_row(4)"
+}
+Solid {
+  translation 7.07 0 0
+  rotation 0 0 1 3.14159
+  children [
+    Solid {
+      translation 0 6.61 0
+      children [
+        Pose {
+          translation -0.15 -0.2 0.91
+          rotation 0 1 0 -1.5707953071795862
+          children [
+            Shape {
+              appearance Appearance {
+                texture ImageTexture {
+                  url [
+                    "../textures/Shelves_37.png"
+                  ]
+                }
+              }
+              geometry Plane {
+                size 0.2 0.2
+              }
+            }
+          ]
+        }
+        Shelves {
+        }
+        Solid {
+          children [
+            CardboardBox {
+              translation 0.0099634628679377 0.16000000000000014 0.249787065337066
+              rotation 1.5721259070765113e-09 -0.9999999999999999 0 3.3277870818092346e-09
+              name "cardboard box(6)"
+              size 0.2 0.3 0.3
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009963448698054655 -0.1900000000000004 0.19978695030176313
+              rotation -1.1531016574497412e-08 -1 0 2.1343252145522913e-09
+              name "cardboard box(5)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009960758740366948 0.1999999999999984 0.5817869406934346
+              rotation 2.549457777371122e-08 -0.9999999999999997 0 1.7102442223564027e-09
+              name "cardboard box(4)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009960898774868276 -0.16999999999999993 0.581786956756324
+              rotation 3.829506936377524e-09 -1 0 1.3661972916770032e-09
+              name "cardboard box(3)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009958778578558203 -0.11000000000000121 0.9147870358225018
+              rotation -4.776251800043772e-10 -1 0 3.328109046862594e-09
+              name "cardboard box(2)"
+              size 0.2 0.4 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009957008801761091 0.15999999999999925 1.1597878196440117
+              rotation 1.5437234257147496e-08 -1 0 1.0984060944682997e-09
+              name "cardboard box(1)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009956768695729146 -0.19000000000000128 1.1597856442782755
+              rotation 2.6113880766911412e-08 -0.9999999999999997 0 2.1593746256398614e-09
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+          ]
+          name "box"
+        }
+      ]
+      name "shelf(11)"
+    }
+    Solid {
+      translation 0 5.53 0
+      children [
+        Pose {
+          translation -0.15 -0.2 0.91
+          rotation 0 1 0 -1.5707953071795862
+          children [
+            Shape {
+              appearance Appearance {
+                texture ImageTexture {
+                  url [
+                    "../textures/Shelves_38.png"
+                  ]
+                }
+              }
+              geometry Plane {
+                size 0.2 0.2
+              }
+            }
+          ]
+        }
+        Shelves {
+        }
+        Solid {
+          children [
+            CardboardBox {
+              translation 0.009963462867939477 0.16000000000000192 0.249787065337066
+              rotation 1.5721259070765113e-09 -0.9999999999999999 0 3.3277870818092346e-09
+              name "cardboard box(6)"
+              size 0.2 0.3 0.3
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009963448698054655 -0.1900000000000004 0.19978695030176313
+              rotation -1.1531016574497412e-08 -1 0 2.1343252145522913e-09
+              name "cardboard box(5)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009960758740368725 0.20000000000000018 0.5817869406934346
+              rotation 2.549457777371122e-08 -0.9999999999999997 0 1.7102442223564027e-09
+              name "cardboard box(4)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009960898774868276 -0.16999999999999815 0.581786956756324
+              rotation 3.829506936377524e-09 -1 0 1.3661972916770032e-09
+              name "cardboard box(3)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009958778578558203 -0.10999999999999943 0.9147870358225018
+              rotation -4.776251800043772e-10 -1 0 3.328109046862594e-09
+              name "cardboard box(2)"
+              size 0.2 0.4 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009957008801762868 0.16000000000000103 1.1597878196440117
+              rotation 1.5437234257147496e-08 -1 0 1.0984060944682997e-09
+              name "cardboard box(1)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009956768695729146 -0.1899999999999995 1.1597856442782755
+              rotation 2.6113880766911412e-08 -0.9999999999999997 0 2.1593746256398614e-09
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+          ]
+          name "box"
+        }
+      ]
+      name "shelf(10)"
+    }
+    Solid {
+      translation 0 4.56 0
+      children [
+        Pose {
+          translation -0.15 -0.2 0.91
+          rotation 0 1 0 -1.5707953071795862
+          children [
+            Shape {
+              appearance Appearance {
+                texture ImageTexture {
+                  url [
+                    "../textures/Shelves_39.png"
+                  ]
+                }
+              }
+              geometry Plane {
+                size 0.2 0.2
+              }
+            }
+          ]
+        }
+        Shelves {
+        }
+        Solid {
+          children [
+            CardboardBox {
+              translation 0.009963462867939477 0.16000000000000014 0.249787065337066
+              rotation 1.5721259070765113e-09 -0.9999999999999999 0 3.3277870818092346e-09
+              name "cardboard box(6)"
+              size 0.2 0.3 0.3
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009963448698054655 -0.1900000000000004 0.19978695030176313
+              rotation -1.1531016574497412e-08 -1 0 2.1343252145522913e-09
+              name "cardboard box(5)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009960758740368725 0.1999999999999984 0.5817869406934346
+              rotation 2.549457777371122e-08 -0.9999999999999997 0 1.7102442223564027e-09
+              name "cardboard box(4)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009960898774868276 -0.16999999999999993 0.581786956756324
+              rotation 3.829506936377524e-09 -1 0 1.3661972916770032e-09
+              name "cardboard box(3)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009958778578558203 -0.10999999999999943 0.9147870358225018
+              rotation -4.776251800043772e-10 -1 0 3.328109046862594e-09
+              name "cardboard box(2)"
+              size 0.2 0.4 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009957008801762868 0.16000000000000103 1.1597878196440117
+              rotation 1.5437234257147496e-08 -1 0 1.0984060944682997e-09
+              name "cardboard box(1)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009956768695729146 -0.19000000000000128 1.1597856442782755
+              rotation 2.6113880766911412e-08 -0.9999999999999997 0 2.1593746256398614e-09
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+          ]
+          name "box"
+        }
+      ]
+      name "shelf(9)"
+    }
+    Solid {
+      translation 0 -6.66 0
+      children [
+        Pose {
+          translation -0.15 -0.2 0.91
+          rotation 0 1 0 -1.5707953071795862
+          children [
+            Shape {
+              appearance Appearance {
+                texture ImageTexture {
+                  url [
+                    "../textures/Shelves_48.png"
+                  ]
+                }
+              }
+              geometry Plane {
+                size 0.2 0.2
+              }
+            }
+          ]
+        }
+        Shelves {
+        }
+        Solid {
+          children [
+            CardboardBox {
+              translation 0.0099634628679377 0.16000000000000014 0.249787065337066
+              rotation 1.5721259070765113e-09 -0.9999999999999999 0 3.3277870818092346e-09
+              name "cardboard box(6)"
+              size 0.2 0.3 0.3
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009963448698054655 -0.1900000000000004 0.19978695030176313
+              rotation -1.1531016574497412e-08 -1 0 2.1343252145522913e-09
+              name "cardboard box(5)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009960758740366948 0.1999999999999984 0.5817869406934346
+              rotation 2.549457777371122e-08 -0.9999999999999997 0 1.7102442223564027e-09
+              name "cardboard box(4)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009960898774868276 -0.16999999999999993 0.581786956756324
+              rotation 3.829506936377524e-09 -1 0 1.3661972916770032e-09
+              name "cardboard box(3)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009958778578558203 -0.10999999999999943 0.9147870358225018
+              rotation -4.776251800043772e-10 -1 0 3.328109046862594e-09
+              name "cardboard box(2)"
+              size 0.2 0.4 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009957008801761091 0.16000000000000103 1.1597878196440117
+              rotation 1.5437234257147496e-08 -1 0 1.0984060944682997e-09
+              name "cardboard box(1)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009956768695729146 -0.1899999999999995 1.1597856442782755
+              rotation 2.6113880766911412e-08 -0.9999999999999997 0 2.1593746256398614e-09
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+          ]
+          name "box"
+        }
+      ]
+      name "shelf(8)"
+    }
+    Solid {
+      translation 0 -5.7 0
+      children [
+        Pose {
+          translation -0.15 -0.2 0.91
+          rotation 0 1 0 -1.5707953071795862
+          children [
+            Shape {
+              appearance Appearance {
+                texture ImageTexture {
+                  url [
+                    "../textures/Shelves_47.png"
+                  ]
+                }
+              }
+              geometry Plane {
+                size 0.2 0.2
+              }
+            }
+          ]
+        }
+        Shelves {
+        }
+        Solid {
+          children [
+            CardboardBox {
+              translation 0.0099634628679377 0.16000000000000014 0.249787065337066
+              rotation 1.5721259070765113e-09 -0.9999999999999999 0 3.3277870818092346e-09
+              name "cardboard box(6)"
+              size 0.2 0.3 0.3
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009963448698054655 -0.1900000000000004 0.19978695030176313
+              rotation -1.1531016574497412e-08 -1 0 2.1343252145522913e-09
+              name "cardboard box(5)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009960758740366948 0.1999999999999984 0.5817869406934346
+              rotation 2.549457777371122e-08 -0.9999999999999997 0 1.7102442223564027e-09
+              name "cardboard box(4)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009960898774868276 -0.16999999999999993 0.581786956756324
+              rotation 3.829506936377524e-09 -1 0 1.3661972916770032e-09
+              name "cardboard box(3)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009958778578556426 -0.10999999999999943 0.9147870358225018
+              rotation -4.776251800043772e-10 -1 0 3.328109046862594e-09
+              name "cardboard box(2)"
+              size 0.2 0.4 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009957008801761091 0.16000000000000103 1.1597878196440117
+              rotation 1.5437234257147496e-08 -1 0 1.0984060944682997e-09
+              name "cardboard box(1)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009956768695729146 -0.1899999999999995 1.1597856442782755
+              rotation 2.6113880766911412e-08 -0.9999999999999997 0 2.1593746256398614e-09
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+          ]
+          name "box"
+        }
+      ]
+      name "shelf(7)"
+    }
+    Solid {
+      translation 0 -4.71 0
+      children [
+        Pose {
+          translation -0.15 -0.2 0.91
+          rotation 0 1 0 -1.5707953071795862
+          children [
+            Shape {
+              appearance Appearance {
+                texture ImageTexture {
+                  url [
+                    "../textures/Shelves_46.png"
+                  ]
+                }
+              }
+              geometry Plane {
+                size 0.2 0.2
+              }
+            }
+          ]
+        }
+        Shelves {
+        }
+        Solid {
+          children [
+            CardboardBox {
+              translation 0.0099634628679377 0.16000000000000014 0.249787065337066
+              rotation 1.5721259070765113e-09 -0.9999999999999999 0 3.3277870818092346e-09
+              name "cardboard box(6)"
+              size 0.2 0.3 0.3
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.00996344869805288 -0.18999999999999861 0.19978695030176313
+              rotation -1.1531016574497412e-08 -1 0 2.1343252145522913e-09
+              name "cardboard box(5)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009960758740366948 0.20000000000000018 0.5817869406934346
+              rotation 2.549457777371122e-08 -0.9999999999999997 0 1.7102442223564027e-09
+              name "cardboard box(4)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.0099608987748665 -0.16999999999999993 0.581786956756324
+              rotation 3.829506936377524e-09 -1 0 1.3661972916770032e-09
+              name "cardboard box(3)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009958778578556426 -0.11000000000000121 0.9147870358225018
+              rotation -4.776251800043772e-10 -1 0 3.328109046862594e-09
+              name "cardboard box(2)"
+              size 0.2 0.4 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009957008801761091 0.15999999999999925 1.1597878196440117
+              rotation 1.5437234257147496e-08 -1 0 1.0984060944682997e-09
+              name "cardboard box(1)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.00995676869572737 -0.1899999999999995 1.1597856442782755
+              rotation 2.6113880766911412e-08 -0.9999999999999997 0 2.1593746256398614e-09
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+          ]
+          name "box"
+        }
+      ]
+      name "shelf(6)"
+    }
+    Solid {
+      translation 0 -2.52 0
+      children [
+        Pose {
+          translation -0.15 -0.2 0.91
+          rotation 0 1 0 -1.5707953071795862
+          children [
+            Shape {
+              appearance Appearance {
+                texture ImageTexture {
+                  url [
+                    "../textures/Shelves_45.png"
+                  ]
+                }
+              }
+              geometry Plane {
+                size 0.2 0.2
+              }
+            }
+          ]
+        }
+        Shelves {
+        }
+        Solid {
+          children [
+            CardboardBox {
+              translation 0.0099634628679377 0.1599999999999997 0.249787065337066
+              rotation 1.5721259070765113e-09 -0.9999999999999999 0 3.3277870818092346e-09
+              name "cardboard box(6)"
+              size 0.2 0.3 0.3
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.00996344869805288 -0.18999999999999995 0.19978695030176313
+              rotation -1.1531016574497412e-08 -1 0 2.1343252145522913e-09
+              name "cardboard box(5)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009960758740366948 0.19999999999999973 0.5817869406934346
+              rotation 2.549457777371122e-08 -0.9999999999999997 0 1.7102442223564027e-09
+              name "cardboard box(4)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.0099608987748665 -0.17000000000000082 0.581786956756324
+              rotation 3.829506936377524e-09 -1 0 1.3661972916770032e-09
+              name "cardboard box(3)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009958778578556426 -0.10999999999999943 0.9147870358225018
+              rotation -4.776251800043772e-10 -1 0 3.328109046862594e-09
+              name "cardboard box(2)"
+              size 0.2 0.4 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009957008801761091 0.16000000000000014 1.1597878196440117
+              rotation 1.5437234257147496e-08 -1 0 1.0984060944682997e-09
+              name "cardboard box(1)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.00995676869572737 -0.1899999999999995 1.1597856442782755
+              rotation 2.6113880766911412e-08 -0.9999999999999997 0 2.1593746256398614e-09
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+          ]
+          name "box"
+        }
+      ]
+      name "shelf(5)"
+    }
+    Solid {
+      translation 0 -1.54 0
+      children [
+        Pose {
+          translation -0.15 -0.2 0.91
+          rotation 0 1 0 -1.5707953071795862
+          children [
+            Shape {
+              appearance Appearance {
+                texture ImageTexture {
+                  url [
+                    "../textures/Shelves_44.png"
+                  ]
+                }
+              }
+              geometry Plane {
+                size 0.2 0.2
+              }
+            }
+          ]
+        }
+        Shelves {
+        }
+        Solid {
+          children [
+            CardboardBox {
+              translation 0.009963462867939477 0.16000000000000036 0.249787065337066
+              rotation 1.5721259070765113e-09 -0.9999999999999999 0 3.3277870818092346e-09
+              name "cardboard box(6)"
+              size 0.2 0.3 0.3
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009963448698054655 -0.18999999999999995 0.19978695030176313
+              rotation -1.1531016574497412e-08 -1 0 2.1343252145522913e-09
+              name "cardboard box(5)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009960758740366948 0.2000000000000004 0.5817869406934346
+              rotation 2.549457777371122e-08 -0.9999999999999997 0 1.7102442223564027e-09
+              name "cardboard box(4)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009960898774868276 -0.1699999999999997 0.581786956756324
+              rotation 3.829506936377524e-09 -1 0 1.3661972916770032e-09
+              name "cardboard box(3)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009958778578558203 -0.10999999999999988 0.9147870358225018
+              rotation -4.776251800043772e-10 -1 0 3.328109046862594e-09
+              name "cardboard box(2)"
+              size 0.2 0.4 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009957008801761091 0.16000000000000014 1.1597878196440117
+              rotation 1.5437234257147496e-08 -1 0 1.0984060944682997e-09
+              name "cardboard box(1)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009956768695729146 -0.19000000000000017 1.1597856442782755
+              rotation 2.6113880766911412e-08 -0.9999999999999997 0 2.1593746256398614e-09
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+          ]
+          name "box"
+        }
+      ]
+      name "shelf(4)"
+    }
+    Solid {
+      translation 0 2.37 0
+      children [
+        Pose {
+          translation -0.15 -0.2 0.91
+          rotation 0 1 0 -1.5707953071795862
+          children [
+            Shape {
+              appearance Appearance {
+                texture ImageTexture {
+                  url [
+                    "../textures/Shelves_40.png"
+                  ]
+                }
+              }
+              geometry Plane {
+                size 0.2 0.2
+              }
+            }
+          ]
+        }
+        Shelves {
+        }
+        Solid {
+          children [
+            CardboardBox {
+              translation 0.009963462867939477 0.1599999999999997 0.249787065337066
+              rotation 1.5721259070765113e-09 -0.9999999999999999 0 3.3277870818092346e-09
+              name "cardboard box(6)"
+              size 0.2 0.3 0.3
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009963448698056432 -0.19000000000000083 0.19978695030176313
+              rotation -1.1531016574497412e-08 -1 0 2.1343252145522913e-09
+              name "cardboard box(5)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009960758740368725 0.19999999999999973 0.5817869406934346
+              rotation 2.549457777371122e-08 -0.9999999999999997 0 1.7102442223564027e-09
+              name "cardboard box(4)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009960898774868276 -0.17000000000000082 0.581786956756324
+              rotation 3.829506936377524e-09 -1 0 1.3661972916770032e-09
+              name "cardboard box(3)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009958778578558203 -0.11000000000000032 0.9147870358225018
+              rotation -4.776251800043772e-10 -1 0 3.328109046862594e-09
+              name "cardboard box(2)"
+              size 0.2 0.4 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009957008801762868 0.15999999999999925 1.1597878196440117
+              rotation 1.5437234257147496e-08 -1 0 1.0984060944682997e-09
+              name "cardboard box(1)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009956768695729146 -0.1900000000000004 1.1597856442782755
+              rotation 2.6113880766911412e-08 -0.9999999999999997 0 2.1593746256398614e-09
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+          ]
+          name "box"
+        }
+      ]
+      name "shelf(3)"
+    }
+    Solid {
+      translation 0 -0.59 0
+      children [
+        Pose {
+          translation -0.15 -0.2 0.91
+          rotation 0 1 0 -1.5707953071795862
+          children [
+            Shape {
+              appearance Appearance {
+                texture ImageTexture {
+                  url [
+                    "../textures/Shelves_43.png"
+                  ]
+                }
+              }
+              geometry Plane {
+                size 0.2 0.2
+              }
+            }
+          ]
+        }
+        Shelves {
+        }
+        Solid {
+          children [
+            CardboardBox {
+              translation 0.0099634628679377 0.16000000000000014 0.249787065337066
+              rotation 1.5721259070765113e-09 -0.9999999999999999 0 3.3277870818092346e-09
+              name "cardboard box(6)"
+              size 0.2 0.3 0.3
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009963448698054655 -0.18999999999999995 0.19978695030176313
+              rotation -1.1531016574497412e-08 -1 0 2.1343252145522913e-09
+              name "cardboard box(5)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009960758740366948 0.20000000000000012 0.5817869406934346
+              rotation 2.549457777371122e-08 -0.9999999999999997 0 1.7102442223564027e-09
+              name "cardboard box(4)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009960898774868276 -0.16999999999999993 0.581786956756324
+              rotation 3.829506936377524e-09 -1 0 1.3661972916770032e-09
+              name "cardboard box(3)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009958778578558203 -0.10999999999999976 0.9147870358225018
+              rotation -4.776251800043772e-10 -1 0 3.328109046862594e-09
+              name "cardboard box(2)"
+              size 0.2 0.4 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009957008801761091 0.16000000000000003 1.1597878196440117
+              rotation 1.5437234257147496e-08 -1 0 1.0984060944682997e-09
+              name "cardboard box(1)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009956768695729146 -0.19000000000000006 1.1597856442782755
+              rotation 2.6113880766911412e-08 -0.9999999999999997 0 2.1593746256398614e-09
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+          ]
+          name "box"
+        }
+      ]
+      name "shelf(2)"
+    }
+    Solid {
+      translation 0 1.37 0
+      children [
+        Pose {
+          translation -0.15 -0.2 0.91
+          rotation 0 1 0 -1.5707953071795862
+          children [
+            Shape {
+              appearance Appearance {
+                texture ImageTexture {
+                  url [
+                    "../textures/Shelves_41.png"
+                  ]
+                }
+              }
+              geometry Plane {
+                size 0.2 0.2
+              }
+            }
+          ]
+        }
+        Shelves {
+        }
+        Solid {
+          children [
+            CardboardBox {
+              translation 0.009963462867939477 0.15999999999999992 0.249787065337066
+              rotation 1.5721259070765113e-09 -0.9999999999999999 0 3.3277870818092346e-09
+              name "cardboard box(6)"
+              size 0.2 0.3 0.3
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009963448698056432 -0.18999999999999972 0.19978695030176313
+              rotation -1.1531016574497412e-08 -1 0 2.1343252145522913e-09
+              name "cardboard box(5)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009960758740368725 0.19999999999999996 0.5817869406934346
+              rotation 2.549457777371122e-08 -0.9999999999999997 0 1.7102442223564027e-09
+              name "cardboard box(4)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009960898774870053 -0.17000000000000015 0.581786956756324
+              rotation 3.829506936377524e-09 -1 0 1.3661972916770032e-09
+              name "cardboard box(3)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.00995877857855998 -0.11000000000000032 0.9147870358225018
+              rotation -4.776251800043772e-10 -1 0 3.328109046862594e-09
+              name "cardboard box(2)"
+              size 0.2 0.4 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009957008801762868 0.15999999999999992 1.1597878196440117
+              rotation 1.5437234257147496e-08 -1 0 1.0984060944682997e-09
+              name "cardboard box(1)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009956768695730922 -0.18999999999999995 1.1597856442782755
+              rotation 2.6113880766911412e-08 -0.9999999999999997 0 2.1593746256398614e-09
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+          ]
+          name "box"
+        }
+      ]
+      name "shelf(1)"
+    }
+    Solid {
+      translation 0 0.37 0
+      children [
+        Pose {
+          translation -0.15 -0.2 0.91
+          rotation 0 1 0 -1.5707953071795862
+          children [
+            Shape {
+              appearance Appearance {
+                texture ImageTexture {
+                  url [
+                    "../textures/Shelves_42.png"
+                  ]
+                }
+              }
+              geometry Plane {
+                size 0.2 0.2
+              }
+            }
+          ]
+        }
+        Shelves {
+        }
+        Solid {
+          children [
+            CardboardBox {
+              translation 0.0099634628679377 0.16000000000000014 0.249787065337066
+              rotation 1.5721259070765113e-09 -0.9999999999999999 0 3.3277870818092346e-09
+              name "cardboard box(6)"
+              size 0.2 0.3 0.3
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009963448698054655 -0.19000000000000006 0.19978695030176313
+              rotation -1.1531016574497412e-08 -1 0 2.1343252145522913e-09
+              name "cardboard box(5)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009960758740366948 0.19999999999999984 0.5817869406934346
+              rotation 2.549457777371122e-08 -0.9999999999999997 0 1.7102442223564027e-09
+              name "cardboard box(4)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009960898774868276 -0.17000000000000007 0.581786956756324
+              rotation 3.829506936377524e-09 -1 0 1.3661972916770032e-09
+              name "cardboard box(3)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009958778578558203 -0.10999999999999999 0.9147870358225018
+              rotation -4.776251800043772e-10 -1 0 3.328109046862594e-09
+              name "cardboard box(2)"
+              size 0.2 0.4 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009957008801761091 0.16000000000000014 1.1597878196440117
+              rotation 1.5437234257147496e-08 -1 0 1.0984060944682997e-09
+              name "cardboard box(1)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009956768695729146 -0.19000000000000014 1.1597856442782755
+              rotation 2.6113880766911412e-08 -0.9999999999999997 0 2.1593746256398614e-09
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+          ]
+          name "box"
+        }
+      ]
+      name "shelf"
+    }
+  ]
+  name "shelf_row(3)"
+}
+Solid {
+  translation 3.04 0 0
+  children [
+    Solid {
+      translation 0 6.61 0
+      children [
+        Pose {
+          translation -0.15 -0.2 0.91
+          rotation 0 1 0 -1.5707953071795862
+          children [
+            Shape {
+              appearance Appearance {
+                texture ImageTexture {
+                  url [
+                    "../textures/Shelves_36.png"
+                  ]
+                }
+              }
+              geometry Plane {
+                size 0.2 0.2
+              }
+            }
+          ]
+        }
+        Shelves {
+        }
+        Solid {
+          children [
+            CardboardBox {
+              translation 0.009963462867938144 0.16000000000000014 0.249787065337066
+              name "cardboard box(6)"
+              size 0.2 0.3 0.3
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009963448698054655 -0.1900000000000004 0.19978695030176313
+              name "cardboard box(5)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009960758740366948 0.20000000000000018 0.5817869406934346
+              name "cardboard box(4)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009960898774868276 -0.16999999999999993 0.581786956756324
+              name "cardboard box(3)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009958778578558203 -0.11000000000000032 0.9147870358225018
+              name "cardboard box(2)"
+              size 0.2 0.4 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009957008801761091 0.16000000000000014 1.1597878196440117
+              name "cardboard box(1)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009956768695729146 -0.1900000000000004 1.1597856442782755
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+          ]
+          name "box"
+        }
+      ]
+      name "shelf(11)"
+    }
+    Solid {
+      translation 0 5.53 0
+      children [
+        Pose {
+          translation -0.15 -0.2 0.91
+          rotation 0 1 0 -1.5707953071795862
+          children [
+            Shape {
+              appearance Appearance {
+                texture ImageTexture {
+                  url [
+                    "../textures/Shelves_35.png"
+                  ]
+                }
+              }
+              geometry Plane {
+                size 0.2 0.2
+              }
+            }
+          ]
+        }
+        Shelves {
+        }
+        Solid {
+          children [
+            CardboardBox {
+              translation 0.009963462867938144 0.16000000000000014 0.249787065337066
+              name "cardboard box(6)"
+              size 0.2 0.3 0.3
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009963448698054655 -0.1900000000000004 0.19978695030176313
+              name "cardboard box(5)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009960758740366948 0.20000000000000018 0.5817869406934346
+              name "cardboard box(4)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009960898774868276 -0.16999999999999993 0.581786956756324
+              name "cardboard box(3)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009958778578558203 -0.11000000000000032 0.9147870358225018
+              name "cardboard box(2)"
+              size 0.2 0.4 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009957008801761091 0.16000000000000014 1.1597878196440117
+              name "cardboard box(1)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009956768695729146 -0.1900000000000004 1.1597856442782755
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+          ]
+          name "box"
+        }
+      ]
+      name "shelf(10)"
+    }
+    Solid {
+      translation 0 4.56 0
+      children [
+        Pose {
+          translation -0.15 -0.2 0.91
+          rotation 0 1 0 -1.5707953071795862
+          children [
+            Shape {
+              appearance Appearance {
+                texture ImageTexture {
+                  url [
+                    "../textures/Shelves_34.png"
+                  ]
+                }
+              }
+              geometry Plane {
+                size 0.2 0.2
+              }
+            }
+          ]
+        }
+        Shelves {
+        }
+        Solid {
+          children [
+            CardboardBox {
+              translation 0.009963462867938144 0.16000000000000014 0.249787065337066
+              name "cardboard box(6)"
+              size 0.2 0.3 0.3
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009963448698054655 -0.1900000000000004 0.19978695030176313
+              name "cardboard box(5)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009960758740366948 0.20000000000000018 0.5817869406934346
+              name "cardboard box(4)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009960898774868276 -0.16999999999999993 0.581786956756324
+              name "cardboard box(3)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009958778578558203 -0.11000000000000032 0.9147870358225018
+              name "cardboard box(2)"
+              size 0.2 0.4 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009957008801761091 0.16000000000000014 1.1597878196440117
+              name "cardboard box(1)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009956768695729146 -0.1900000000000004 1.1597856442782755
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+          ]
+          name "box"
+        }
+      ]
+      name "shelf(9)"
+    }
+    Solid {
+      translation 0 -6.66 0
+      children [
+        Pose {
+          translation -0.15 -0.2 0.91
+          rotation 0 1 0 -1.5707953071795862
+          children [
+            Shape {
+              appearance Appearance {
+                texture ImageTexture {
+                  url [
+                    "../textures/Shelves_25.png"
+                  ]
+                }
+              }
+              geometry Plane {
+                size 0.2 0.2
+              }
+            }
+          ]
+        }
+        Shelves {
+        }
+        Solid {
+          children [
+            CardboardBox {
+              translation 0.009963462867938144 0.16000000000000014 0.249787065337066
+              name "cardboard box(6)"
+              size 0.2 0.3 0.3
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009963448698054655 -0.1900000000000004 0.19978695030176313
+              name "cardboard box(5)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009960758740366948 0.20000000000000018 0.5817869406934346
+              name "cardboard box(4)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009960898774868276 -0.16999999999999993 0.581786956756324
+              name "cardboard box(3)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009958778578558203 -0.11000000000000032 0.9147870358225018
+              name "cardboard box(2)"
+              size 0.2 0.4 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009957008801761091 0.16000000000000014 1.1597878196440117
+              name "cardboard box(1)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009956768695729146 -0.1900000000000004 1.1597856442782755
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+          ]
+          name "box"
+        }
+      ]
+      name "shelf(8)"
+    }
+    Solid {
+      translation 0 -5.7 0
+      children [
+        Pose {
+          translation -0.15 -0.2 0.91
+          rotation 0 1 0 -1.5707953071795862
+          children [
+            Shape {
+              appearance Appearance {
+                texture ImageTexture {
+                  url [
+                    "../textures/Shelves_26.png"
+                  ]
+                }
+              }
+              geometry Plane {
+                size 0.2 0.2
+              }
+            }
+          ]
+        }
+        Shelves {
+        }
+        Solid {
+          children [
+            CardboardBox {
+              translation 0.009963462867938144 0.16000000000000014 0.249787065337066
+              name "cardboard box(6)"
+              size 0.2 0.3 0.3
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009963448698054655 -0.1900000000000004 0.19978695030176313
+              name "cardboard box(5)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009960758740366948 0.20000000000000018 0.5817869406934346
+              name "cardboard box(4)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009960898774868276 -0.16999999999999993 0.581786956756324
+              name "cardboard box(3)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009958778578558203 -0.11000000000000032 0.9147870358225018
+              name "cardboard box(2)"
+              size 0.2 0.4 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009957008801761091 0.16000000000000014 1.1597878196440117
+              name "cardboard box(1)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009956768695729146 -0.1900000000000004 1.1597856442782755
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+          ]
+          name "box"
+        }
+      ]
+      name "shelf(7)"
+    }
+    Solid {
+      translation 0 -4.71 0
+      children [
+        Pose {
+          translation -0.15 -0.2 0.91
+          rotation 0 1 0 -1.5707953071795862
+          children [
+            Shape {
+              appearance Appearance {
+                texture ImageTexture {
+                  url [
+                    "../textures/Shelves_27.png"
+                  ]
+                }
+              }
+              geometry Plane {
+                size 0.2 0.2
+              }
+            }
+          ]
+        }
+        Shelves {
+        }
+        Solid {
+          children [
+            CardboardBox {
+              translation 0.009963462867938144 0.16000000000000014 0.249787065337066
+              name "cardboard box(6)"
+              size 0.2 0.3 0.3
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009963448698054655 -0.1900000000000004 0.19978695030176313
+              name "cardboard box(5)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009960758740366948 0.20000000000000018 0.5817869406934346
+              name "cardboard box(4)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009960898774868276 -0.16999999999999993 0.581786956756324
+              name "cardboard box(3)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009958778578558203 -0.11000000000000032 0.9147870358225018
+              name "cardboard box(2)"
+              size 0.2 0.4 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009957008801761091 0.16000000000000014 1.1597878196440117
+              name "cardboard box(1)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009956768695729146 -0.1900000000000004 1.1597856442782755
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+          ]
+          name "box"
+        }
+      ]
+      name "shelf(6)"
+    }
+    Solid {
+      translation 0 -2.52 0
+      children [
+        Pose {
+          translation -0.15 -0.2 0.91
+          rotation 0 1 0 -1.5707953071795862
+          children [
+            Shape {
+              appearance Appearance {
+                texture ImageTexture {
+                  url [
+                    "../textures/Shelves_28.png"
+                  ]
+                }
+              }
+              geometry Plane {
+                size 0.2 0.2
+              }
+            }
+          ]
+        }
+        Shelves {
+        }
+        Solid {
+          children [
+            CardboardBox {
+              translation 0.009963462867938144 0.16000000000000014 0.249787065337066
+              name "cardboard box(6)"
+              size 0.2 0.3 0.3
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009963448698054655 -0.18999999999999995 0.19978695030176313
+              name "cardboard box(5)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009960758740366948 0.20000000000000018 0.5817869406934346
+              name "cardboard box(4)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009960898774868276 -0.16999999999999993 0.581786956756324
+              name "cardboard box(3)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009958778578558203 -0.10999999999999988 0.9147870358225018
+              name "cardboard box(2)"
+              size 0.2 0.4 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009957008801761091 0.16000000000000014 1.1597878196440117
+              name "cardboard box(1)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009956768695729146 -0.18999999999999995 1.1597856442782755
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+          ]
+          name "box"
+        }
+      ]
+      name "shelf(5)"
+    }
+    Solid {
+      translation 0 -1.54 0
+      children [
+        Pose {
+          translation -0.15 -0.2 0.91
+          rotation 0 1 0 -1.5707953071795862
+          children [
+            Shape {
+              appearance Appearance {
+                texture ImageTexture {
+                  url [
+                    "../textures/Shelves_29.png"
+                  ]
+                }
+              }
+              geometry Plane {
+                size 0.2 0.2
+              }
+            }
+          ]
+        }
+        Shelves {
+        }
+        Solid {
+          children [
+            CardboardBox {
+              translation 0.009963462867938144 0.15999999999999992 0.249787065337066
+              name "cardboard box(6)"
+              size 0.2 0.3 0.3
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009963448698054655 -0.18999999999999995 0.19978695030176313
+              name "cardboard box(5)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009960758740366948 0.19999999999999996 0.5817869406934346
+              name "cardboard box(4)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009960898774868276 -0.16999999999999993 0.581786956756324
+              name "cardboard box(3)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009958778578558203 -0.10999999999999988 0.9147870358225018
+              name "cardboard box(2)"
+              size 0.2 0.4 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009957008801761091 0.15999999999999992 1.1597878196440117
+              name "cardboard box(1)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009956768695729146 -0.19000000000000017 1.1597856442782755
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+          ]
+          name "box"
+        }
+      ]
+      name "shelf(4)"
+    }
+    Solid {
+      translation 0 2.37 0
+      children [
+        Pose {
+          translation -0.15 -0.2 0.91
+          rotation 0 1 0 -1.5707953071795862
+          children [
+            Shape {
+              appearance Appearance {
+                texture ImageTexture {
+                  url [
+                    "../textures/Shelves_33.png"
+                  ]
+                }
+              }
+              geometry Plane {
+                size 0.2 0.2
+              }
+            }
+          ]
+        }
+        Shelves {
+        }
+        Solid {
+          children [
+            CardboardBox {
+              translation 0.009963462867938144 0.16000000000000014 0.249787065337066
+              name "cardboard box(6)"
+              size 0.2 0.3 0.3
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009963448698054655 -0.18999999999999995 0.19978695030176313
+              name "cardboard box(5)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009960758740366948 0.20000000000000018 0.5817869406934346
+              name "cardboard box(4)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009960898774868276 -0.16999999999999993 0.581786956756324
+              name "cardboard box(3)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009958778578558203 -0.10999999999999988 0.9147870358225018
+              name "cardboard box(2)"
+              size 0.2 0.4 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009957008801761091 0.16000000000000014 1.1597878196440117
+              name "cardboard box(1)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009956768695729146 -0.18999999999999995 1.1597856442782755
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+          ]
+          name "box"
+        }
+      ]
+      name "shelf(3)"
+    }
+    Solid {
+      translation 0 -0.59 0
+      children [
+        Pose {
+          translation -0.15 -0.2 0.91
+          rotation 0 1 0 -1.5707953071795862
+          children [
+            Shape {
+              appearance Appearance {
+                texture ImageTexture {
+                  url [
+                    "../textures/Shelves_30.png"
+                  ]
+                }
+              }
+              geometry Plane {
+                size 0.2 0.2
+              }
+            }
+          ]
+        }
+        Shelves {
+        }
+        Solid {
+          children [
+            CardboardBox {
+              translation 0.009963462867938144 0.16000000000000003 0.249787065337066
+              name "cardboard box(6)"
+              size 0.2 0.3 0.3
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009963448698054655 -0.19000000000000006 0.19978695030176313
+              name "cardboard box(5)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009960758740366948 0.2 0.5817869406934346
+              name "cardboard box(4)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009960898774868276 -0.17000000000000004 0.581786956756324
+              name "cardboard box(3)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009958778578558203 -0.10999999999999999 0.9147870358225018
+              name "cardboard box(2)"
+              size 0.2 0.4 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009957008801761091 0.16000000000000003 1.1597878196440117
+              name "cardboard box(1)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009956768695729146 -0.19000000000000006 1.1597856442782755
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+          ]
+          name "box"
+        }
+      ]
+      name "shelf(2)"
+    }
+    Solid {
+      translation 0 1.37 0
+      children [
+        Pose {
+          translation -0.15 -0.2 0.91
+          rotation 0 1 0 -1.5707953071795862
+          children [
+            Shape {
+              appearance Appearance {
+                texture ImageTexture {
+                  url [
+                    "../textures/Shelves_32.png"
+                  ]
+                }
+              }
+              geometry Plane {
+                size 0.2 0.2
+              }
+            }
+          ]
+        }
+        Shelves {
+        }
+        Solid {
+          children [
+            CardboardBox {
+              translation 0.009963462867938144 0.15999999999999992 0.249787065337066
+              name "cardboard box(6)"
+              size 0.2 0.3 0.3
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009963448698054655 -0.18999999999999995 0.19978695030176313
+              name "cardboard box(5)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009960758740366948 0.19999999999999996 0.5817869406934346
+              name "cardboard box(4)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009960898774868276 -0.16999999999999993 0.581786956756324
+              name "cardboard box(3)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009958778578558203 -0.10999999999999988 0.9147870358225018
+              name "cardboard box(2)"
+              size 0.2 0.4 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009957008801761091 0.15999999999999992 1.1597878196440117
+              name "cardboard box(1)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009956768695729146 -0.19000000000000017 1.1597856442782755
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+          ]
+          name "box"
+        }
+      ]
+      name "shelf(1)"
+    }
+    Solid {
+      translation 0 0.37 0
+      children [
+        Pose {
+          translation -0.15 -0.2 0.91
+          rotation 0 1 0 -1.5707953071795862
+          children [
+            Shape {
+              appearance Appearance {
+                texture ImageTexture {
+                  url [
+                    "../textures/Shelves_31.png"
+                  ]
+                }
+              }
+              geometry Plane {
+                size 0.2 0.2
+              }
+            }
+          ]
+        }
+        Shelves {
+        }
+        Solid {
+          children [
+            CardboardBox {
+              translation 0.009963462867938144 0.16000000000000003 0.249787065337066
+              name "cardboard box(6)"
+              size 0.2 0.3 0.3
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009963448698054655 -0.19 0.19978695030176313
+              name "cardboard box(5)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009960758740366948 0.20000000000000007 0.5817869406934346
+              name "cardboard box(4)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009960898774868276 -0.17 0.581786956756324
+              name "cardboard box(3)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009958778578558203 -0.10999999999999999 0.9147870358225018
+              name "cardboard box(2)"
+              size 0.2 0.4 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009957008801761091 0.16000000000000003 1.1597878196440117
+              name "cardboard box(1)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009956768695729146 -0.19000000000000009 1.1597856442782755
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+          ]
+          name "box"
+        }
+      ]
+      name "shelf"
+    }
+  ]
+  name "shelf_row(2)"
+}
+Solid {
+  translation -1.97 -2.09634e-06 0
+  rotation 0 0 1 3.14159
+  children [
+    Solid {
+      translation 0 6.61 0
+      children [
+        Pose {
+          translation -0.15 -0.2 0.91
+          rotation 0 1 0 -1.5707953071795862
+          children [
+            Shape {
+              appearance Appearance {
+                texture ImageTexture {
+                  url [
+                    "../textures/Shelves_13.png"
+                  ]
+                }
+              }
+              geometry Plane {
+                size 0.2 0.2
+              }
+            }
+          ]
+        }
+        Shelves {
+        }
+        Solid {
+          children [
+            CardboardBox {
+              translation 0.009963462867937922 0.16000000000000014 0.249787065337066
+              rotation 1.5721259070765113e-09 -0.9999999999999999 0 3.3277870818092346e-09
+              name "cardboard box(6)"
+              size 0.2 0.3 0.3
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009963448698054433 -0.1900000000000004 0.19978695030176313
+              rotation -1.1531016574497412e-08 -1 0 2.1343252145522913e-09
+              name "cardboard box(5)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.00996075874036717 0.1999999999999984 0.5817869406934346
+              rotation 2.549457777371122e-08 -0.9999999999999997 0 1.7102442223564027e-09
+              name "cardboard box(4)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009960898774868054 -0.16999999999999993 0.581786956756324
+              rotation 3.829506936377524e-09 -1 0 1.3661972916770032e-09
+              name "cardboard box(3)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009958778578558425 -0.11000000000000121 0.9147870358225018
+              rotation -4.776251800043772e-10 -1 0 3.328109046862594e-09
+              name "cardboard box(2)"
+              size 0.2 0.4 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009957008801761313 0.15999999999999925 1.1597878196440117
+              rotation 1.5437234257147496e-08 -1 0 1.0984060944682997e-09
+              name "cardboard box(1)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009956768695729368 -0.19000000000000128 1.1597856442782755
+              rotation 2.6113880766911412e-08 -0.9999999999999997 0 2.1593746256398614e-09
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+          ]
+          name "box"
+        }
+      ]
+      name "shelf(11)"
+    }
+    Solid {
+      translation 0 5.53 0
+      children [
+        Pose {
+          translation -0.15 -0.2 0.91
+          rotation 0 1 0 -1.5707953071795862
+          children [
+            Shape {
+              appearance Appearance {
+                texture ImageTexture {
+                  url [
+                    "../textures/Shelves_14.png"
+                  ]
+                }
+              }
+              geometry Plane {
+                size 0.2 0.2
+              }
+            }
+          ]
+        }
+        Shelves {
+        }
+        Solid {
+          children [
+            CardboardBox {
+              translation 0.009963462867938366 0.16000000000000192 0.249787065337066
+              rotation 1.5721259070765113e-09 -0.9999999999999999 0 3.3277870818092346e-09
+              name "cardboard box(6)"
+              size 0.2 0.3 0.3
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009963448698054878 -0.18999999999999861 0.19978695030176313
+              rotation -1.1531016574497412e-08 -1 0 2.1343252145522913e-09
+              name "cardboard box(5)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009960758740367615 0.20000000000000018 0.5817869406934346
+              rotation 2.549457777371122e-08 -0.9999999999999997 0 1.7102442223564027e-09
+              name "cardboard box(4)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009960898774868943 -0.16999999999999815 0.581786956756324
+              rotation 3.829506936377524e-09 -1 0 1.3661972916770032e-09
+              name "cardboard box(3)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009958778578558869 -0.10999999999999943 0.9147870358225018
+              rotation -4.776251800043772e-10 -1 0 3.328109046862594e-09
+              name "cardboard box(2)"
+              size 0.2 0.4 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009957008801761313 0.16000000000000103 1.1597878196440117
+              rotation 1.5437234257147496e-08 -1 0 1.0984060944682997e-09
+              name "cardboard box(1)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009956768695729812 -0.1899999999999995 1.1597856442782755
+              rotation 2.6113880766911412e-08 -0.9999999999999997 0 2.1593746256398614e-09
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+          ]
+          name "box"
+        }
+      ]
+      name "shelf(10)"
+    }
+    Solid {
+      translation 0 4.56 0
+      children [
+        Pose {
+          translation -0.15 -0.2 0.91
+          rotation 0 1 0 -1.5707953071795862
+          children [
+            Shape {
+              appearance Appearance {
+                texture ImageTexture {
+                  url [
+                    "../textures/Shelves_15.png"
+                  ]
+                }
+              }
+              geometry Plane {
+                size 0.2 0.2
+              }
+            }
+          ]
+        }
+        Shelves {
+        }
+        Solid {
+          children [
+            CardboardBox {
+              translation 0.009963462867938366 0.16000000000000192 0.249787065337066
+              rotation 1.5721259070765113e-09 -0.9999999999999999 0 3.3277870818092346e-09
+              name "cardboard box(6)"
+              size 0.2 0.3 0.3
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009963448698055322 -0.1900000000000004 0.19978695030176313
+              rotation -1.1531016574497412e-08 -1 0 2.1343252145522913e-09
+              name "cardboard box(5)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009960758740367615 0.20000000000000018 0.5817869406934346
+              rotation 2.549457777371122e-08 -0.9999999999999997 0 1.7102442223564027e-09
+              name "cardboard box(4)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009960898774868499 -0.16999999999999815 0.581786956756324
+              rotation 3.829506936377524e-09 -1 0 1.3661972916770032e-09
+              name "cardboard box(3)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009958778578558425 -0.10999999999999943 0.9147870358225018
+              rotation -4.776251800043772e-10 -1 0 3.328109046862594e-09
+              name "cardboard box(2)"
+              size 0.2 0.4 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009957008801761313 0.16000000000000103 1.1597878196440117
+              rotation 1.5437234257147496e-08 -1 0 1.0984060944682997e-09
+              name "cardboard box(1)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009956768695729368 -0.1899999999999995 1.1597856442782755
+              rotation 2.6113880766911412e-08 -0.9999999999999997 0 2.1593746256398614e-09
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+          ]
+          name "box"
+        }
+      ]
+      name "shelf(9)"
+    }
+    Solid {
+      translation 0 -6.66 0
+      children [
+        Pose {
+          translation -0.15 -0.2 0.91
+          rotation 0 1 0 -1.5707953071795862
+          children [
+            Shape {
+              appearance Appearance {
+                texture ImageTexture {
+                  url [
+                    "../textures/Shelves_24.png"
+                  ]
+                }
+              }
+              geometry Plane {
+                size 0.2 0.2
+              }
+            }
+          ]
+        }
+        Shelves {
+        }
+        Solid {
+          children [
+            CardboardBox {
+              translation 0.009963462867937922 0.16000000000000192 0.249787065337066
+              rotation 1.5721259070765113e-09 -0.9999999999999999 0 3.3277870818092346e-09
+              name "cardboard box(6)"
+              size 0.2 0.3 0.3
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009963448698054878 -0.18999999999999861 0.19978695030176313
+              rotation -1.1531016574497412e-08 -1 0 2.1343252145522913e-09
+              name "cardboard box(5)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.00996075874036717 0.20000000000000018 0.5817869406934346
+              rotation 2.549457777371122e-08 -0.9999999999999997 0 1.7102442223564027e-09
+              name "cardboard box(4)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009960898774868499 -0.16999999999999815 0.581786956756324
+              rotation 3.829506936377524e-09 -1 0 1.3661972916770032e-09
+              name "cardboard box(3)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009958778578558425 -0.10999999999999943 0.9147870358225018
+              rotation -4.776251800043772e-10 -1 0 3.328109046862594e-09
+              name "cardboard box(2)"
+              size 0.2 0.4 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.00995700880176087 0.16000000000000103 1.1597878196440117
+              rotation 1.5437234257147496e-08 -1 0 1.0984060944682997e-09
+              name "cardboard box(1)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009956768695729368 -0.1899999999999995 1.1597856442782755
+              rotation 2.6113880766911412e-08 -0.9999999999999997 0 2.1593746256398614e-09
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+          ]
+          name "box"
+        }
+      ]
+      name "shelf(8)"
+    }
+    Solid {
+      translation 0 -5.7 0
+      children [
+        Pose {
+          translation -0.15 -0.2 0.91
+          rotation 0 1 0 -1.5707953071795862
+          children [
+            Shape {
+              appearance Appearance {
+                texture ImageTexture {
+                  url [
+                    "../textures/Shelves_23.png"
+                  ]
+                }
+              }
+              geometry Plane {
+                size 0.2 0.2
+              }
+            }
+          ]
+        }
+        Shelves {
+        }
+        Solid {
+          children [
+            CardboardBox {
+              translation 0.009963462867937922 0.16000000000000192 0.249787065337066
+              rotation 1.5721259070765113e-09 -0.9999999999999999 0 3.3277870818092346e-09
+              name "cardboard box(6)"
+              size 0.2 0.3 0.3
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009963448698054878 -0.1900000000000004 0.19978695030176313
+              rotation -1.1531016574497412e-08 -1 0 2.1343252145522913e-09
+              name "cardboard box(5)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.00996075874036717 0.20000000000000018 0.5817869406934346
+              rotation 2.549457777371122e-08 -0.9999999999999997 0 1.7102442223564027e-09
+              name "cardboard box(4)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009960898774868499 -0.16999999999999815 0.581786956756324
+              rotation 3.829506936377524e-09 -1 0 1.3661972916770032e-09
+              name "cardboard box(3)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.00995877857855798 -0.10999999999999943 0.9147870358225018
+              rotation -4.776251800043772e-10 -1 0 3.328109046862594e-09
+              name "cardboard box(2)"
+              size 0.2 0.4 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.00995700880176087 0.16000000000000103 1.1597878196440117
+              rotation 1.5437234257147496e-08 -1 0 1.0984060944682997e-09
+              name "cardboard box(1)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009956768695728924 -0.1899999999999995 1.1597856442782755
+              rotation 2.6113880766911412e-08 -0.9999999999999997 0 2.1593746256398614e-09
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+          ]
+          name "box"
+        }
+      ]
+      name "shelf(7)"
+    }
+    Solid {
+      translation 0 -4.71 0
+      children [
+        Pose {
+          translation -0.15 -0.2 0.91
+          rotation 0 1 0 -1.5707953071795862
+          children [
+            Shape {
+              appearance Appearance {
+                texture ImageTexture {
+                  url [
+                    "../textures/Shelves_22.png"
+                  ]
+                }
+              }
+              geometry Plane {
+                size 0.2 0.2
+              }
+            }
+          ]
+        }
+        Shelves {
+        }
+        Solid {
+          children [
+            CardboardBox {
+              translation 0.009963462867938366 0.16000000000000014 0.249787065337066
+              rotation 1.5721259070765113e-09 -0.9999999999999999 0 3.3277870818092346e-09
+              name "cardboard box(6)"
+              size 0.2 0.3 0.3
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009963448698054878 -0.18999999999999861 0.19978695030176313
+              rotation -1.1531016574497412e-08 -1 0 2.1343252145522913e-09
+              name "cardboard box(5)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.00996075874036717 0.20000000000000018 0.5817869406934346
+              rotation 2.549457777371122e-08 -0.9999999999999997 0 1.7102442223564027e-09
+              name "cardboard box(4)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009960898774868499 -0.16999999999999993 0.581786956756324
+              rotation 3.829506936377524e-09 -1 0 1.3661972916770032e-09
+              name "cardboard box(3)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009958778578558425 -0.10999999999999943 0.9147870358225018
+              rotation -4.776251800043772e-10 -1 0 3.328109046862594e-09
+              name "cardboard box(2)"
+              size 0.2 0.4 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.00995700880176087 0.16000000000000103 1.1597878196440117
+              rotation 1.5437234257147496e-08 -1 0 1.0984060944682997e-09
+              name "cardboard box(1)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009956768695729368 -0.18999999999999773 1.1597856442782755
+              rotation 2.6113880766911412e-08 -0.9999999999999997 0 2.1593746256398614e-09
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+          ]
+          name "box"
+        }
+      ]
+      name "shelf(6)"
+    }
+    Solid {
+      translation 0 -2.52 0
+      children [
+        Pose {
+          translation -0.15 -0.2 0.91
+          rotation 0 1 0 -1.5707953071795862
+          children [
+            Shape {
+              appearance Appearance {
+                texture ImageTexture {
+                  url [
+                    "../textures/Shelves_21.png"
+                  ]
+                }
+              }
+              geometry Plane {
+                size 0.2 0.2
+              }
+            }
+          ]
+        }
+        Shelves {
+        }
+        Solid {
+          children [
+            CardboardBox {
+              translation 0.009963462867937922 0.1599999999999997 0.249787065337066
+              rotation 1.5721259070765113e-09 -0.9999999999999999 0 3.3277870818092346e-09
+              name "cardboard box(6)"
+              size 0.2 0.3 0.3
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009963448698054433 -0.19000000000000083 0.19978695030176313
+              rotation -1.1531016574497412e-08 -1 0 2.1343252145522913e-09
+              name "cardboard box(5)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.00996075874036717 0.19999999999999973 0.5817869406934346
+              rotation 2.549457777371122e-08 -0.9999999999999997 0 1.7102442223564027e-09
+              name "cardboard box(4)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009960898774868054 -0.17000000000000082 0.581786956756324
+              rotation 3.829506936377524e-09 -1 0 1.3661972916770032e-09
+              name "cardboard box(3)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.00995877857855798 -0.11000000000000032 0.9147870358225018
+              rotation -4.776251800043772e-10 -1 0 3.328109046862594e-09
+              name "cardboard box(2)"
+              size 0.2 0.4 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.00995700880176087 0.15999999999999925 1.1597878196440117
+              rotation 1.5437234257147496e-08 -1 0 1.0984060944682997e-09
+              name "cardboard box(1)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009956768695728924 -0.1900000000000004 1.1597856442782755
+              rotation 2.6113880766911412e-08 -0.9999999999999997 0 2.1593746256398614e-09
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+          ]
+          name "box"
+        }
+      ]
+      name "shelf(5)"
+    }
+    Solid {
+      translation 0 -1.54 0
+      children [
+        Pose {
+          translation -0.15 -0.2 0.91
+          rotation 0 1 0 -1.5707953071795862
+          children [
+            Shape {
+              appearance Appearance {
+                texture ImageTexture {
+                  url [
+                    "../textures/Shelves_20.png"
+                  ]
+                }
+              }
+              geometry Plane {
+                size 0.2 0.2
+              }
+            }
+          ]
+        }
+        Shelves {
+        }
+        Solid {
+          children [
+            CardboardBox {
+              translation 0.009963462867937922 0.16000000000000014 0.249787065337066
+              rotation 1.5721259070765113e-09 -0.9999999999999999 0 3.3277870818092346e-09
+              name "cardboard box(6)"
+              size 0.2 0.3 0.3
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009963448698054878 -0.18999999999999972 0.19978695030176313
+              rotation -1.1531016574497412e-08 -1 0 2.1343252145522913e-09
+              name "cardboard box(5)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.00996075874036717 0.20000000000000018 0.5817869406934346
+              rotation 2.549457777371122e-08 -0.9999999999999997 0 1.7102442223564027e-09
+              name "cardboard box(4)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009960898774868499 -0.1699999999999997 0.581786956756324
+              rotation 3.829506936377524e-09 -1 0 1.3661972916770032e-09
+              name "cardboard box(3)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.00995877857855798 -0.10999999999999988 0.9147870358225018
+              rotation -4.776251800043772e-10 -1 0 3.328109046862594e-09
+              name "cardboard box(2)"
+              size 0.2 0.4 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.00995700880176087 0.15999999999999992 1.1597878196440117
+              rotation 1.5437234257147496e-08 -1 0 1.0984060944682997e-09
+              name "cardboard box(1)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009956768695729368 -0.18999999999999995 1.1597856442782755
+              rotation 2.6113880766911412e-08 -0.9999999999999997 0 2.1593746256398614e-09
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+          ]
+          name "box"
+        }
+      ]
+      name "shelf(4)"
+    }
+    Solid {
+      translation 0 2.37 0
+      children [
+        Pose {
+          translation -0.15 -0.2 0.91
+          rotation 0 1 0 -1.5707953071795862
+          children [
+            Shape {
+              appearance Appearance {
+                texture ImageTexture {
+                  url [
+                    "../textures/Shelves_16.png"
+                  ]
+                }
+              }
+              geometry Plane {
+                size 0.2 0.2
+              }
+            }
+          ]
+        }
+        Shelves {
+        }
+        Solid {
+          children [
+            CardboardBox {
+              translation 0.009963462867937922 0.1599999999999988 0.249787065337066
+              rotation 1.5721259070765113e-09 -0.9999999999999999 0 3.3277870818092346e-09
+              name "cardboard box(6)"
+              size 0.2 0.3 0.3
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009963448698054433 -0.19000000000000083 0.19978695030176313
+              rotation -1.1531016574497412e-08 -1 0 2.1343252145522913e-09
+              name "cardboard box(5)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.00996075874036717 0.19999999999999885 0.5817869406934346
+              rotation 2.549457777371122e-08 -0.9999999999999997 0 1.7102442223564027e-09
+              name "cardboard box(4)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009960898774868054 -0.1700000000000017 0.581786956756324
+              rotation 3.829506936377524e-09 -1 0 1.3661972916770032e-09
+              name "cardboard box(3)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.00995877857855798 -0.11000000000000032 0.9147870358225018
+              rotation -4.776251800043772e-10 -1 0 3.328109046862594e-09
+              name "cardboard box(2)"
+              size 0.2 0.4 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.00995700880176087 0.15999999999999925 1.1597878196440117
+              rotation 1.5437234257147496e-08 -1 0 1.0984060944682997e-09
+              name "cardboard box(1)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009956768695728924 -0.1900000000000004 1.1597856442782755
+              rotation 2.6113880766911412e-08 -0.9999999999999997 0 2.1593746256398614e-09
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+          ]
+          name "box"
+        }
+      ]
+      name "shelf(3)"
+    }
+    Solid {
+      translation 0 -0.59 0
+      children [
+        Pose {
+          translation -0.15 -0.2 0.91
+          rotation 0 1 0 -1.5707953071795862
+          children [
+            Shape {
+              appearance Appearance {
+                texture ImageTexture {
+                  url [
+                    "../textures/Shelves_19.png"
+                  ]
+                }
+              }
+              geometry Plane {
+                size 0.2 0.2
+              }
+            }
+          ]
+        }
+        Shelves {
+        }
+        Solid {
+          children [
+            CardboardBox {
+              translation 0.009963462867937922 0.16000000000000014 0.249787065337066
+              rotation 1.5721259070765113e-09 -0.9999999999999999 0 3.3277870818092346e-09
+              name "cardboard box(6)"
+              size 0.2 0.3 0.3
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009963448698054878 -0.18999999999999995 0.19978695030176313
+              rotation -1.1531016574497412e-08 -1 0 2.1343252145522913e-09
+              name "cardboard box(5)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.00996075874036717 0.20000000000000012 0.5817869406934346
+              rotation 2.549457777371122e-08 -0.9999999999999997 0 1.7102442223564027e-09
+              name "cardboard box(4)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009960898774868499 -0.16999999999999993 0.581786956756324
+              rotation 3.829506936377524e-09 -1 0 1.3661972916770032e-09
+              name "cardboard box(3)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.00995877857855798 -0.10999999999999976 0.9147870358225018
+              rotation -4.776251800043772e-10 -1 0 3.328109046862594e-09
+              name "cardboard box(2)"
+              size 0.2 0.4 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.00995700880176087 0.16000000000000003 1.1597878196440117
+              rotation 1.5437234257147496e-08 -1 0 1.0984060944682997e-09
+              name "cardboard box(1)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009956768695729368 -0.19000000000000006 1.1597856442782755
+              rotation 2.6113880766911412e-08 -0.9999999999999997 0 2.1593746256398614e-09
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+          ]
+          name "box"
+        }
+      ]
+      name "shelf(2)"
+    }
+    Solid {
+      translation 0 1.37 0
+      children [
+        Pose {
+          translation -0.15 -0.2 0.91
+          rotation 0 1 0 -1.5707953071795862
+          children [
+            Shape {
+              appearance Appearance {
+                texture ImageTexture {
+                  url [
+                    "../textures/Shelves_17.png"
+                  ]
+                }
+              }
+              geometry Plane {
+                size 0.2 0.2
+              }
+            }
+          ]
+        }
+        Shelves {
+        }
+        Solid {
+          children [
+            CardboardBox {
+              translation 0.009963462867937922 0.1599999999999997 0.249787065337066
+              rotation 1.5721259070765113e-09 -0.9999999999999999 0 3.3277870818092346e-09
+              name "cardboard box(6)"
+              size 0.2 0.3 0.3
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009963448698054878 -0.18999999999999995 0.19978695030176313
+              rotation -1.1531016574497412e-08 -1 0 2.1343252145522913e-09
+              name "cardboard box(5)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.00996075874036717 0.19999999999999973 0.5817869406934346
+              rotation 2.549457777371122e-08 -0.9999999999999997 0 1.7102442223564027e-09
+              name "cardboard box(4)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009960898774868499 -0.17000000000000015 0.581786956756324
+              rotation 3.829506936377524e-09 -1 0 1.3661972916770032e-09
+              name "cardboard box(3)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.00995877857855798 -0.11000000000000032 0.9147870358225018
+              rotation -4.776251800043772e-10 -1 0 3.328109046862594e-09
+              name "cardboard box(2)"
+              size 0.2 0.4 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.00995700880176087 0.16000000000000014 1.1597878196440117
+              rotation 1.5437234257147496e-08 -1 0 1.0984060944682997e-09
+              name "cardboard box(1)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009956768695729368 -0.19000000000000017 1.1597856442782755
+              rotation 2.6113880766911412e-08 -0.9999999999999997 0 2.1593746256398614e-09
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+          ]
+          name "box"
+        }
+      ]
+      name "shelf(1)"
+    }
+    Solid {
+      translation 0 0.37 0
+      children [
+        Pose {
+          translation -0.15 -0.2 0.91
+          rotation 0 1 0 -1.5707953071795862
+          children [
+            Shape {
+              appearance Appearance {
+                texture ImageTexture {
+                  url [
+                    "../textures/Shelves_18.png"
+                  ]
+                }
+              }
+              geometry Plane {
+                size 0.2 0.2
+              }
+            }
+          ]
+        }
+        Shelves {
+        }
+        Solid {
+          children [
+            CardboardBox {
+              translation 0.009963462867937922 0.1600000000000002 0.249787065337066
+              rotation 1.5721259070765113e-09 -0.9999999999999999 0 3.3277870818092346e-09
+              name "cardboard box(6)"
+              size 0.2 0.3 0.3
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009963448698054433 -0.19 0.19978695030176313
+              rotation -1.1531016574497412e-08 -1 0 2.1343252145522913e-09
+              name "cardboard box(5)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.00996075874036717 0.1999999999999999 0.5817869406934346
+              rotation 2.549457777371122e-08 -0.9999999999999997 0 1.7102442223564027e-09
+              name "cardboard box(4)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009960898774868054 -0.17 0.581786956756324
+              rotation 3.829506936377524e-09 -1 0 1.3661972916770032e-09
+              name "cardboard box(3)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.00995877857855798 -0.10999999999999993 0.9147870358225018
+              rotation -4.776251800043772e-10 -1 0 3.328109046862594e-09
+              name "cardboard box(2)"
+              size 0.2 0.4 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.00995700880176087 0.1600000000000002 1.1597878196440117
+              rotation 1.5437234257147496e-08 -1 0 1.0984060944682997e-09
+              name "cardboard box(1)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009956768695728924 -0.19000000000000014 1.1597856442782755
+              rotation 2.6113880766911412e-08 -0.9999999999999997 0 2.1593746256398614e-09
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+          ]
+          name "box"
+        }
+      ]
+      name "shelf"
+    }
+  ]
+  name "shelf_row(1)"
+}
+Solid {
+  translation -6.97 0 0
+  children [
+    Solid {
+      translation 0 6.61 0
+      children [
+        Pose {
+          translation -0.15 -0.2 0.91
+          rotation 0 1 0 -1.5707953071795862
+          children [
+            Shape {
+              appearance Appearance {
+                texture ImageTexture {
+                  url [
+                    "../textures/Shelves_12.png"
+                  ]
+                }
+              }
+              geometry Plane {
+                size 0.2 0.2
+              }
+            }
+          ]
+        }
+        Shelves {
+        }
+        Solid {
+          children [
+            CardboardBox {
+              translation 0.0099634628679377 0.16000000000000014 0.249787065337066
+              name "cardboard box(6)"
+              size 0.2 0.3 0.3
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009963448698054655 -0.1900000000000004 0.19978695030176313
+              name "cardboard box(5)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009960758740366948 0.20000000000000018 0.5817869406934346
+              name "cardboard box(4)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009960898774868276 -0.16999999999999993 0.581786956756324
+              name "cardboard box(3)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009958778578558203 -0.11000000000000032 0.9147870358225018
+              name "cardboard box(2)"
+              size 0.2 0.4 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009957008801761091 0.16000000000000014 1.1597878196440117
+              name "cardboard box(1)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009956768695729146 -0.1900000000000004 1.1597856442782755
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+          ]
+          name "box"
+        }
+      ]
+      name "shelf(11)"
+    }
+    Solid {
+      translation 0 5.53 0
+      children [
+        Pose {
+          translation -0.15 -0.2 0.91
+          rotation 0 1 0 -1.5707953071795862
+          children [
+            Shape {
+              appearance Appearance {
+                texture ImageTexture {
+                  url [
+                    "../textures/Shelves_11.png"
+                  ]
+                }
+              }
+              geometry Plane {
+                size 0.2 0.2
+              }
+            }
+          ]
+        }
+        Shelves {
+        }
+        Solid {
+          children [
+            CardboardBox {
+              translation 0.0099634628679377 0.16000000000000014 0.249787065337066
+              name "cardboard box(6)"
+              size 0.2 0.3 0.3
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009963448698054655 -0.1900000000000004 0.19978695030176313
+              name "cardboard box(5)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009960758740366948 0.20000000000000018 0.5817869406934346
+              name "cardboard box(4)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009960898774868276 -0.16999999999999993 0.581786956756324
+              name "cardboard box(3)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009958778578558203 -0.11000000000000032 0.9147870358225018
+              name "cardboard box(2)"
+              size 0.2 0.4 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009957008801761091 0.16000000000000014 1.1597878196440117
+              name "cardboard box(1)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009956768695729146 -0.1900000000000004 1.1597856442782755
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+          ]
+          name "box"
+        }
+      ]
+      name "shelf(10)"
+    }
+    Solid {
+      translation 0 4.56 0
+      children [
+        Pose {
+          translation -0.15 -0.2 0.91
+          rotation 0 1 0 -1.5707953071795862
+          children [
+            Shape {
+              appearance Appearance {
+                texture ImageTexture {
+                  url [
+                    "../textures/Shelves_10.png"
+                  ]
+                }
+              }
+              geometry Plane {
+                size 0.2 0.2
+              }
+            }
+          ]
+        }
+        Shelves {
+        }
+        Solid {
+          children [
+            CardboardBox {
+              translation 0.0099634628679377 0.16000000000000014 0.249787065337066
+              name "cardboard box(6)"
+              size 0.2 0.3 0.3
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009963448698054655 -0.1900000000000004 0.19978695030176313
+              name "cardboard box(5)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009960758740366948 0.20000000000000018 0.5817869406934346
+              name "cardboard box(4)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009960898774868276 -0.16999999999999993 0.581786956756324
+              name "cardboard box(3)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009958778578558203 -0.11000000000000032 0.9147870358225018
+              name "cardboard box(2)"
+              size 0.2 0.4 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009957008801761091 0.16000000000000014 1.1597878196440117
+              name "cardboard box(1)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009956768695729146 -0.1900000000000004 1.1597856442782755
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+          ]
+          name "box"
+        }
+      ]
+      name "shelf(9)"
+    }
+    Solid {
+      translation 0 -6.66 0
+      children [
+        Pose {
+          translation -0.15 -0.2 0.91
+          rotation 0 1 0 -1.5707953071795862
+          children [
+            Shape {
+              appearance Appearance {
+                texture ImageTexture {
+                  url [
+                    "../textures/Shelves_01.png"
+                  ]
+                }
+              }
+              geometry Plane {
+                size 0.2 0.2
+              }
+            }
+          ]
+        }
+        Shelves {
+        }
+        Solid {
+          children [
+            CardboardBox {
+              translation 0.0099634628679377 0.16000000000000014 0.249787065337066
+              name "cardboard box(6)"
+              size 0.2 0.3 0.3
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009963448698054655 -0.1900000000000004 0.19978695030176313
+              name "cardboard box(5)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009960758740366948 0.20000000000000018 0.5817869406934346
+              name "cardboard box(4)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009960898774868276 -0.16999999999999993 0.581786956756324
+              name "cardboard box(3)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009958778578558203 -0.11000000000000032 0.9147870358225018
+              name "cardboard box(2)"
+              size 0.2 0.4 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009957008801761091 0.16000000000000014 1.1597878196440117
+              name "cardboard box(1)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009956768695729146 -0.1900000000000004 1.1597856442782755
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+          ]
+          name "box"
+        }
+      ]
+      name "shelf(8)"
+    }
+    Solid {
+      translation 0 -5.7 0
+      children [
+        Pose {
+          translation -0.15 -0.2 0.91
+          rotation 0 1 0 -1.5707953071795862
+          children [
+            Shape {
+              appearance Appearance {
+                texture ImageTexture {
+                  url [
+                    "../textures/Shelves_02.png"
+                  ]
+                }
+              }
+              geometry Plane {
+                size 0.2 0.2
+              }
+            }
+          ]
+        }
+        Shelves {
+        }
+        Solid {
+          children [
+            CardboardBox {
+              translation 0.0099634628679377 0.16000000000000014 0.249787065337066
+              name "cardboard box(6)"
+              size 0.2 0.3 0.3
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009963448698054655 -0.1900000000000004 0.19978695030176313
+              name "cardboard box(5)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009960758740366948 0.20000000000000018 0.5817869406934346
+              name "cardboard box(4)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009960898774868276 -0.16999999999999993 0.581786956756324
+              name "cardboard box(3)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009958778578558203 -0.11000000000000032 0.9147870358225018
+              name "cardboard box(2)"
+              size 0.2 0.4 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009957008801761091 0.16000000000000014 1.1597878196440117
+              name "cardboard box(1)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009956768695729146 -0.1900000000000004 1.1597856442782755
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+          ]
+          name "box"
+        }
+      ]
+      name "shelf(7)"
+    }
+    Solid {
+      translation 0 -4.71 0
+      children [
+        Pose {
+          translation -0.15 -0.2 0.91
+          rotation 0 1 0 -1.5707953071795862
+          children [
+            Shape {
+              appearance Appearance {
+                texture ImageTexture {
+                  url [
+                    "../textures/Shelves_03.png"
+                  ]
+                }
+              }
+              geometry Plane {
+                size 0.2 0.2
+              }
+            }
+          ]
+        }
+        Shelves {
+        }
+        Solid {
+          children [
+            CardboardBox {
+              translation 0.0099634628679377 0.16000000000000014 0.249787065337066
+              name "cardboard box(6)"
+              size 0.2 0.3 0.3
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009963448698054655 -0.1900000000000004 0.19978695030176313
+              name "cardboard box(5)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009960758740366948 0.20000000000000018 0.5817869406934346
+              name "cardboard box(4)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009960898774868276 -0.16999999999999993 0.581786956756324
+              name "cardboard box(3)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009958778578558203 -0.11000000000000032 0.9147870358225018
+              name "cardboard box(2)"
+              size 0.2 0.4 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009957008801761091 0.16000000000000014 1.1597878196440117
+              name "cardboard box(1)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009956768695729146 -0.1900000000000004 1.1597856442782755
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+          ]
+          name "box"
+        }
+      ]
+      name "shelf(6)"
+    }
+    Solid {
+      translation 0 -2.52 0
+      children [
+        Pose {
+          translation -0.15 -0.2 0.91
+          rotation 0 1 0 -1.5707953071795862
+          children [
+            Shape {
+              appearance Appearance {
+                texture ImageTexture {
+                  url [
+                    "../textures/Shelves_04.png"
+                  ]
+                }
+              }
+              geometry Plane {
+                size 0.2 0.2
+              }
+            }
+          ]
+        }
+        Shelves {
+        }
+        Solid {
+          children [
+            CardboardBox {
+              translation 0.0099634628679377 0.16000000000000014 0.249787065337066
+              name "cardboard box(6)"
+              size 0.2 0.3 0.3
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009963448698054655 -0.18999999999999995 0.19978695030176313
+              name "cardboard box(5)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009960758740366948 0.20000000000000018 0.5817869406934346
+              name "cardboard box(4)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009960898774868276 -0.16999999999999993 0.581786956756324
+              name "cardboard box(3)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009958778578558203 -0.10999999999999988 0.9147870358225018
+              name "cardboard box(2)"
+              size 0.2 0.4 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009957008801761091 0.16000000000000014 1.1597878196440117
+              name "cardboard box(1)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009956768695729146 -0.18999999999999995 1.1597856442782755
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+          ]
+          name "box"
+        }
+      ]
+      name "shelf(5)"
+    }
+    Solid {
+      translation 0 -1.54 0
+      children [
+        Pose {
+          translation -0.15 -0.2 0.91
+          rotation 0 1 0 -1.5707953071795862
+          children [
+            Shape {
+              appearance Appearance {
+                texture ImageTexture {
+                  url [
+                    "../textures/Shelves_05.png"
+                  ]
+                }
+              }
+              geometry Plane {
+                size 0.2 0.2
+              }
+            }
+          ]
+        }
+        Shelves {
+        }
+        Solid {
+          children [
+            CardboardBox {
+              translation 0.0099634628679377 0.15999999999999992 0.249787065337066
+              name "cardboard box(6)"
+              size 0.2 0.3 0.3
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009963448698054655 -0.18999999999999995 0.19978695030176313
+              name "cardboard box(5)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009960758740366948 0.19999999999999996 0.5817869406934346
+              name "cardboard box(4)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009960898774868276 -0.16999999999999993 0.581786956756324
+              name "cardboard box(3)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009958778578558203 -0.10999999999999988 0.9147870358225018
+              name "cardboard box(2)"
+              size 0.2 0.4 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009957008801761091 0.15999999999999992 1.1597878196440117
+              name "cardboard box(1)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009956768695729146 -0.19000000000000017 1.1597856442782755
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+          ]
+          name "box"
+        }
+      ]
+      name "shelf(4)"
+    }
+    Solid {
+      translation 0 2.37 0
+      children [
+        Pose {
+          translation -0.15 -0.2 0.91
+          rotation 0 1 0 -1.5707953071795862
+          children [
+            Shape {
+              appearance Appearance {
+                texture ImageTexture {
+                  url [
+                    "../textures/Shelves_09.png"
+                  ]
+                }
+              }
+              geometry Plane {
+                size 0.2 0.2
+              }
+            }
+          ]
+        }
+        Shelves {
+        }
+        Solid {
+          children [
+            CardboardBox {
+              translation 0.0099634628679377 0.16000000000000014 0.249787065337066
+              name "cardboard box(6)"
+              size 0.2 0.3 0.3
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009963448698054655 -0.18999999999999995 0.19978695030176313
+              name "cardboard box(5)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009960758740366948 0.20000000000000018 0.5817869406934346
+              name "cardboard box(4)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009960898774868276 -0.16999999999999993 0.581786956756324
+              name "cardboard box(3)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009958778578558203 -0.10999999999999988 0.9147870358225018
+              name "cardboard box(2)"
+              size 0.2 0.4 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009957008801761091 0.16000000000000014 1.1597878196440117
+              name "cardboard box(1)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009956768695729146 -0.18999999999999995 1.1597856442782755
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+          ]
+          name "box"
+        }
+      ]
+      name "shelf(3)"
+    }
+    Solid {
+      translation 0 -0.59 0
+      children [
+        Pose {
+          translation -0.15 -0.2 0.91
+          rotation 0 1 0 -1.5707953071795862
+          children [
+            Shape {
+              appearance Appearance {
+                texture ImageTexture {
+                  url [
+                    "../textures/Shelves_06.png"
+                  ]
+                }
+              }
+              geometry Plane {
+                size 0.2 0.2
+              }
+            }
+          ]
+        }
+        Shelves {
+        }
+        Solid {
+          children [
+            CardboardBox {
+              translation 0.0099634628679377 0.16000000000000003 0.249787065337066
+              name "cardboard box(6)"
+              size 0.2 0.3 0.3
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009963448698054655 -0.19000000000000006 0.19978695030176313
+              name "cardboard box(5)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009960758740366948 0.2 0.5817869406934346
+              name "cardboard box(4)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009960898774868276 -0.17000000000000004 0.581786956756324
+              name "cardboard box(3)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009958778578558203 -0.10999999999999999 0.9147870358225018
+              name "cardboard box(2)"
+              size 0.2 0.4 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009957008801761091 0.16000000000000003 1.1597878196440117
+              name "cardboard box(1)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009956768695729146 -0.19000000000000006 1.1597856442782755
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+          ]
+          name "box"
+        }
+      ]
+      name "shelf(2)"
+    }
+    Solid {
+      translation 0 1.37 0
+      children [
+        Pose {
+          translation -0.15 -0.2 0.91
+          rotation 0 1 0 -1.5707953071795862
+          children [
+            Shape {
+              appearance Appearance {
+                texture ImageTexture {
+                  url [
+                    "../textures/Shelves_08.png"
+                  ]
+                }
+              }
+              geometry Plane {
+                size 0.2 0.2
+              }
+            }
+          ]
+        }
+        Shelves {
+        }
+        Solid {
+          children [
+            CardboardBox {
+              translation 0.0099634628679377 0.15999999999999992 0.249787065337066
+              name "cardboard box(6)"
+              size 0.2 0.3 0.3
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009963448698054655 -0.18999999999999995 0.19978695030176313
+              name "cardboard box(5)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009960758740366948 0.19999999999999996 0.5817869406934346
+              name "cardboard box(4)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009960898774868276 -0.16999999999999993 0.581786956756324
+              name "cardboard box(3)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009958778578558203 -0.10999999999999988 0.9147870358225018
+              name "cardboard box(2)"
+              size 0.2 0.4 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009957008801761091 0.15999999999999992 1.1597878196440117
+              name "cardboard box(1)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009956768695729146 -0.19000000000000017 1.1597856442782755
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+          ]
+          name "box"
+        }
+      ]
+      name "shelf(1)"
+    }
+    Solid {
+      translation 0 0.37 0
+      children [
+        Pose {
+          translation -0.15 -0.2 0.91
+          rotation 0 1 0 -1.5707953071795862
+          children [
+            Shape {
+              appearance Appearance {
+                texture ImageTexture {
+                  url [
+                    "../textures/Shelves_07.png"
+                  ]
+                }
+              }
+              geometry Plane {
+                size 0.2 0.2
+              }
+            }
+          ]
+        }
+        Shelves {
+        }
+        Solid {
+          children [
+            CardboardBox {
+              translation 0.0099634628679377 0.16000000000000003 0.249787065337066
+              name "cardboard box(6)"
+              size 0.2 0.3 0.3
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009963448698054655 -0.19 0.19978695030176313
+              name "cardboard box(5)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009960758740366948 0.20000000000000007 0.5817869406934346
+              name "cardboard box(4)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009960898774868276 -0.17 0.581786956756324
+              name "cardboard box(3)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009958778578558203 -0.10999999999999999 0.9147870358225018
+              name "cardboard box(2)"
+              size 0.2 0.4 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009957008801761091 0.16000000000000003 1.1597878196440117
+              name "cardboard box(1)"
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+            CardboardBox {
+              translation 0.009956768695729146 -0.19000000000000009 1.1597856442782755
+              size 0.2 0.2 0.2
+              mass 0.5
+            }
+          ]
+          name "box"
+        }
+      ]
+      name "shelf"
+    }
+  ]
+  name "shelf_row"
+}
+Pr2 {
+  translation 8.30147e-06 -6.6 0.02
+  rotation 0 0 1 1.5708
+  controller "pr2_key_qr_reader"
+  supervisor TRUE
+  selfCollision TRUE
+}
+DEF Human_QR_01 Solid {
+  translation 0.81 -3.05 0.05
+  rotation 0 0 1 1.5708
+  children [
+    Pedestrian {
+      shirtColor 1 0.937255 0.0823529
+      pantsColor 0.0313726 0.666667 0.0509804
+      shoesColor 1 0 0
+      skinColor 0.666667 0.333333 0
+      enableBoundingObject TRUE
+    }
+    Pose {
+      translation 0.15 0 1.3
+      rotation 0 1 0 1.5708
+      children [
+        Shape {
+          appearance Appearance {
+            texture ImageTexture {
+              url [
+                "../textures/human_01_qr.png"
+              ]
+            }
+          }
+          geometry Plane {
+            size 0.25 0.25
+          }
+        }
+      ]
+    }
+    Pose {
+      translation -0.15 0 1.3
+      rotation 0 1 0 -1.5708
+      children [
+        Shape {
+          appearance Appearance {
+            texture ImageTexture {
+              url [
+                "../textures/human_01_qr_back.png"
+              ]
+            }
+          }
+          geometry Plane {
+            size 0.25 0.25
+          }
+        }
+      ]
+    }
+  ]
+}
