@@ -1,0 +1,45 @@
+#VRML_SIM R2025a utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/floors/protos/RectangleArena.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/robots/willow_garage/pr2/protos/PR2.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/humans/pedestrian/protos/Pedestrian.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/factory/containers/protos/WoodenBox.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/shelving/protos/Shelf.proto"
+
+WorldInfo {
+}
+Viewpoint {
+  orientation -0.2 0.9 0.4 1.2
+  position -5 -2 4
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+RectangleArena {
+  floorSize 20 20
+}
+
+PR2 {
+  translation 0 0 0
+  rotation 0 0 1 0
+  controller "pr2_autonomous_ethics"
+}
+
+Pedestrian {
+  translation 3 0 1.27
+  rotation 0 0 1 3.14159
+  name "human_1"
+}
+
+Shelf {
+  translation 6 0 0
+  rotation 0 0 1 1.5708
+}
+
+WoodenBox {
+  translation 5.8 0 0.5
+  size 0.2 0.2 0.2
+}
