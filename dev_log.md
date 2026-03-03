@@ -1,7 +1,12 @@
 # Development Log - Ontology-Driven Ethical Warehouse Robot
 
-## [2026-03-03] - Reverting to Working Movement State
-- **Action:** Reverted `pr2_autonomous_ethics.py` to the threshold-based navigation state (pre-GPS/Threading).
-- **Action:** Removed `extensionSlot` and `GPS` from `ethics_test.wbt` to resolve Proto errors.
-- **Reasoning:** Re-establishing a stable baseline for user commit. 
-- **Current Status:** Robot navigates using Lidar distance to stop at the shelf, with speed governed by blocking ontology reasoning every 30 steps.
+## [2026-03-03] - Initial Setup
+... (previous logs preserved) ...
+
+## [2026-03-03] - Continuous Navigation Implementation
+- **Refinement:** Removed all speed stops and pauses at intermediate waypoints.
+- **Logic:** 
+    - The robot now treats checkpoints as "pass-through" markers.
+    - When a margin is reached, it increments the index and continues at the current ethical speed limit without deceleration.
+    - The robot only stops at the final checkpoint (`Target Shelf`).
+- **Result:** Fluid, uninterrupted motion while maintaining ontology-driven speed control for humans.

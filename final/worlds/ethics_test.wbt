@@ -12,8 +12,8 @@ EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/project
 WorldInfo {
 }
 Viewpoint {
-  orientation -0.0005257349568654804 0.9983426512383029 0.05754714868028899 0.7505559199721369
-  position -8.060586990753448 -0.10478571526361469 9.271746835110562
+  orientation -0.13029199860287033 0.13411336272912133 0.9823632734572056 1.6005905881069948
+  position -0.05436416120830276 -29.747090379765115 8.83374446179673
 }
 TexturedBackground {
 }
@@ -27,6 +27,7 @@ RectangleArena {
 Pr2 {
   translation -4.26 0 0
   controller "pr2_autonomous_ethics"
+  supervisor TRUE
 }
 Pedestrian {
   translation -0.62 1 1.27
