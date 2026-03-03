@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base="">
+        <uri id="Automatically generated entry, Timestamp=1772566379657" name="http://purl.org/ieee1872-owl/cora-fullaxiom" uri="final/controllers/pr2_autonomous_ethics/fullaxiom.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1772566379657" name="http://test.org/warehouse_ethics.owl" uri="controllers/warehouse_ethics.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1772566379657" name="shadowed:http://purl.org/ieee1872-owl/cora-fullaxiom" uri="FN%20Robotics/controllers/pr2_py_controller/fullaxiom.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1772566379657" name="shadowed:http://purl.org/ieee1872-owl/cora-fullaxiom" uri="FN%20Robotics/controllers/pr2_autonomous_ethics/fullaxiom.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1772566379657" name="shadowed:http://test.org/warehouse_ethics.owl" uri="final/controllers/pr2_autonomous_ethics/warehouse_ethics.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1772566379657" name="shadowed:http://test.org/warehouse_ethics.owl" uri="FN%20Robotics/controllers/pr2_autonomous_ethics/warehouse_ethics.owl"/>
+    </group>
+</catalog>
