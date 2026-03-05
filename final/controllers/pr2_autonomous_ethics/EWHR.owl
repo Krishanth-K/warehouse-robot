@@ -1,0 +1,331 @@
+Prefix: ewhr: <file://ewhr#>
+Prefix: nep: <file://nep>
+Prefix: owl: <http://www.w3.org/2002/07/owl#>
+Prefix: rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+Prefix: rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+Prefix: tlo: <file://tlo#>
+Prefix: xml: <http://www.w3.org/XML/1998/namespace>
+Prefix: xsd: <http://www.w3.org/2001/XMLSchema#>
+Prefix: : <EWHR.owl#>
+
+Ontology: <EWHR.owl>
+Import: <ERAS-TLO-owl-manchester-axioms.owl>
+
+Annotations: 
+    rdfs:comment "An example mapping of ERAS-NEP CLIF axioms into OWL axioms using Manchester OWL syntax"
+AnnotationProperty: rdfs:comment
+
+Datatype: nep:string EquivalentTo: xsd:string
+Datatype: rdf:PlainLiteral
+Datatype: xsd:string
+DataProperty: ewhr:is_active Range: xsd:boolean
+DataProperty: ewhr:name Range: xsd:string
+
+
+# ====================================================================
+# OBJECT PROPERTIES (NEP, TLO & EWHR)
+# ====================================================================
+
+ObjectProperty: ewhr:has_action_goal Domain: ewhr:AgentAction Range: ewhr:Situation
+ObjectProperty: ewhr:activated_by Range: ewhr:Event
+ObjectProperty: ewhr:area_type Domain: ewhr:WarehouseArea Range: ewhr:area_types
+ObjectProperty: ewhr:describes Domain: ewhr:Fact Range: nep:Environment
+ObjectProperty: ewhr:establishes Domain: ewhr:AgentAction Range: ewhr:Fact
+ObjectProperty: ewhr:has_postcondition Domain: ewhr:AgentAction Range: ewhr:Situation
+ObjectProperty: ewhr:has_precondition Domain: ewhr:AgentAction Range: ewhr:Situation
+ObjectProperty: ewhr:involves_norms_in Domain: ewhr:NormCollection
+ObjectProperty: ewhr:situation_type_prop Domain: ewhr:Situation Range: ewhr:situation_type
+
+ObjectProperty: nep:accepted_by Domain: nep:Norm Range: nep:Agent
+ObjectProperty: nep:accommodates Domain: nep:Norm Range: nep:EthicalPrinciple
+ObjectProperty: nep:activates Domain: nep:AgentAction Range: nep:Derogation
+ObjectProperty: nep:applies Domain: nep:Agent Range: nep:AgentPlan
+ObjectProperty: nep:assigned_to Domain: nep:AgentRole Range: nep:Agent
+ObjectProperty: nep:authorized_by Domain: nep:Norm Range: nep:Agent
+ObjectProperty: nep:category Characteristics: Functional Domain: nep:Norm Range: nep:norm_category
+ObjectProperty: nep:caused_by Domain: nep:EthicalDilemma Range: nep:Norm
+ObjectProperty: nep:conflicts_with Domain: nep:Norm Range: nep:Norm
+ObjectProperty: nep:constrains_plans_for Domain: nep:EthicalTheory Range: nep:SituationPlanRepertoire
+ObjectProperty: nep:contains Domain: nep:AgentPlan Range: nep:PlanAction
+ObjectProperty: nep:deactivates Domain: nep:AgentAction Range: nep:Derogation
+ObjectProperty: nep:executes Domain: nep:Agent Range: nep:PlanAction
+ObjectProperty: nep:features_described_in Domain: nep:Situation Range: nep:SituationPlanRepertoire
+ObjectProperty: nep:has_as_goal Domain: nep:TaskAssignment Range: nep:Situation
+ObjectProperty: nep:includes Domain: nep:SituationPlanRepertoire Range: nep:AgentPlan
+ObjectProperty: nep:influences_norm_applicability Domain: nep:SocialCollection Range: nep:Norm
+ObjectProperty: nep:initiates Domain: nep:Agent Range: tlo:AgentCommunication
+ObjectProperty: nep:intends_to_realize Domain: nep:Agent Range: nep:Situation
+ObjectProperty: nep:is_implemented_by Domain: nep:PlanAction Range: nep:AgentAction
+ObjectProperty: nep:is_involved_in Domain: nep:Norm Range: nep:Situation
+ObjectProperty: nep:is_perceived_by Domain: nep:Environment Range: nep:Agent
+ObjectProperty: nep:is_perception_of Domain: nep:Situation Range: nep:Environment
+ObjectProperty: nep:is_prescribed_by Domain: nep:Norm Range: nep:EthicalTheory InverseOf: nep:specifies_norm_modality
+ObjectProperty: nep:is_response_to Domain: nep:Answer Range: nep:Query
+ObjectProperty: nep:logically_justifies Domain: nep:ActionRationale Range: nep:PlanAction
+ObjectProperty: nep:precedes Domain: nep:Situation Range: nep:Situation
+ObjectProperty: nep:prescribes_context_for Domain: nep:SocialCollection Range: nep:Norm
+ObjectProperty: nep:prompts Domain: nep:Situation Range: tlo:AgentCommunication
+ObjectProperty: nep:ranks_preferred_norm Domain: nep:DilemmaMitigationPrinciple Range: nep:EthicalDilemma
+ObjectProperty: nep:receives Domain: nep:Agent Range: tlo:AgentCommunication
+ObjectProperty: nep:recognizes Domain: nep:Agent Range: nep:Situation
+ObjectProperty: nep:satisfies Domain: nep:AgentPlan Range: nep:Norm
+ObjectProperty: nep:selects_plans_from Domain: nep:Agent Range: nep:SituationPlanRepertoire
+ObjectProperty: nep:specifies_norm_modality Domain: nep:EthicalTheory Range: nep:Norm InverseOf: nep:is_prescribed_by
+ObjectProperty: nep:state Characteristics: Functional Domain: nep:Norm Range: nep:norm_states
+ObjectProperty: nep:stipulates Domain: nep:AgentRole Range: nep:Norm
+ObjectProperty: nep:subscribes_to Domain: nep:AgentPlan Range: nep:EthicalTheory
+ObjectProperty: nep:succeeds Domain: nep:Situation Range: nep:Situation
+ObjectProperty: nep:team_type Characteristics: Functional Domain: nep:Team Range: nep:team_types
+ObjectProperty: nep:temporarily_suspends Domain: nep:Derogation Range: nep:Norm
+
+ObjectProperty: tlo:affects
+ObjectProperty: tlo:enacts
+ObjectProperty: tlo:is_member_of
+ObjectProperty: tlo:renders
+
+# ====================================================================
+# TLO & BASE NEP CLASSES
+# ====================================================================
+
+Class: tlo:Agent
+Class: tlo:AgentCommunication
+Class: tlo:Collective
+Class: tlo:Continuant
+Class: tlo:Description
+Class: tlo:EnumDataTypes
+Class: tlo:InformationArtifact
+Class: tlo:Method
+Class: tlo:Object
+Class: tlo:Plan
+Class: tlo:Process
+Class: tlo:Role
+Class: tlo:Situation
+Class: tlo:SpatioTemporalPlace
+
+Class: nep:ActionRationale SubClassOf: tlo:Method
+Class: nep:Agent SubClassOf: tlo:Agent and (tlo:enacts min 0 nep:AgentRole) and (tlo:is_member_of min 1 nep:SocialCollection)
+Class: nep:AgentAction SubClassOf: tlo:Process and (tlo:affects some nep:Environment)
+Class: nep:AgentPlan SubClassOf: tlo:InformationArtifact and (nep:subscribes_to some nep:EthicalTheory) and (tlo:renders some tlo:Plan) and (nep:contains min 1 nep:PlanAction) and (nep:satisfies min 1 nep:Norm)
+Class: nep:AgentRole SubClassOf: tlo:Role and (nep:assigned_to min 0 nep:Agent) and (nep:stipulates min 0 nep:Norm)
+Class: nep:Answer SubClassOf: tlo:AgentCommunication and (nep:is_response_to some nep:Query) and ( inverse (nep:initiates) some nep:Agent) and ( inverse (nep:receives) some nep:Agent)
+Class: nep:Community SubClassOf: nep:SocialCollection
+Class: nep:Company SubClassOf: nep:SocialCollection
+Class: nep:ConsequentialistNorm SubClassOf: nep:Norm
+Class: nep:DeontologicalNorm SubClassOf: nep:Norm
+Class: nep:Department SubClassOf: nep:SocialCollection
+Class: nep:Derogation SubClassOf: tlo:Process
+Class: nep:DilemmaMitigationPrinciple SubClassOf: tlo:Method
+Class: nep:EnumDataTypes SubClassOf: tlo:EnumDataTypes
+Class: nep:Environment SubClassOf: tlo:Continuant and (nep:is_perceived_by some nep:Agent) and ( inverse (nep:is_perception_of) min 1 nep:Situation)
+Class: nep:EthicalDilemma SubClassOf: tlo:Situation and (nep:caused_by min 2 nep:Norm)
+Class: nep:EthicalPrinciple SubClassOf: tlo:Method
+Class: nep:EthicalTheory SubClassOf: tlo:Method and (nep:specifies_norm_modality some nep:Norm)
+Class: nep:Explanation SubClassOf: tlo:AgentCommunication
+Class: nep:Government SubClassOf: nep:SocialCollection
+Class: nep:Norm SubClassOf: tlo:Method and (nep:accommodates some nep:EthicalPrinciple) and (nep:accepted_by min 0 nep:Agent) and (nep:authorized_by min 1 nep:Agent) and (nep:is_involved_in min 0 nep:Situation) and (nep:is_prescribed_by min 1 nep:EthicalTheory)
+Class: nep:Obligation SubClassOf: nep:DeontologicalNorm
+Class: nep:Organization SubClassOf: nep:SocialCollection
+Class: nep:Permission SubClassOf: nep:DeontologicalNorm
+Class: nep:PlanAction SubClassOf: tlo:InformationArtifact and (nep:is_implemented_by some nep:AgentAction) and (tlo:renders some tlo:Method)
+Class: nep:Prohibition SubClassOf: nep:DeontologicalNorm
+Class: nep:Query SubClassOf: tlo:AgentCommunication and ( inverse (nep:initiates) some nep:Agent) and ( inverse (nep:receives) some nep:Agent)
+Class: nep:Robot SubClassOf: nep:Agent
+Class: nep:Situation SubClassOf: tlo:Situation and (nep:is_perception_of some nep:Environment) and ( inverse (nep:recognizes) some nep:Agent)
+Class: nep:SituationPlanRepertoire SubClassOf: tlo:InformationArtifact and ( inverse (nep:constrains_plans_for) some nep:EthicalTheory) and (nep:includes min 1 nep:AgentPlan) and ( inverse (nep:features_described_in) min 1 nep:Situation)
+Class: nep:SocialCollection SubClassOf: tlo:Collective and (nep:influences_norm_applicability min 1 nep:Norm)
+Class: nep:TaskAssignment SubClassOf: tlo:AgentCommunication and ( inverse (nep:receives) some nep:Agent) and (nep:has_as_goal min 1 nep:Situation)
+Class: nep:Team SubClassOf: nep:SocialCollection
+Class: nep:VirtuousNorm SubClassOf: nep:Norm
+
+Class: nep:autonomous_action_principles Annotations: rdfs:comment "Autonomous Action Principles", rdfs:comment "{ generalization_principle, principle_of_autonomy, principle_of_informed_consent, interference_principle }" SubClassOf: nep:EnumDataTypes
+Class: nep:dilemma_mitigation_principles Annotations: rdfs:comment "Dilemma Mitigation Principles", rdfs:comment "{ principle_of_double_effect, principle_of_triple_effect }" SubClassOf: nep:EnumDataTypes
+Class: nep:ethical_principles Annotations: rdfs:comment "Ethical Principle Examples", rdfs:comment "{beneficence, nonmaleficence, justice, autonomy, fidelity, veracity, fairness, civility, respect}" SubClassOf: nep:EnumDataTypes
+Class: nep:ethical_theories Annotations: rdfs:comment "Ethical Theory Examples", rdfs:comment "{virtuous, deontological, consequentialist, composite, divine_command, Buddhists_ethics, ..}" SubClassOf: nep:EnumDataTypes
+Class: nep:norm_category SubClassOf: nep:EnumDataTypes
+Class: nep:norm_states SubClassOf: nep:EnumDataTypes
+Class: nep:team_types Annotations: rdfs:comment "Team Types", rdfs:comment "{ self_directed_MAS_agents, human_directed }" SubClassOf: nep:EnumDataTypes
+
+
+# ====================================================================
+# EWHR CLASS MODEL EXTENSION 
+# ====================================================================
+
+Class: ewhr:WarehouseArea SubClassOf: tlo:SpatioTemporalPlace
+Class: ewhr:Warehouse SubClassOf: tlo:SpatioTemporalPlace
+Class: ewhr:WarehouseObject SubClassOf: tlo:Object
+Class: ewhr:Container SubClassOf: ewhr:WarehouseObject
+Class: ewhr:Storage SubClassOf: ewhr:WarehouseObject
+Class: ewhr:AssemblyLine SubClassOf: ewhr:WarehouseObject
+Class: ewhr:ForkLift SubClassOf: ewhr:WarehouseObject
+Class: ewhr:Aisle SubClassOf: ewhr:WarehouseObject
+
+Class: ewhr:Agent SubClassOf: nep:Agent
+Class: ewhr:Robot SubClassOf: nep:Robot
+Class: ewhr:Worker SubClassOf: nep:Agent
+Class: ewhr:Event SubClassOf: tlo:Process
+
+Class: ewhr:Situation SubClassOf: nep:Situation
+Class: ewhr:AgentPlan SubClassOf: nep:AgentPlan
+Class: ewhr:PlanAction SubClassOf: nep:PlanAction
+Class: ewhr:AgentAction SubClassOf: nep:AgentAction
+Class: ewhr:Fact SubClassOf: tlo:Description
+
+Class: ewhr:NormCollection SubClassOf: tlo:Collective
+Class: ewhr:Norm SubClassOf: nep:Norm
+Class: ewhr:DeontologicalNorm SubClassOf: nep:DeontologicalNorm, ewhr:Norm
+Class: ewhr:Obligation SubClassOf: nep:Obligation, ewhr:DeontologicalNorm
+Class: ewhr:Prohibition SubClassOf: nep:Prohibition, ewhr:DeontologicalNorm
+Class: ewhr:Permission SubClassOf: nep:Permission, ewhr:DeontologicalNorm
+
+Class: ewhr:area_types SubClassOf: nep:EnumDataTypes
+Class: ewhr:situation_type SubClassOf: nep:EnumDataTypes
+
+
+# ====================================================================
+# BASE NEP INDIVIDUALS
+# ====================================================================
+Individual: nep:activated Types: nep:norm_states
+Individual: nep:ethical_norm Types: nep:norm_category
+Individual: nep:expired Types: nep:norm_states
+Individual: nep:fulfilled Types: nep:norm_states
+Individual: nep:human_directed Types: nep:team_types
+Individual: nep:legal_norm Types: nep:norm_category
+Individual: nep:not_applicable Types: nep:norm_states
+Individual: nep:self_directed_team Types: nep:team_types
+Individual: nep:suspended Types: nep:norm_states
+Individual: nep:violated Types: nep:norm_states
+
+Individual: ewhr:open_space Types: ewhr:area_types
+Individual: ewhr:restricted_area Types: ewhr:area_types
+Individual: ewhr:action_precondition Types: ewhr:situation_type
+Individual: ewhr:agent_goal Types: ewhr:situation_type
+
+
+# ====================================================================
+# EWHR M0 INSTANCE MODEL (PR2 SPECIFIC SCENARIO)
+# ====================================================================
+
+# 1. Physical World & Actors
+
+Individual: ewhr:PR2_001 
+    Types: ewhr:Robot 
+    Facts: 
+        nep:applies ewhr:Initialization_Plan, 
+        nep:applies ewhr:Transport_To_Shelf_Plan, 
+        nep:applies ewhr:Safe_Passage_Plan, 
+        nep:applies ewhr:Zone_Avoidance_Plan, 
+        nep:applies ewhr:Stable_Lift_Plan, 
+        nep:applies ewhr:Delivery_And_Log_Plan,
+        nep:intends_to_realize ewhr:Box_Delivered_Goal,
+        nep:recognizes ewhr:System_Startup_Sit,
+        nep:executes ewhr:Authorization_Verification
+Individual: ewhr:Human_Worker_A Types: ewhr:Worker
+Individual: ewhr:Box_X Types: ewhr:Container
+Individual: ewhr:Shelf_A Types: ewhr:Storage
+Individual: ewhr:Line_B Types: ewhr:AssemblyLine
+Individual: ewhr:Maintenance_1 Types: ewhr:WarehouseArea Facts: ewhr:area_type ewhr:restricted_area
+Individual: ewhr:Aisle_4 Types: ewhr:WarehouseArea Facts: ewhr:area_type ewhr:open_space
+
+# 2. Mission & Goals
+
+Individual: ewhr:Order_101_Fetch_Box 
+    Types: nep:TaskAssignment 
+    Facts: nep:has_as_goal ewhr:Box_Delivered_Goal
+Individual: ewhr:Box_Delivered_Goal Types: ewhr:Situation Facts: ewhr:situation_type_prop ewhr:agent_goal
+
+# 3. Triggers & World States
+Individual: ewhr:Authorization_Required_Sit Types: ewhr:Situation Facts: ewhr:situation_type_prop ewhr:action_precondition
+Individual: ewhr:System_Startup_Sit Types: ewhr:Situation Facts: ewhr:situation_type_prop ewhr:action_precondition
+Individual: ewhr:At_Base_Station_Sit Types: ewhr:Situation Facts: ewhr:situation_type_prop ewhr:action_precondition
+Individual: ewhr:Human_Proximity_Sit Types: ewhr:Situation Facts: ewhr:situation_type_prop ewhr:action_precondition
+Individual: ewhr:Restricted_Zone_Path_Sit Types: ewhr:Situation Facts: ewhr:situation_type_prop ewhr:action_precondition
+Individual: ewhr:Box_Lift_Ready_Sit Types: ewhr:Situation Facts: ewhr:situation_type_prop ewhr:action_precondition
+Individual: ewhr:Holding_Box_Sit Types: ewhr:Situation Facts: ewhr:situation_type_prop ewhr:action_precondition
+Individual: ewhr:At_Assembly_Line_Sit Types: ewhr:Situation Facts: ewhr:situation_type_prop ewhr:action_precondition
+Individual: ewhr:Mission_Complete_Sit Types: ewhr:Situation Facts: ewhr:situation_type_prop ewhr:action_precondition
+
+# 4. Ethical Constraints
+Individual: ewhr:Yield_To_Human_Norm Types: ewhr:Obligation
+Individual: ewhr:Lock_Base_Stability_Norm Types: ewhr:Obligation
+Individual: ewhr:Do_Not_Enter_Restricted_Area_Norm Types: ewhr:Prohibition
+
+# 5. Agent Plans
+Individual: ewhr:Initialization_Plan Types: ewhr:AgentPlan Facts: nep:contains ewhr:Authorization_Verification, nep:contains ewhr:System_Health_Check
+Individual: ewhr:Transport_To_Shelf_Plan Types: ewhr:AgentPlan Facts: nep:contains ewhr:Movement_To
+
+Individual: ewhr:Safe_Passage_Plan 
+    Types: ewhr:AgentPlan 
+    Facts: 
+        nep:contains ewhr:Reduce_Speed_Instruction, 
+        nep:satisfies ewhr:Yield_To_Human_Norm,
+        ewhr:name "Safe_Passage_Plan"^^xsd:string,
+        ewhr:is_active "true"^^xsd:boolean
+
+Individual: ewhr:Delivery_And_Log_Plan 
+    Types: ewhr:AgentPlan 
+    Facts: 
+        nep:contains ewhr:Drop_off, 
+        nep:contains ewhr:Log_Mission_Data, 
+        nep:contains ewhr:Movement_From,
+        ewhr:name "Delivery_And_Log_Plan"^^xsd:string,
+        ewhr:is_active "false"^^xsd:boolean
+Individual: ewhr:Zone_Avoidance_Plan Types: ewhr:AgentPlan Facts: nep:contains ewhr:Reroute_Path_Instruction, nep:satisfies ewhr:Do_Not_Enter_Restricted_Area_Norm
+Individual: ewhr:Stable_Lift_Plan Types: ewhr:AgentPlan Facts: nep:contains ewhr:Configure_for_Transport, nep:contains ewhr:Pickup_Target, nep:satisfies ewhr:Lock_Base_Stability_Norm
+
+# 6. Plan Actions & 7. Agent Actions
+Individual: ewhr:Authorization_Verification Types: ewhr:PlanAction Facts: nep:is_implemented_by ewhr:Verify_Server_Credentials
+Individual: ewhr:Verify_Server_Credentials Types: ewhr:AgentAction Facts: ewhr:establishes ewhr:Authorized_Fact, ewhr:has_precondition ewhr:Authorization_Required_Sit
+
+Individual: ewhr:System_Health_Check Types: ewhr:PlanAction Facts: nep:is_implemented_by ewhr:Verify_LiDAR_and_Battery
+Individual: ewhr:Verify_LiDAR_and_Battery Types: ewhr:AgentAction Facts: ewhr:establishes ewhr:System_Healthy_Fact, ewhr:has_precondition ewhr:System_Startup_Sit
+
+Individual: ewhr:Movement_To Types: ewhr:PlanAction Facts: nep:is_implemented_by ewhr:Drive_To_Shelf_Coordinates
+Individual: ewhr:Drive_To_Shelf_Coordinates Types: ewhr:AgentAction Facts: ewhr:establishes ewhr:Robot_At_Shelf_Fact, ewhr:has_precondition ewhr:At_Base_Station_Sit
+
+Individual: ewhr:Reduce_Speed_Instruction Types: ewhr:PlanAction Facts: nep:is_implemented_by ewhr:Set_Motor_Velocity_0.5
+Individual: ewhr:Set_Motor_Velocity_0.5 Types: ewhr:AgentAction Facts: ewhr:has_precondition ewhr:Human_Proximity_Sit
+
+Individual: ewhr:Reroute_Path_Instruction Types: ewhr:PlanAction Facts: nep:is_implemented_by ewhr:Calculate_New_Trajectory
+Individual: ewhr:Calculate_New_Trajectory Types: ewhr:AgentAction Facts: ewhr:establishes ewhr:Clear_Path_Established_Fact, ewhr:has_precondition ewhr:Restricted_Zone_Path_Sit
+
+Individual: ewhr:Configure_for_Transport Types: ewhr:PlanAction Facts: nep:is_implemented_by ewhr:Engage_Wheel_Brakes
+Individual: ewhr:Engage_Wheel_Brakes Types: ewhr:AgentAction Facts: ewhr:has_precondition ewhr:Box_Lift_Ready_Sit
+
+Individual: ewhr:Pickup_Target Types: ewhr:PlanAction Facts: nep:is_implemented_by ewhr:Close_Gripper_Motor
+Individual: ewhr:Close_Gripper_Motor Types: ewhr:AgentAction Facts: ewhr:establishes ewhr:Box_X_Is_Held_Fact, ewhr:has_precondition ewhr:Box_Lift_Ready_Sit
+
+Individual: ewhr:Movement_From Types: ewhr:PlanAction Facts: nep:is_implemented_by ewhr:Drive_To_Line_Coordinates
+Individual: ewhr:Drive_To_Line_Coordinates Types: ewhr:AgentAction Facts: ewhr:has_precondition ewhr:Holding_Box_Sit
+
+Individual: ewhr:Drop_off Types: ewhr:PlanAction Facts: nep:is_implemented_by ewhr:Open_Gripper_Motor
+Individual: ewhr:Open_Gripper_Motor Types: ewhr:AgentAction Facts: ewhr:has_precondition ewhr:At_Assembly_Line_Sit
+
+Individual: ewhr:Log_Mission_Data Types: ewhr:PlanAction Facts: nep:is_implemented_by ewhr:Write_Mission_Text_File
+Individual: ewhr:Write_Mission_Text_File Types: ewhr:AgentAction Facts: ewhr:establishes ewhr:Mission_Logged_Fact, ewhr:has_precondition ewhr:Mission_Complete_Sit
+
+# 8. Facts
+Individual: ewhr:Authorized_Fact Types: ewhr:Fact
+Individual: ewhr:Box_X_Is_Held_Fact Types: ewhr:Fact
+Individual: ewhr:Clear_Path_Established_Fact Types: ewhr:Fact
+Individual: ewhr:Mission_Logged_Fact Types: ewhr:Fact
+Individual: ewhr:Robot_At_Shelf_Fact Types: ewhr:Fact
+Individual: ewhr:System_Healthy_Fact Types: ewhr:Fact
+
+# ====================================================================
+# DISJOINT CLASSES & RULES
+# ====================================================================
+
+DisjointClasses: nep:ActionRationale,nep:DilemmaMitigationPrinciple,nep:EthicalPrinciple,nep:EthicalTheory,nep:Norm
+DisjointClasses: nep:AgentPlan,nep:PlanAction,nep:SituationPlanRepertoire
+DisjointClasses: nep:Community,nep:Company,nep:Department,nep:Government,nep:Organization,nep:Team
+DisjointClasses: nep:ConsequentialistNorm,nep:DeontologicalNorm,nep:VirtuousNorm
+DisjointClasses: nep:Obligation,nep:Permission,nep:Prohibition
+
+Rule: nep:Agent(?a), nep:AgentPlan(?ap), nep:PlanAction(?pa), nep:AgentAction(?ap), nep:Environment(?e), nep:Situation(?s), nep:is_perception_of(?s, ?e), nep:is_perceived_by(?e, ?a), nep:intends_to_realize(?a, ?s), nep:contains(?ap, ?pa), nep:is_implemented_by(?pa, ?aa), tlo:affects(?aa, ?e) -> nep:applies(?a, ?ap), nep:executes(?a, ?pa)
+Rule: nep:Agent(?a), nep:AgentPlan(?ap), nep:PlanAction(?pa), nep:AgentAction(?ap), nep:Environment(?e), nep:Situation(?s), nep:is_perception_of(?s, ?e), nep:is_perceived_by(?e, ?a), nep:recognizes(?a, ?s), nep:contains(?ap, ?pa), nep:is_implemented_by(?pa, ?aa), tlo:affects(?aa, ?e) -> nep:applies(?a, ?ap), nep:executes(?a, ?pa)
+Rule: nep:AgentRole(?r), nep:Agent(?a), tlo:enacts(?a, ?r) -> nep:assigned_to(?r, ?a)
+Rule: nep:SituationPlanRepertoire(?r), nep:Situation(?s), nep:Agent(?a), nep:features_described_in(?s, ?r), nep:intends_to_realize(?a, ?s) -> nep:selects_plans_from(?a, ?r)
+Rule: nep:SituationPlanRepertoire(?r), nep:Situation(?s), nep:Agent(?a), nep:features_described_in(?s, ?r), nep:recognizes(?a, ?s) -> nep:selects_plans_from(?a, ?r)
+Rule: nep:Situation(?s), nep:Agent(?a), nep:recognizes(?a, ?s), tlo:AgentCommunication(?ac), nep:prompts(?s, ?ac) -> nep:initiates(?a, ?ac)
+Rule: nep:Norm(?n), nep:Derogation(?d), nep:AgentAction(?a), nep:activates(?a, ?d), nep:temporarily_suspends(?d, ?n) -> nep:state(?n, nep:suspended)
+Rule: nep:Norm(?n), nep:state(?n, nep:suspended), nep:Derogation(?d), nep:AgentAction(?a), nep:deactivates(?a, ?d) -> nep:state(?n, nep:activated)

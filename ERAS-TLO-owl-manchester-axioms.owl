@@ -1,0 +1,261 @@
+Prefix: owl:  <http://www.w3.org/2002/07/owl#>
+Prefix: rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+Prefix: rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+Prefix: xml:  <http://www.w3.org/XML/1998/namespace>
+Prefix: xsd:  <http://www.w3.org/2001/XMLSchema#>
+
+# is there a way of defining the sqwrl prefix so that the full iri is not required for each rule?
+# Prefix: sqwrl: <http://sqwrl.stanford.edu/ontologies/built-ins/3.4/sqwrl.owl>
+# Prefix: sqwrl: <http://sqwrl.stanford.edu/ontologies/built-ins/3.4/sqwrl.owl#>
+# Prefix: sqwrl: <http://sqwrl.stanford.edu/ontologies/built-ins/3.4/sqwrl.owl#select>
+# Prefix: sqwrl: <http://sqwrl.stanford.edu/ontologies/built-ins/3.4/>
+
+Prefix: tlo: <file://tlo#>
+Prefix: nep: <file://nep>
+
+# Ontology: <file://tlo>
+
+Ontology: <file://~/Documents/AI-ontologies/ERAS-TLO-owl-manchester-axioms.owl>
+Annotations:
+  rdfs:comment "An example mapping of ERAS-TLO CLIF axioms into OWL axioms using Manchester OWL syntax" 
+
+AnnotationProperty: rdfs:comment
+
+# definitions for the 19 TLO relationships and two Event concept attributes
+#
+ObjectProperty: tlo:is_member_of
+		Domain: tlo:Entity
+		Range:  tlo:Collective
+
+ObjectProperty: tlo:hasMember
+		Domain: tlo:Collective
+		Range:  tlo:Entity
+		InverseOf: tlo:is_member_of
+		
+ObjectProperty: tlo:characterizes
+		Domain: tlo:Abstract
+    		Range:  tlo:Physical
+        
+ObjectProperty: tlo:located_at
+		Domain: tlo:Physical
+    		Range:  tlo:SpatioTemporalPlace
+        
+ObjectProperty: tlo:present_at
+		Domain: tlo:Physical
+    		Range:  tlo:Time
+
+ObjectProperty: tlo:property_of
+		Domain: tlo:Property
+		Range:  tlo:Entity
+
+ObjectProperty: tlo:describes
+		Domain: tlo:Description
+		Range:  tlo:Entity
+
+ObjectProperty: tlo:describedBy
+		Domain: tlo:Entity
+		Range:  tlo:Description
+		
+ObjectProperty: tlo:realizes
+		Domain: tlo:Process
+     		Range:  tlo:Method
+
+ObjectProperty: tlo:isRealizedBy
+		Domain: tlo:Method
+		Range:  tlo:Process
+		InverseOf: tlo:realizes
+
+ObjectProperty: tlo:start_time
+		Domain: tlo:Event
+		Range:  tlo:Time
+		
+ObjectProperty: tlo:end_time
+		Domain: tlo:Event
+		Range:  tlo:Time
+
+ObjectProperty: tlo:occurs_in
+		Domain: tlo:Event
+		Range:  tlo:Process
+
+ObjectProperty: tlo:manifests
+		Domain: tlo:Process
+		Range:  tlo:Event
+		InverseOf: tlo:occurs_in
+
+ObjectProperty: tlo:created_by
+		Domain: tlo:ActionEvent
+		Range:  tlo:Agent
+		InverseOf: tlo:creates
+
+ObjectProperty: tlo:creates
+		Domain: tlo:Agent
+		Range:  tlo:ActionEvent
+
+ObjectProperty: tlo:enacts
+		Domain: tlo:Agent
+		Range:  tlo:Role
+
+ObjectProperty: tlo:enactedBy
+		Domain: tlo:Role
+		Range:  tlo:Agent
+		InverseOf: tlo:enacts
+
+ObjectProperty: tlo:formulates
+		Domain: tlo:Agent
+		Range:  tlo:InformationArtifact
+
+ObjectProperty: tlo:renders
+		Domain: tlo:InformationArtifact
+		Range:  tlo:Abstract
+		
+ObjectProperty: tlo:formulatedBy
+		Domain: tlo:InformationArtifact
+		Range:  tlo:Agent
+		InverseOf: tlo:formulates
+
+ObjectProperty: tlo:selected_by
+		Domain: tlo:Plan
+		Range:  tlo:Agent
+
+ObjectProperty: tlo:perceived_by
+		Domain: tlo:Entity
+		Range:  tlo:Agent
+		
+ObjectProperty: tlo:transmits
+		Domain: tlo:AgentCommunication
+		Range:  tlo:InformationArtifact
+		
+ObjectProperty: tlo:transmitted_by
+		Domain:    tlo:InformationArtifact
+		Range:     tlo:AgentCommunication
+		InverseOf: tlo:transmits
+
+ObjectProperty: tlo:participates_in
+		Domain: tlo:Object
+		Range:  tlo:Process
+
+ObjectProperty: tlo:hasParticipant
+		Domain: tlo:Process
+		Range:  tlo:Object
+		InverseOf: tlo:participates_in
+
+ObjectProperty: tlo:affects
+		Domain: tlo:Process
+		Range:  tlo:Physical
+
+ObjectProperty: tlo:is_stage_of
+		Domain: tlo:Process
+		Range:  tlo:Process
+
+# note: the tlo ternary relationship process_stage_at
+#       is approximated using the is_stage_of
+#       and an added is_stage_at relationship
+#
+ObjectProperty: tlo:is_stage_at
+		Domain: tlo:Process
+		Range:  tlo:Time
+
+# note: the tlo ternary relationship identifies_at
+#       is mapped to the following two relationships
+#
+ObjectProperty: tlo:identified_by
+		Domain: tlo:Physical
+		Range:  tlo:Property
+
+ObjectProperty: tlo:identified_at
+		Domain: tlo:Physical
+		Range:  tlo:Time
+		
+# defintions for the 27 TLO concepts
+#
+Class: tlo:Entity   SubClassOf: owl:Thing
+Class: tlo:Abstract SubClassOf: tlo:Entity
+       		    that tlo:characterizes min 0 tlo:Physical
+		    
+Class: tlo:Physical SubClassOf: tlo:Entity
+       		    that tlo:present_at some tlo:Time
+		     and tlo:located_at some tlo:SpatioTemporalPlace
+
+DisjointClasses: tlo:Physical, tlo:Abstract
+
+Class: tlo:SpatioTemporalPlace SubClassOf: tlo:Abstract
+Class: tlo:Time 	 SubClassOf: tlo:Abstract
+Class: tlo:Property 	 SubClassOf: tlo:Abstract
+       			 that tlo:property_of some tlo:Entity
+			 
+Class: tlo:Description	 SubClassOf: tlo:Abstract
+       			 that tlo:describes some tlo:Entity
+			 
+Class: tlo:Collective    SubClassOf: tlo:Abstract
+       			 that inverse tlo:is_member_of some tlo:Entity
+			  and inverse tlo:describes some tlo:Description
+
+Class: tlo:Attribute	 SubClassOf: tlo:Property
+       			 that tlo:property_of some tlo:Object
+			 
+Class: tlo:Manner 	 SubClassOf: tlo:Property
+       			 that tlo:property_of some tlo:Process
+
+DisjointClasses: tlo:Property, tlo:Collective,
+		 tlo:Description, tlo:SpatioTemporalPlace, tlo:Time
+DisjointClasses: tlo:Attribute, tlo:Manner
+
+Class: tlo:Continuant	 SubClassOf: tlo:Physical
+Class: tlo:Occurrent	 SubClassOf: tlo:Physical
+
+DisjointClasses: tlo:Continuant, tlo:Occurrent
+
+Class: tlo:Process 	 SubClassOf: tlo:Occurrent
+Class: tlo:Role    	 SubClassOf: tlo:Occurrent
+			 
+Class: tlo:Event     	 SubClassOf: tlo:Occurrent
+       			 that tlo:start_time some tlo:Time
+			  and tlo:end_time some tlo:Time
+			  and tlo:occurs_in some tlo:Process
+
+DisjointClasses: tlo:Event, tlo:Process, tlo:Role
+
+Class: tlo:InteractionProcess  SubClassOf: tlo:Process
+       			       that inverse tlo:occurs_in some tlo:ActionEvent
+				and tlo:hasParticipant some tlo:Agent
+				     
+Class: tlo:SocialInteractionProcess SubClassOf: tlo:InteractionProcess
+       				    that tlo:hasParticipant min 2 tlo:Agent
+				     and inverse tlo:occurs_in some tlo:AgentCommunication
+
+Class: tlo:ActionEvent        SubClassOf: tlo:Event
+       			      that tlo:created_by some tlo:Agent
+			      
+Class: tlo:EnvironmentalEvent SubClassOf: tlo:Event
+
+DisjointClasses: tlo:ActionEvent, tlo:EnvironmentalEvent
+
+Class: tlo:AgentCommunication SubClassOf: tlo:ActionEvent
+       			      that tlo:transmits some tlo:InformationArtifact
+
+Class: tlo:Object            SubClassOf: tlo:Continuant
+			     
+Class: tlo:Situation	     SubClassOf: tlo:Continuant
+DisjointClasses: tlo:Object, tlo:Situation
+
+Class: tlo:Agent  SubClassOf: tlo:Object
+			       
+Class: tlo:InformationArtifact SubClassOf: tlo:Object
+       			       that tlo:formulatedBy some tlo:Agent
+
+Class: tlo:Method SubClassOf: tlo:Description
+       		  that tlo:describes some tlo:Process
+		   and tlo:isRealizedBy some tlo:Process
+		  
+Class: tlo:Schema SubClassOf: tlo:Description
+          	  that tlo:describes some tlo:Continuant
+			     
+Class: tlo:EnumDataTypes SubClassOf: tlo:Description
+
+DisjointClasses: tlo:EnumDataTypes,tlo:Method,tlo:Schema
+
+Class: tlo:Plan  SubClassOf: tlo:Method
+
+
+
+

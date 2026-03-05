@@ -1,0 +1,354 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xml:base="http://ewhr.org/integrated.owl"
+         xmlns="http://ewhr.org/integrated.owl#"
+         xmlns:swrl="http://www.w3.org/2003/11/swrl#">
+
+<owl:Ontology rdf:about="http://ewhr.org/integrated.owl"/>
+
+<owl:ObjectProperty rdf:about="#recognizes"/>
+
+<owl:ObjectProperty rdf:about="#executes"/>
+
+<owl:Class rdf:about="#Agent">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Robot">
+  <rdfs:subClassOf rdf:resource="#Agent"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Situation">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#PlanAction">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:NamedIndividual rdf:about="#PR2_001">
+  <rdf:type rdf:resource="#Robot"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#System_Startup_Sit">
+  <rdf:type rdf:resource="#Situation"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#System_Health_Check">
+  <rdf:type rdf:resource="#PlanAction"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#At_Base_Station_Sit">
+  <rdf:type rdf:resource="#Situation"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Movement_To">
+  <rdf:type rdf:resource="#PlanAction"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Human_Proximity_Sit">
+  <rdf:type rdf:resource="#Situation"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Set_Motor_Velocity_0.5">
+  <rdf:type rdf:resource="#PlanAction"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Box_Lift_Ready_Sit">
+  <rdf:type rdf:resource="#Situation"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Pickup_Target">
+  <rdf:type rdf:resource="#PlanAction"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Holding_Box_Sit">
+  <rdf:type rdf:resource="#Situation"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Movement_From">
+  <rdf:type rdf:resource="#PlanAction"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#At_Assembly_Line_Sit">
+  <rdf:type rdf:resource="#Situation"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Drop_off">
+  <rdf:type rdf:resource="#PlanAction"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Mission_Complete_Sit">
+  <rdf:type rdf:resource="#Situation"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Log_Mission_Data">
+  <rdf:type rdf:resource="#PlanAction"/>
+</owl:NamedIndividual>
+
+<swrl:Variable rdf:about="urn:swrl#r"/>
+
+<swrl:Imp>
+  <swrl:body>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:ClassAtom>
+          <swrl:classPredicate rdf:resource="#Robot"/>
+          <swrl:argument1 rdf:resource="urn:swrl#r"/>
+        </swrl:ClassAtom>
+      </rdf:first>
+      <rdf:rest>
+        <rdf:Description>
+          <rdf:first>
+            <swrl:IndividualPropertyAtom>
+              <swrl:propertyPredicate rdf:resource="#recognizes"/>
+              <swrl:argument1 rdf:resource="urn:swrl#r"/>
+              <swrl:argument2 rdf:resource="#Mission_Complete_Sit"/>
+            </swrl:IndividualPropertyAtom>
+          </rdf:first>
+          <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+        </rdf:Description>
+      </rdf:rest>
+    </rdf:Description>
+  </swrl:body>
+  <swrl:head>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:IndividualPropertyAtom>
+          <swrl:propertyPredicate rdf:resource="#executes"/>
+          <swrl:argument1 rdf:resource="urn:swrl#r"/>
+          <swrl:argument2 rdf:resource="#Log_Mission_Data"/>
+        </swrl:IndividualPropertyAtom>
+      </rdf:first>
+      <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    </rdf:Description>
+  </swrl:head>
+</swrl:Imp>
+
+<swrl:Imp>
+  <swrl:body>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:ClassAtom>
+          <swrl:classPredicate rdf:resource="#Robot"/>
+          <swrl:argument1 rdf:resource="urn:swrl#r"/>
+        </swrl:ClassAtom>
+      </rdf:first>
+      <rdf:rest>
+        <rdf:Description>
+          <rdf:first>
+            <swrl:IndividualPropertyAtom>
+              <swrl:propertyPredicate rdf:resource="#recognizes"/>
+              <swrl:argument1 rdf:resource="urn:swrl#r"/>
+              <swrl:argument2 rdf:resource="#At_Assembly_Line_Sit"/>
+            </swrl:IndividualPropertyAtom>
+          </rdf:first>
+          <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+        </rdf:Description>
+      </rdf:rest>
+    </rdf:Description>
+  </swrl:body>
+  <swrl:head>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:IndividualPropertyAtom>
+          <swrl:propertyPredicate rdf:resource="#executes"/>
+          <swrl:argument1 rdf:resource="urn:swrl#r"/>
+          <swrl:argument2 rdf:resource="#Drop_off"/>
+        </swrl:IndividualPropertyAtom>
+      </rdf:first>
+      <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    </rdf:Description>
+  </swrl:head>
+</swrl:Imp>
+
+<swrl:Imp>
+  <swrl:body>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:ClassAtom>
+          <swrl:classPredicate rdf:resource="#Robot"/>
+          <swrl:argument1 rdf:resource="urn:swrl#r"/>
+        </swrl:ClassAtom>
+      </rdf:first>
+      <rdf:rest>
+        <rdf:Description>
+          <rdf:first>
+            <swrl:IndividualPropertyAtom>
+              <swrl:propertyPredicate rdf:resource="#recognizes"/>
+              <swrl:argument1 rdf:resource="urn:swrl#r"/>
+              <swrl:argument2 rdf:resource="#Holding_Box_Sit"/>
+            </swrl:IndividualPropertyAtom>
+          </rdf:first>
+          <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+        </rdf:Description>
+      </rdf:rest>
+    </rdf:Description>
+  </swrl:body>
+  <swrl:head>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:IndividualPropertyAtom>
+          <swrl:propertyPredicate rdf:resource="#executes"/>
+          <swrl:argument1 rdf:resource="urn:swrl#r"/>
+          <swrl:argument2 rdf:resource="#Movement_From"/>
+        </swrl:IndividualPropertyAtom>
+      </rdf:first>
+      <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    </rdf:Description>
+  </swrl:head>
+</swrl:Imp>
+
+<swrl:Imp>
+  <swrl:body>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:ClassAtom>
+          <swrl:classPredicate rdf:resource="#Robot"/>
+          <swrl:argument1 rdf:resource="urn:swrl#r"/>
+        </swrl:ClassAtom>
+      </rdf:first>
+      <rdf:rest>
+        <rdf:Description>
+          <rdf:first>
+            <swrl:IndividualPropertyAtom>
+              <swrl:propertyPredicate rdf:resource="#recognizes"/>
+              <swrl:argument1 rdf:resource="urn:swrl#r"/>
+              <swrl:argument2 rdf:resource="#Box_Lift_Ready_Sit"/>
+            </swrl:IndividualPropertyAtom>
+          </rdf:first>
+          <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+        </rdf:Description>
+      </rdf:rest>
+    </rdf:Description>
+  </swrl:body>
+  <swrl:head>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:IndividualPropertyAtom>
+          <swrl:propertyPredicate rdf:resource="#executes"/>
+          <swrl:argument1 rdf:resource="urn:swrl#r"/>
+          <swrl:argument2 rdf:resource="#Pickup_Target"/>
+        </swrl:IndividualPropertyAtom>
+      </rdf:first>
+      <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    </rdf:Description>
+  </swrl:head>
+</swrl:Imp>
+
+<swrl:Imp>
+  <swrl:body>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:ClassAtom>
+          <swrl:classPredicate rdf:resource="#Robot"/>
+          <swrl:argument1 rdf:resource="urn:swrl#r"/>
+        </swrl:ClassAtom>
+      </rdf:first>
+      <rdf:rest>
+        <rdf:Description>
+          <rdf:first>
+            <swrl:IndividualPropertyAtom>
+              <swrl:propertyPredicate rdf:resource="#recognizes"/>
+              <swrl:argument1 rdf:resource="urn:swrl#r"/>
+              <swrl:argument2 rdf:resource="#Human_Proximity_Sit"/>
+            </swrl:IndividualPropertyAtom>
+          </rdf:first>
+          <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+        </rdf:Description>
+      </rdf:rest>
+    </rdf:Description>
+  </swrl:body>
+  <swrl:head>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:IndividualPropertyAtom>
+          <swrl:propertyPredicate rdf:resource="#executes"/>
+          <swrl:argument1 rdf:resource="urn:swrl#r"/>
+          <swrl:argument2 rdf:resource="#Set_Motor_Velocity_0.5"/>
+        </swrl:IndividualPropertyAtom>
+      </rdf:first>
+      <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    </rdf:Description>
+  </swrl:head>
+</swrl:Imp>
+
+<swrl:Imp>
+  <swrl:body>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:ClassAtom>
+          <swrl:classPredicate rdf:resource="#Robot"/>
+          <swrl:argument1 rdf:resource="urn:swrl#r"/>
+        </swrl:ClassAtom>
+      </rdf:first>
+      <rdf:rest>
+        <rdf:Description>
+          <rdf:first>
+            <swrl:IndividualPropertyAtom>
+              <swrl:propertyPredicate rdf:resource="#recognizes"/>
+              <swrl:argument1 rdf:resource="urn:swrl#r"/>
+              <swrl:argument2 rdf:resource="#At_Base_Station_Sit"/>
+            </swrl:IndividualPropertyAtom>
+          </rdf:first>
+          <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+        </rdf:Description>
+      </rdf:rest>
+    </rdf:Description>
+  </swrl:body>
+  <swrl:head>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:IndividualPropertyAtom>
+          <swrl:propertyPredicate rdf:resource="#executes"/>
+          <swrl:argument1 rdf:resource="urn:swrl#r"/>
+          <swrl:argument2 rdf:resource="#Movement_To"/>
+        </swrl:IndividualPropertyAtom>
+      </rdf:first>
+      <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    </rdf:Description>
+  </swrl:head>
+</swrl:Imp>
+
+<swrl:Imp>
+  <swrl:body>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:ClassAtom>
+          <swrl:classPredicate rdf:resource="#Robot"/>
+          <swrl:argument1 rdf:resource="urn:swrl#r"/>
+        </swrl:ClassAtom>
+      </rdf:first>
+      <rdf:rest>
+        <rdf:Description>
+          <rdf:first>
+            <swrl:IndividualPropertyAtom>
+              <swrl:propertyPredicate rdf:resource="#recognizes"/>
+              <swrl:argument1 rdf:resource="urn:swrl#r"/>
+              <swrl:argument2 rdf:resource="#System_Startup_Sit"/>
+            </swrl:IndividualPropertyAtom>
+          </rdf:first>
+          <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+        </rdf:Description>
+      </rdf:rest>
+    </rdf:Description>
+  </swrl:body>
+  <swrl:head>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:IndividualPropertyAtom>
+          <swrl:propertyPredicate rdf:resource="#executes"/>
+          <swrl:argument1 rdf:resource="urn:swrl#r"/>
+          <swrl:argument2 rdf:resource="#System_Health_Check"/>
+        </swrl:IndividualPropertyAtom>
+      </rdf:first>
+      <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    </rdf:Description>
+  </swrl:head>
+</swrl:Imp>
+
+
+</rdf:RDF>
