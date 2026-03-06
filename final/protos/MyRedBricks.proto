@@ -1,0 +1,10 @@
+#VRML_SIM R2025a utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/released/projects/appearances/protos/RedBricks.proto"
+
+PROTO MyRedBricks [
+]
+{
+  RedBricks {
+  }
+}

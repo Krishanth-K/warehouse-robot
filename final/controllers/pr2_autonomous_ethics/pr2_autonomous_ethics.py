@@ -13,7 +13,9 @@ PROXIMITY_THRESHOLD = 4.0
 CHECKPOINT_MARGIN = 0.3    
 CLEARANCE_TIME = 1.5       
 TARGET_BOX_HEIGHT = 0.62  # Known height of the box in the world
-ONTOLOGY_PATH = "final/controllers/pr2_autonomous_ethics/EWHR_integrated.owl"
+
+# FIX: Changed path to relative for Webots environment
+ONTOLOGY_PATH = "EWHR_integrated.owl"
 
 # --- Initialization ---
 robot = Supervisor()
@@ -122,7 +124,7 @@ while robot.step(TIME_STEP) != -1:
             if dist_to_wp < CHECKPOINT_MARGIN:
                 checkpoint_index += 1; is_rotating = False
             elif is_rotating:
-                set_caster_angles(hw["rotation"], 3*math.pi/4, math.pi/4, -3*math.pi/4, -math.pi/4)
+                set_caster_angles(hw["rotation"], 3*math.pi/4, math.pi/4, -3*math.pi/4, -3*math.pi/4)
                 current_rot_speed = SPEED_ROTATE if angle_error > 0 else -SPEED_ROTATE
                 target_speed = SPEED_STOP
             else:

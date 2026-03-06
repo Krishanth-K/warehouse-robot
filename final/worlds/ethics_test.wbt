@@ -7,38 +7,133 @@ EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/project
 EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/humans/pedestrian/protos/Pedestrian.proto"
 EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/factory/containers/protos/WoodenBox.proto"
 EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/robots/softbank/nao/protos/Shelves.proto"
-EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/VarnishedPine.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/RoughConcrete.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/RedBricks.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/obstacles/protos/OilBarrel.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/traffic/protos/TrafficCone.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/factory/pallet/protos/WoodenPalletStack.proto"
 
 WorldInfo {
+  title "Ethical Warehouse - 3-Sided Compact Industrial"
+  basicTimeStep 16
 }
 Viewpoint {
-  orientation -0.05660443435016334 0.061511754997301146 0.9964999959904918 1.5868778398408587
-  position 0.3890257804821109 -32.854878901761616 4.725559530083252
+  orientation -0.165 0.126 0.978 1.75
+  position 5.5 -12 8
 }
 TexturedBackground {
 }
 TexturedBackgroundLight {
 }
+
+# --- Compact Floor (15x15) ---
 RectangleArena {
-  floorSize 20 20
-  floorAppearance VarnishedPine {
+  floorSize 15 15
+  floorAppearance RoughConcrete {
+    textureTransform TextureTransform {
+      scale 5 5
+    }
   }
+  wallHeight 0
 }
+
+# --- Manual 3-Sided Brick Walls (South Side Open) ---
+# North Wall
+Solid {
+  translation 0 7.5 2
+  children [
+    Shape {
+      appearance RedBricks {
+        textureTransform TextureTransform {
+          scale 15 4
+        }
+      }
+      geometry Box { size 15.2 0.2 4 }
+    }
+  ]
+  boundingObject Box { size 15.2 0.2 4 }
+  name "north_wall"
+}
+# West Wall
+Solid {
+  translation -7.5 0 2
+  children [
+    Shape {
+      appearance RedBricks {
+        textureTransform TextureTransform {
+          scale 15 4
+        }
+      }
+      geometry Box { size 0.2 15.2 4 }
+    }
+  ]
+  boundingObject Box { size 0.2 15.2 4 }
+  name "west_wall"
+}
+# East Wall
+Solid {
+  translation 7.5 0 2
+  children [
+    Shape {
+      appearance RedBricks {
+        textureTransform TextureTransform {
+          scale 15 4
+        }
+      }
+      geometry Box { size 0.2 15.2 4 }
+    }
+  ]
+  boundingObject Box { size 0.2 15.2 4 }
+  name "east_wall"
+}
+
+# --- Robot ---
 Pr2 {
-  translation -4.99 0 0
+  translation -6 0 0
   controller "pr2_autonomous_ethics"
   supervisor TRUE
 }
+
+# --- Staff ---
 Pedestrian {
-  translation -0.62 0.73 1.27
-  rotation 0 0 1 -1.5707953071795862
-  name "human_1"
+  translation -4 4 1.27
+  name "staff_1"
 }
-Shelves {
-  translation 6 0 0
-  rotation 0 0 1 3.141592653589793
+
+# --- Industrial Decorations ---
+OilBarrel {
+  translation -6.5 6.5 0.44
 }
+TrafficCone {
+  translation -6.5 -3 0
+}
+WoodenPalletStack {
+  translation -6.5 3 0
+}
+
+# --- Aisle 1 (X=0) ---
+Shelves { translation 0 2 0 rotation 0 0 1 3.14159 name "a1_1" }
+Shelves { translation 0 2.8 0 rotation 0 0 1 3.14159 name "a1_2" }
+Shelves { translation 0 3.6 0 rotation 0 0 1 3.14159 name "a1_3" }
+Shelves { translation 0 4.4 0 rotation 0 0 1 3.14159 name "a1_4" }
+Shelves { translation 0 5.2 0 rotation 0 0 1 3.14159 name "a1_5" }
+
+# --- Aisle 2 (X=3) - TARGET AISLE ---
+Shelves { translation 3 2 0 rotation 0 0 1 3.14159 name "a2_1" }
+Shelves { translation 3 2.8 0 rotation 0 0 1 3.14159 name "a2_2" }
+Shelves { translation 3 3.6 0 rotation 0 0 1 3.14159 name "a2_3" }
+Shelves { translation 3 4.4 0 rotation 0 0 1 3.14159 name "target_shelf" }
+Shelves { translation 3 5.2 0 rotation 0 0 1 3.14159 name "a2_5" }
+
+# --- Target Box ---
 WoodenBox {
-  translation 5.98 0 0.62
+  translation 2.98 4.4 0.62
   size 0.2 0.2 0.2
 }
+
+# --- Aisle 3 (X=6) ---
+Shelves { translation 6 2 0 rotation 0 0 1 3.14159 name "a3_1" }
+Shelves { translation 6 2.8 0 rotation 0 0 1 3.14159 name "a3_2" }
+Shelves { translation 6 3.6 0 rotation 0 0 1 3.14159 name "a3_3" }
+Shelves { translation 6 4.4 0 rotation 0 0 1 3.14159 name "a3_4" }
+Shelves { translation 6 5.2 0 rotation 0 0 1 3.14159 name "a3_5" }

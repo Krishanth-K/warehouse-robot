@@ -39,12 +39,24 @@
   <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
 </owl:DatatypeProperty>
 
-<owl:Class rdf:about="#Agent">
+<owl:Class rdf:about="#Robot">
+  <rdfs:subClassOf rdf:resource="#Agent"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Fact">
   <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
 </owl:Class>
 
-<owl:Class rdf:about="#Robot">
-  <rdfs:subClassOf rdf:resource="#Agent"/>
+<owl:Class rdf:about="#WarehouseArea">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#AreaType">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Agent">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
 </owl:Class>
 
 <owl:Class rdf:about="#Situation">
@@ -65,18 +77,6 @@
 
 <owl:Class rdf:about="#InboundWaypoint">
   <rdfs:subClassOf rdf:resource="#Waypoint"/>
-</owl:Class>
-
-<owl:Class rdf:about="#Fact">
-  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-</owl:Class>
-
-<owl:Class rdf:about="#WarehouseArea">
-  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-</owl:Class>
-
-<owl:Class rdf:about="#AreaType">
-  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
 </owl:Class>
 
 <owl:NamedIndividual rdf:about="#PR2_001">
@@ -141,34 +141,34 @@
 
 <owl:NamedIndividual rdf:about="#OutboundWaypoint1">
   <rdf:type rdf:resource="#OutboundWaypoint"/>
-  <hasX rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1.0</hasX>
   <hasY rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.0</hasY>
   <hasOrder rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</hasOrder>
-  <hasLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Warehouse Middle</hasLabel>
+  <hasLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Aisle 2 Entrance</hasLabel>
+  <hasX rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2.2</hasX>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#OutboundWaypoint2">
   <rdf:type rdf:resource="#OutboundWaypoint"/>
-  <hasX rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">5.25</hasX>
-  <hasY rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.0</hasY>
   <hasOrder rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</hasOrder>
-  <hasLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Final Stop Before Shelf</hasLabel>
+  <hasLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Aisle 2 Target Slot</hasLabel>
+  <hasX rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2.2</hasX>
+  <hasY rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">4.4</hasY>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#InboundWaypoint1">
   <rdf:type rdf:resource="#InboundWaypoint"/>
-  <hasX rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1.0</hasX>
   <hasY rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.0</hasY>
   <hasOrder rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</hasOrder>
-  <hasLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Warehouse Middle Return</hasLabel>
+  <hasLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Aisle 2 Exit</hasLabel>
+  <hasX rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2.2</hasX>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#InboundWaypoint2">
   <rdf:type rdf:resource="#InboundWaypoint"/>
-  <hasX rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">-4.2</hasX>
   <hasY rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.0</hasY>
   <hasOrder rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</hasOrder>
   <hasLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Starting Position</hasLabel>
+  <hasX rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">-5.5</hasX>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#Authorized_Fact">
@@ -208,6 +208,34 @@
 
 <owl:NamedIndividual rdf:about="#Authorization_Verification">
   <rdf:type rdf:resource="#PlanAction"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#RestrictedZone2">
+  <rdf:type rdf:resource="#WarehouseArea"/>
+  <hasAreaType rdf:resource="#restricted_area"/>
+  <hasX rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">6.0</hasX>
+  <hasY rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">3.0</hasY>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#RestrictedZone3">
+  <rdf:type rdf:resource="#WarehouseArea"/>
+  <hasAreaType rdf:resource="#restricted_area"/>
+  <hasX rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">10.0</hasX>
+  <hasY rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">-2.0</hasY>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#RestrictedZoneA1">
+  <rdf:type rdf:resource="#WarehouseArea"/>
+  <hasAreaType rdf:resource="#restricted_area"/>
+  <hasX rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">-0.8</hasX>
+  <hasY rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">5.0</hasY>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#RestrictedZoneA1_v5">
+  <rdf:type rdf:resource="#WarehouseArea"/>
+  <hasAreaType rdf:resource="#restricted_area"/>
+  <hasX rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.0</hasX>
+  <hasY rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">4.0</hasY>
 </owl:NamedIndividual>
 
 <swrl:Variable rdf:about="urn:swrl#r"/>
