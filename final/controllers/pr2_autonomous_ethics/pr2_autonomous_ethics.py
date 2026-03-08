@@ -10,7 +10,7 @@ SPEED_NORMAL = 15.0
 SPEED_ROTATE = 2.0
 SPEED_BACKWARD = -3.0 
 SPEED_STOP = 0.0
-CHECKPOINT_MARGIN = 0.7
+CHECKPOINT_MARGIN = 0.75    
 CLEARANCE_TIME = 1.5       
 TARGET_BOX_HEIGHT = 0.62  
 
@@ -169,18 +169,18 @@ while robot.step(TIME_STEP) != -1:
         torso_p, shoulder_p, elbow_p, wrist_p, _ = calculate_reach_params(TARGET_BOX_HEIGHT, current_reach)
         
         if elapsed == 50:
-            # VERY NARROW DEPLOY: Arms centered on box width
+            # 1. EXTEND: Move arms straight forward (No pan)
             for side in ['r', 'l']:
-                pan = 0.2 if side == 'r' else -0.2
                 if f"{side}_shoulder_lift_joint" in hw["arms"]: hw["arms"][f"{side}_shoulder_lift_joint"].setPosition(shoulder_p)
                 if f"{side}_elbow_flex_joint" in hw["arms"]: hw["arms"][f"{side}_elbow_flex_joint"].setPosition(elbow_p)
                 if f"{side}_wrist_flex_joint" in hw["arms"]: hw["arms"][f"{side}_wrist_flex_joint"].setPosition(wrist_p)
-                if f"{side}_shoulder_pan_joint" in hw["arms"]: hw["arms"][f"{side}_shoulder_pan_joint"].setPosition(pan)
         elif elapsed == 100:
-            # INTENSE SQUEEZE: Firmly clamp the box
-            if "r_shoulder_pan_joint" in hw["arms"]: hw["arms"]["r_shoulder_pan_joint"].setPosition(0.25)
-            if "l_shoulder_pan_joint" in hw["arms"]: hw["arms"]["l_shoulder_pan_joint"].setPosition(-0.25)
+            # 2. GRASP: Bring grippers together to grasp the box
+            # Sign Logic: Right positive (+), Left negative (-) to move inward
+            if "r_shoulder_pan_joint" in hw["arms"]: hw["arms"]["r_shoulder_pan_joint"].setPosition(0.4)
+            if "l_shoulder_pan_joint" in hw["arms"]: hw["arms"]["l_shoulder_pan_joint"].setPosition(-0.4)
         elif elapsed == 150:
+            # Ensure fingers are tight
             if hw["r_finger"]: hw["r_finger"].setPosition(0.0)
             if hw["l_finger"]: hw["l_finger"].setPosition(0.0)
             with ethics._lock:
@@ -189,8 +189,10 @@ while robot.step(TIME_STEP) != -1:
                     if robot_ind and held_fact:
                         robot_ind.establishes.append(held_fact)
         elif elapsed == 200:
+            # 3. LIFT: Raise very slightly
             if hw["torso"]: hw["torso"].setPosition(torso_p + 0.05)
         elif elapsed == 250:
+            # 4. RETRACT: Transition to backward movement
             state = "NAV_INBOUND"; checkpoint_index = 0
 
     # 3. Actuation
