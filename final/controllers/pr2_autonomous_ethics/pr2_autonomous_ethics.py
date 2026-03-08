@@ -14,7 +14,7 @@ CHECKPOINT_MARGIN = 0.3
 CLEARANCE_TIME = 1.5       
 TARGET_BOX_HEIGHT = 0.62  # Known height of the box in the world
 
-# FIX: Changed path to relative for Webots environment
+# Corrected Ontology Path
 ONTOLOGY_PATH = "EWHR_integrated.owl"
 
 # --- Initialization ---
@@ -31,12 +31,17 @@ onto = ethics.onto
 WAYPOINTS_OUTBOUND = load_waypoints(onto, "OutboundWaypoint")
 WAYPOINTS_INBOUND  = load_waypoints(onto, "InboundWaypoint")
 
+# Helper to find individuals robustly
+def get_ind(name):
+    return onto.search_one(iri=f"*{name}")
+
 # Initial Mission Authorization Assertion
 with ethics._lock:
     with onto:
-        robot_ind = onto.search_one(iri="*PR2_001")
-        if robot_ind:
-            robot_ind.establishes.append(onto.Authorized_Fact)
+        robot_ind = get_ind("PR2_001")
+        authorized_fact = get_ind("Authorized_Fact")
+        if robot_ind and authorized_fact:
+            robot_ind.establishes.append(authorized_fact)
 
 # --- State Management ---
 state = "NAV_OUTBOUND"
@@ -134,12 +139,16 @@ while robot.step(TIME_STEP) != -1:
             if state == "NAV_OUTBOUND":
                 with ethics._lock:
                     with onto:
-                        robot_ind.establishes.append(onto.Robot_At_Shelf_Fact)
+                        shelf_fact = get_ind("Robot_At_Shelf_Fact")
+                        if robot_ind and shelf_fact:
+                            robot_ind.establishes.append(shelf_fact)
                 state = "PICKING_UP"; pickup_sequence_start = step_count
             else:
                 with ethics._lock:
                     with onto:
-                        robot_ind.establishes.append(onto.Mission_Logged_Fact)
+                        mission_fact = get_ind("Mission_Logged_Fact")
+                        if robot_ind and mission_fact:
+                            robot_ind.establishes.append(mission_fact)
                 state = "FINISHED"
 
     # Manipulation State
@@ -159,7 +168,9 @@ while robot.step(TIME_STEP) != -1:
             if hw["r_finger"]: hw["r_finger"].setPosition(0.0)
             with ethics._lock:
                 with onto:
-                    robot_ind.establishes.append(onto.Box_X_Is_Held_Fact)
+                    held_fact = get_ind("Box_X_Is_Held_Fact")
+                    if robot_ind and held_fact:
+                        robot_ind.establishes.append(held_fact)
         elif elapsed == 200:
             if "r_shoulder_lift_joint" in hw["arms"]: hw["arms"]["r_shoulder_lift_joint"].setPosition(retract_s)
         elif elapsed == 250:

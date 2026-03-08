@@ -1,0 +1,241 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xml:base="http://ewhr.org/formal.owl"
+         xmlns="http://ewhr.org/formal.owl#"
+         xmlns:swrl="http://www.w3.org/2003/11/swrl#">
+
+<owl:Ontology rdf:about="http://ewhr.org/formal.owl"/>
+
+<owl:ObjectProperty rdf:about="#recognizes">
+  <rdfs:domain rdf:resource="#Agent"/>
+  <rdfs:range rdf:resource="#Situation"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#executes">
+  <rdfs:domain rdf:resource="#Agent"/>
+  <rdfs:range rdf:resource="#PlanAction"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#applies">
+  <rdfs:domain rdf:resource="#Agent"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#establishes">
+  <rdfs:domain rdf:resource="#AgentAction"/>
+  <rdfs:range rdf:resource="#Fact"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#has_precondition">
+  <rdfs:domain rdf:resource="#AgentAction"/>
+  <rdfs:range rdf:resource="#Situation"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#is_implemented_by">
+  <rdfs:domain rdf:resource="#PlanAction"/>
+  <rdfs:range rdf:resource="#AgentAction"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasAreaType">
+  <rdfs:domain rdf:resource="#WarehouseArea"/>
+  <rdfs:range rdf:resource="#AreaType"/>
+</owl:ObjectProperty>
+
+<owl:DatatypeProperty rdf:about="#hasX">
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#hasY">
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#hasOrder">
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#hasLabel">
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:Class rdf:about="#Agent">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Situation">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#PlanAction">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#AgentAction">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Fact">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#WarehouseArea">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#AreaType">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Robot">
+  <rdfs:subClassOf rdf:resource="#Agent"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Norm">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#DeontologicalNorm">
+  <rdfs:subClassOf rdf:resource="#Norm"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Obligation">
+  <rdfs:subClassOf rdf:resource="#DeontologicalNorm"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Prohibition">
+  <rdfs:subClassOf rdf:resource="#DeontologicalNorm"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Waypoint">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#OutboundWaypoint">
+  <rdfs:subClassOf rdf:resource="#Waypoint"/>
+</owl:Class>
+
+<owl:Class rdf:about="#InboundWaypoint">
+  <rdfs:subClassOf rdf:resource="#Waypoint"/>
+</owl:Class>
+
+<owl:NamedIndividual rdf:about="#PR2_001">
+  <rdf:type rdf:resource="#Robot"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#System_Startup_Sit">
+  <rdf:type rdf:resource="#Situation"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#At_Base_Station_Sit">
+  <rdf:type rdf:resource="#Situation"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Human_Proximity_Sit">
+  <rdf:type rdf:resource="#Situation"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Box_Lift_Ready_Sit">
+  <rdf:type rdf:resource="#Situation"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Holding_Box_Sit">
+  <rdf:type rdf:resource="#Situation"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Mission_Complete_Sit">
+  <rdf:type rdf:resource="#Situation"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#System_Health_Check">
+  <rdf:type rdf:resource="#PlanAction"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Movement_To">
+  <rdf:type rdf:resource="#PlanAction"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Reduce_Speed_Instruction">
+  <rdf:type rdf:resource="#PlanAction"/>
+  <is_implemented_by rdf:resource="#Set_Motor_Velocity_0.5"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Set_Motor_Velocity_0.5">
+  <rdf:type rdf:resource="#AgentAction"/>
+  <has_precondition rdf:resource="#Human_Proximity_Sit"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Pickup_Target">
+  <rdf:type rdf:resource="#PlanAction"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Movement_From">
+  <rdf:type rdf:resource="#PlanAction"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Log_Mission_Data">
+  <rdf:type rdf:resource="#PlanAction"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Yield_To_Human_Norm">
+  <rdf:type rdf:resource="#Obligation"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#OutboundWaypoint1">
+  <rdf:type rdf:resource="#OutboundWaypoint"/>
+  <hasX rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">-1.0</hasX>
+  <hasY rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">-5.0</hasY>
+  <hasOrder rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</hasOrder>
+  <hasLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Target Shelf</hasLabel>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#InboundWaypoint1">
+  <rdf:type rdf:resource="#InboundWaypoint"/>
+  <hasX rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">-8.0</hasX>
+  <hasY rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">-5.0</hasY>
+  <hasOrder rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</hasOrder>
+  <hasLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Start Position</hasLabel>
+</owl:NamedIndividual>
+
+<swrl:Variable rdf:about="urn:swrl#r"/>
+
+<swrl:Imp>
+  <swrl:body>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:ClassAtom>
+          <swrl:classPredicate rdf:resource="#Robot"/>
+          <swrl:argument1 rdf:resource="urn:swrl#r"/>
+        </swrl:ClassAtom>
+      </rdf:first>
+      <rdf:rest>
+        <rdf:Description>
+          <rdf:first>
+            <swrl:IndividualPropertyAtom>
+              <swrl:propertyPredicate rdf:resource="#recognizes"/>
+              <swrl:argument1 rdf:resource="urn:swrl#r"/>
+              <swrl:argument2 rdf:resource="#Human_Proximity_Sit"/>
+            </swrl:IndividualPropertyAtom>
+          </rdf:first>
+          <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+        </rdf:Description>
+      </rdf:rest>
+    </rdf:Description>
+  </swrl:body>
+  <swrl:head>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:IndividualPropertyAtom>
+          <swrl:propertyPredicate rdf:resource="#executes"/>
+          <swrl:argument1 rdf:resource="urn:swrl#r"/>
+          <swrl:argument2 rdf:resource="#Reduce_Speed_Instruction"/>
+        </swrl:IndividualPropertyAtom>
+      </rdf:first>
+      <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    </rdf:Description>
+  </swrl:head>
+</swrl:Imp>
+
+
+</rdf:RDF>

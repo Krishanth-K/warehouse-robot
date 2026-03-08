@@ -1,7 +1,7 @@
 from owlready2 import *
 import os
 
-onto_path = "final/controllers/pr2_autonomous_ethics/EWHR_integrated.owl"
+onto_path = "final/controllers/pr2_autonomous_ethics/EWHR_formal.owl"
 onto = get_ontology(onto_path).load()
 
 with onto:
