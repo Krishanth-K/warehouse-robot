@@ -1,0 +1,4 @@
+- [x] Increase robot movement speed
+- [x] The robot something sees empty spaces, thinks there is a human, and slows down. find out why this happens
+    - *Investigation:* Simple color heuristic was too sensitive to background elements like red brick walls.
+    - *Fix:* Increased pixel match threshold and refined color range in `robot_config.py`. Also reduced `PROXIMITY_THRESHOLD` to `3.0m`.

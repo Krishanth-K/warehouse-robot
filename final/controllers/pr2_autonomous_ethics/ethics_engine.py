@@ -4,8 +4,8 @@ import math
 from owlready2 import *
 
 # --- Constants copied from main to maintain logic ---
-SPEED_NORMAL = 10.0
-SPEED_REDUCED = 3.0
+SPEED_NORMAL = 15.0
+SPEED_REDUCED = 5.0
 
 def load_waypoints(onto, class_name):
     """Queries the ontology for waypoint individuals and returns them sorted by order."""

@@ -70,14 +70,32 @@ def tuck_arms(arm_motors):
     if "r_elbow_flex_joint" in arm_motors: arm_motors["r_elbow_flex_joint"].setPosition(-2.0)
 
 def is_human_in_view(camera):
-    """Simple color-based heuristic to detect human presence in camera feed."""
+    """
+    Heuristic to detect human presence in camera feed.
+    Optimized for Pedestrian PROTO in industrial environments.
+    """
     img = camera.getImage()
     if not img: return False
     w, h = camera.getWidth(), camera.getHeight()
-    # Check central horizontal band
-    for y in range(h // 4, 3 * h // 4, 15):
-        for x in range(0, w, 15):
+    match_count = 0
+    # Increase sampling density (step 5) for better reliability
+    for y in range(h // 4, 3 * h // 4, 5):
+        for x in range(0, w, 5):
             r, g, b = camera.imageGetRed(img, w, x, y), camera.imageGetGreen(img, w, x, y), camera.imageGetBlue(img, w, x, y)
-            # Detect skin-like or specific clothing colors (simplified)
-            if (r > 140 and g < 110 and b < 110) or (g > 140 and r < 110 and b < 110): return True
-    return False
+            
+            # 1. Detect Skin Tones / Warm colors
+            # (Higher red, moderate green, lower blue)
+            is_warm = (r > 150 and g > 100 and r > b + 40)
+            
+            # 2. Detect Common Pedestrian Clothing (e.g., Blue jeans or Green shirts)
+            is_clothing = (b > 150 and b > r + 30) or (g > 150 and g > r + 30)
+            
+            # 3. Filter out Brick Walls (which are very flat red)
+            # Brick red usually has G and B very close to each other.
+            is_brick = (r > 140 and abs(g - b) < 15)
+            
+            if (is_warm or is_clothing) and not is_brick:
+                match_count += 1
+    
+    # Threshold adjusted for higher sampling density
+    return match_count > 15

@@ -6,19 +6,36 @@ from ethics_engine import EWHREthicsEngine, load_waypoints
 
 # --- Configuration & Constants ---
 TIME_STEP = 16
-SPEED_NORMAL = 10.0
+SPEED_NORMAL = 15.0
 SPEED_ROTATE = 2.0
 SPEED_STOP = 0.0
-PROXIMITY_THRESHOLD = 4.0  
+PROXIMITY_THRESHOLD = 3.0  
 CHECKPOINT_MARGIN = 0.3    
 CLEARANCE_TIME = 1.5       
 TARGET_BOX_HEIGHT = 0.62  # Known height of the box in the world
 
-# Corrected Ontology Path
 ONTOLOGY_PATH = "EWHR_integrated.owl"
 
 # --- Initialization ---
 robot = Supervisor()
+
+# SUPERVISOR OVERRIDE: Increase Physical Motor Limits
+# PR2 wheel motors are inside HingeJoints. We find the nodes and update maxVelocity.
+pr2_node = robot.getSelf()
+wheel_motor_names = ["fl_caster_l_wheel_joint","fl_caster_r_wheel_joint","fr_caster_l_wheel_joint","fr_caster_r_wheel_joint","bl_caster_l_wheel_joint","bl_caster_r_wheel_joint","br_caster_l_wheel_joint","br_caster_r_wheel_joint"]
+
+if pr2_node:
+    for name in wheel_motor_names:
+        # getFromProtoDef is for internal PROTO nodes
+        motor_node = pr2_node.getFromProtoDef(name)
+        if motor_node:
+            max_vel_field = motor_node.getField("maxVelocity")
+            if max_vel_field:
+                max_vel_field.setSFFloat(25.0)
+        else:
+            # Fallback for standard nodes if not in PROTO (less likely for PR2)
+            pass
+
 hw = initialize_devices(robot, TIME_STEP)
 tuck_arms(hw["arms"])
 self_node = robot.getSelf()
@@ -31,7 +48,6 @@ onto = ethics.onto
 WAYPOINTS_OUTBOUND = load_waypoints(onto, "OutboundWaypoint")
 WAYPOINTS_INBOUND  = load_waypoints(onto, "InboundWaypoint")
 
-# Helper to find individuals robustly
 def get_ind(name):
     return onto.search_one(iri=f"*{name}")
 
@@ -52,7 +68,7 @@ is_rotating = False
 clearance_timer = 0.0
 pickup_sequence_start = 0
 
-print(f"DEBUG: Starting Mission. Target Height: {TARGET_BOX_HEIGHT}m")
+print(f"DEBUG: Starting Mission. Target Speed: {SPEED_NORMAL}")
 
 # --- Main Control Loop ---
 while robot.step(TIME_STEP) != -1:
@@ -61,7 +77,6 @@ while robot.step(TIME_STEP) != -1:
     rot = self_node.getOrientation()
     yaw = math.atan2(rot[3], rot[0]) 
     
-    # Update Ethical Monitoring Attributes
     ethics.robot_position = (pos[0], pos[1])
     ethics.current_state = state
     elapsed = step_count - pickup_sequence_start if state == "PICKING_UP" else 0
@@ -102,7 +117,6 @@ while robot.step(TIME_STEP) != -1:
     current_rot_speed = 0.0
     active_waypoints = WAYPOINTS_OUTBOUND if state == "NAV_OUTBOUND" else WAYPOINTS_INBOUND
     
-    # Synchronize Situation Reasoning
     if state == "NAV_OUTBOUND":
         ethics.set_active_situations(["At_Base_Station_Sit"])
     elif state == "PICKING_UP":
@@ -113,7 +127,6 @@ while robot.step(TIME_STEP) != -1:
     elif state == "FINISHED":
         ethics.set_active_situations(["Mission_Complete_Sit"])
 
-    # Navigation State
     if state in ["NAV_OUTBOUND", "NAV_INBOUND"]:
         if checkpoint_index < len(active_waypoints):
             wp = active_waypoints[checkpoint_index]
@@ -151,7 +164,6 @@ while robot.step(TIME_STEP) != -1:
                             robot_ind.establishes.append(mission_fact)
                 state = "FINISHED"
 
-    # Manipulation State
     elif state == "PICKING_UP":
         target_speed = SPEED_STOP
         torso_p, shoulder_p, elbow_p, wrist_p, retract_s = calculate_reach_params(TARGET_BOX_HEIGHT)
@@ -180,6 +192,5 @@ while robot.step(TIME_STEP) != -1:
     for m in hw["wheels"]:
         m.setVelocity(current_rot_speed if is_rotating else target_speed)
 
-    # Feedback
     if step_count % 100 == 0:
-        print(f"STATE: {state} | Ethics: {ethics.behavior_desc} | Speed: {target_speed:.1f}/{limit_speed:.1f}")
+        print(f"STATE: {state} | Speed: {target_speed:.1f}/{limit_speed:.1f} | Ethical Act: {ethics.behavior_desc}")
