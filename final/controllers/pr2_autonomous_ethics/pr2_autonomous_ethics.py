@@ -1,25 +1,25 @@
 from controller import Supervisor
 import math
 from kinematics import normalize_angle, calculate_reach_params, set_caster_angles
-from robot_config import initialize_devices, tuck_arms, is_human_in_view
+from robot_config import initialize_devices, tuck_arms, is_human_in_view, set_mission_pose
 from ethics_engine import EWHREthicsEngine, load_waypoints
 
 # --- Configuration & Constants ---
 TIME_STEP = 16
 SPEED_NORMAL = 15.0
 SPEED_ROTATE = 2.0
+SPEED_BACKWARD = -3.0 
 SPEED_STOP = 0.0
-PROXIMITY_THRESHOLD = 3.0  
-CHECKPOINT_MARGIN = 0.75   
+CHECKPOINT_MARGIN = 0.7
 CLEARANCE_TIME = 1.5       
-TARGET_BOX_HEIGHT = 0.62  # Known height of the box in the world
+TARGET_BOX_HEIGHT = 0.62  
 
 ONTOLOGY_PATH = "EWHR_integrated.owl"
 
 # --- Initialization ---
 robot = Supervisor()
 
-# SUPERVISOR OVERRIDE: Increase Physical Motor Limits
+# SUPERVISOR OVERRIDE
 pr2_node = robot.getSelf()
 wheel_motor_names = ["fl_caster_l_wheel_joint","fl_caster_r_wheel_joint","fr_caster_l_wheel_joint","fr_caster_r_wheel_joint","bl_caster_l_wheel_joint","bl_caster_r_wheel_joint","br_caster_l_wheel_joint","br_caster_r_wheel_joint"]
 
@@ -32,21 +32,19 @@ if pr2_node:
                 max_vel_field.setSFFloat(25.0)
 
 hw = initialize_devices(robot, TIME_STEP)
-tuck_arms(hw["arms"])
+set_mission_pose(hw, TARGET_BOX_HEIGHT)
 self_node = robot.getSelf()
 
-# Ethics Engine Setup
 ethics = EWHREthicsEngine(ONTOLOGY_PATH)
 onto = ethics.onto
 
-# Load Navigation Targets from Ontology
 WAYPOINTS_OUTBOUND = load_waypoints(onto, "OutboundWaypoint")
 WAYPOINTS_INBOUND  = load_waypoints(onto, "InboundWaypoint")
 
 def get_ind(name):
     return onto.search_one(iri=f"*{name}")
 
-# Initial Mission Authorization Assertion
+# Initial Authorization
 with ethics._lock:
     with onto:
         robot_ind = get_ind("PR2_001")
@@ -63,7 +61,8 @@ is_rotating = False
 clearance_timer = 0.0
 pickup_sequence_start = 0
 
-print(f"DEBUG: Starting Mission. Target Speed: {SPEED_NORMAL}")
+# --- Mission Context ---
+TARGET_SHELF_X = 11.0 
 
 # --- Main Control Loop ---
 while robot.step(TIME_STEP) != -1:
@@ -89,12 +88,14 @@ while robot.step(TIME_STEP) != -1:
         
         if not currently_tracking:
             if hw["head_pan"]: hw["head_pan"].setPosition(0.0)
-            if min_dist < PROXIMITY_THRESHOLD and abs(angle) < 0.5 and is_human_in_view(hw["camera"]):
+            prox_t = robot.getSelf().getField("proximity_threshold")
+            threshold = prox_t.getSFFloat() if prox_t else 3.0
+            if min_dist < threshold and abs(angle) < 0.5 and is_human_in_view(hw["camera"]):
                 currently_tracking = True; lidar_sees_human = True
         else:
             if hw["head_pan"]: hw["head_pan"].setPosition(angle)
             lidar_sees_human = True
-            if min_dist > PROXIMITY_THRESHOLD or abs(angle) > 1.45:
+            if min_dist > 3.0 or abs(angle) > 1.45:
                 currently_tracking = False; lidar_sees_human = False
                 if hw["head_pan"]: hw["head_pan"].setPosition(0.0)
                 clearance_timer = CLEARANCE_TIME
@@ -107,7 +108,7 @@ while robot.step(TIME_STEP) != -1:
     ethics.update_human_proximity(lidar_sees_human or (clearance_timer > 0))
     limit_speed = ethics.target_velocity
     
-    # 2. Mission Logic & Ontological Synchronization
+    # 2. Mission Logic
     target_speed = SPEED_STOP
     current_rot_speed = 0.0
     active_waypoints = WAYPOINTS_OUTBOUND if state == "NAV_OUTBOUND" else WAYPOINTS_INBOUND
@@ -142,7 +143,10 @@ while robot.step(TIME_STEP) != -1:
                 target_speed = SPEED_STOP
             else:
                 set_caster_angles(hw["rotation"], 0, 0, 0, 0)
-                target_speed = limit_speed
+                if state == "NAV_INBOUND" and checkpoint_index == 0:
+                    target_speed = SPEED_BACKWARD
+                else:
+                    target_speed = limit_speed
         else:
             if state == "NAV_OUTBOUND":
                 with ethics._lock:
@@ -161,25 +165,21 @@ while robot.step(TIME_STEP) != -1:
 
     elif state == "PICKING_UP":
         target_speed = SPEED_STOP
-        torso_p, shoulder_p, elbow_p, wrist_p, retract_s = calculate_reach_params(TARGET_BOX_HEIGHT)
+        current_reach = (TARGET_SHELF_X - pos[0]) - 0.25
+        torso_p, shoulder_p, elbow_p, wrist_p, _ = calculate_reach_params(TARGET_BOX_HEIGHT, current_reach)
         
-        if elapsed == 1:
-            if hw["torso"]: hw["torso"].setPosition(torso_p)
-        elif elapsed == 50:
-            # Deploy Right Arm
-            if "r_shoulder_lift_joint" in hw["arms"]: hw["arms"]["r_shoulder_lift_joint"].setPosition(shoulder_p)
-            if "r_elbow_flex_joint" in hw["arms"]: hw["arms"]["r_elbow_flex_joint"].setPosition(elbow_p)
-            if "r_wrist_flex_joint" in hw["arms"]: hw["arms"]["r_wrist_flex_joint"].setPosition(wrist_p)
-            # Deploy Left Arm
-            if "l_shoulder_lift_joint" in hw["arms"]: hw["arms"]["l_shoulder_lift_joint"].setPosition(shoulder_p)
-            if "l_elbow_flex_joint" in hw["arms"]: hw["arms"]["l_elbow_flex_joint"].setPosition(elbow_p)
-            if "l_wrist_flex_joint" in hw["arms"]: hw["arms"]["l_wrist_flex_joint"].setPosition(wrist_p)
-            # Center shoulders slightly for dual grip
-            if "r_shoulder_pan_joint" in hw["arms"]: hw["arms"]["r_shoulder_pan_joint"].setPosition(-0.1)
-            if "l_shoulder_pan_joint" in hw["arms"]: hw["arms"]["l_shoulder_pan_joint"].setPosition(0.1)
+        if elapsed == 50:
+            # VERY NARROW DEPLOY: Arms centered on box width
+            for side in ['r', 'l']:
+                pan = 0.2 if side == 'r' else -0.2
+                if f"{side}_shoulder_lift_joint" in hw["arms"]: hw["arms"][f"{side}_shoulder_lift_joint"].setPosition(shoulder_p)
+                if f"{side}_elbow_flex_joint" in hw["arms"]: hw["arms"][f"{side}_elbow_flex_joint"].setPosition(elbow_p)
+                if f"{side}_wrist_flex_joint" in hw["arms"]: hw["arms"][f"{side}_wrist_flex_joint"].setPosition(wrist_p)
+                if f"{side}_shoulder_pan_joint" in hw["arms"]: hw["arms"][f"{side}_shoulder_pan_joint"].setPosition(pan)
         elif elapsed == 100:
-            if hw["r_finger"]: hw["r_finger"].setPosition(0.5)
-            if hw["l_finger"]: hw["l_finger"].setPosition(0.5)
+            # INTENSE SQUEEZE: Firmly clamp the box
+            if "r_shoulder_pan_joint" in hw["arms"]: hw["arms"]["r_shoulder_pan_joint"].setPosition(0.25)
+            if "l_shoulder_pan_joint" in hw["arms"]: hw["arms"]["l_shoulder_pan_joint"].setPosition(-0.25)
         elif elapsed == 150:
             if hw["r_finger"]: hw["r_finger"].setPosition(0.0)
             if hw["l_finger"]: hw["l_finger"].setPosition(0.0)
@@ -189,8 +189,7 @@ while robot.step(TIME_STEP) != -1:
                     if robot_ind and held_fact:
                         robot_ind.establishes.append(held_fact)
         elif elapsed == 200:
-            if "r_shoulder_lift_joint" in hw["arms"]: hw["arms"]["r_shoulder_lift_joint"].setPosition(retract_s)
-            if "l_shoulder_lift_joint" in hw["arms"]: hw["arms"]["l_shoulder_lift_joint"].setPosition(retract_s)
+            if hw["torso"]: hw["torso"].setPosition(torso_p + 0.05)
         elif elapsed == 250:
             state = "NAV_INBOUND"; checkpoint_index = 0
 
@@ -199,4 +198,4 @@ while robot.step(TIME_STEP) != -1:
         m.setVelocity(current_rot_speed if is_rotating else target_speed)
 
     if step_count % 100 == 0:
-        print(f"STATE: {state} | Speed: {target_speed:.1f}/{limit_speed:.1f} | Ethical Act: {ethics.behavior_desc}")
+        print(f"STATE: {state} | Speed: {target_speed:.1f}/{limit_speed:.1f}")

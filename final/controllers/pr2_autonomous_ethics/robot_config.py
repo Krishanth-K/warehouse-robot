@@ -69,33 +69,35 @@ def tuck_arms(arm_motors):
     if "r_shoulder_lift_joint" in arm_motors: arm_motors["r_shoulder_lift_joint"].setPosition(1.2)
     if "r_elbow_flex_joint" in arm_motors: arm_motors["r_elbow_flex_joint"].setPosition(-2.0)
 
+def set_mission_pose(hw, box_height):
+    """Sets extremely narrow arm positions to ensure they are centered on the box."""
+    from kinematics import calculate_reach_params
+    torso_p, shoulder_p, elbow_p, wrist_p, _ = calculate_reach_params(box_height, 0.5)
+    
+    if hw["torso"]: hw["torso"].setPosition(torso_p)
+    
+    for side, roll in [('r', 0.7), ('l', -0.7)]:
+        if f"{side}_shoulder_lift_joint" in hw["arms"]: hw["arms"][f"{side}_shoulder_lift_joint"].setPosition(shoulder_p)
+        if f"{side}_elbow_flex_joint" in hw["arms"]: hw["arms"][f"{side}_elbow_flex_joint"].setPosition(elbow_p)
+        if f"{side}_wrist_flex_joint" in hw["arms"]: hw["arms"][f"{side}_wrist_flex_joint"].setPosition(wrist_p)
+        if f"{side}_upper_arm_roll_joint" in hw["arms"]: hw["arms"][f"{side}_upper_arm_roll_joint"].setPosition(roll)
+        
+        # EXTREMELY TIGHT: 0.2 rad inward brings hands close together
+        pan_val = 0.2 if side == 'r' else -0.2
+        if f"{side}_shoulder_pan_joint" in hw["arms"]: hw["arms"][f"{side}_shoulder_pan_joint"].setPosition(pan_val)
+
 def is_human_in_view(camera):
-    """
-    Heuristic to detect human presence in camera feed.
-    Optimized for Pedestrian PROTO in industrial environments.
-    """
+    """Heuristic to detect human presence."""
     img = camera.getImage()
     if not img: return False
     w, h = camera.getWidth(), camera.getHeight()
     match_count = 0
-    # Increase sampling density (step 5) for better reliability
     for y in range(h // 4, 3 * h // 4, 5):
         for x in range(0, w, 5):
             r, g, b = camera.imageGetRed(img, w, x, y), camera.imageGetGreen(img, w, x, y), camera.imageGetBlue(img, w, x, y)
-            
-            # 1. Detect Skin Tones / Warm colors
-            # (Higher red, moderate green, lower blue)
             is_warm = (r > 150 and g > 100 and r > b + 40)
-            
-            # 2. Detect Common Pedestrian Clothing (e.g., Blue jeans or Green shirts)
             is_clothing = (b > 150 and b > r + 30) or (g > 150 and g > r + 30)
-            
-            # 3. Filter out Brick Walls (which are very flat red)
-            # Brick red usually has G and B very close to each other.
             is_brick = (r > 140 and abs(g - b) < 15)
-            
             if (is_warm or is_clothing) and not is_brick:
                 match_count += 1
-    
-    # Threshold adjusted for higher sampling density
     return match_count > 15
