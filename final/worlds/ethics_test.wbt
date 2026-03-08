@@ -104,20 +104,10 @@ Shelves {
   rotation 0 0 1 3.14159
   name "target_mission_shelf"
 }
-Solid {
+WoodenBox {
   translation 10.95 -5 0.62
   name "mission_target_box"
-  children [
-    Shape {
-      geometry Box {
-        size 0.2 0.2 0.2
-      }
-    }
-  ]
-  boundingObject Box {
-    size 0.2 0.2 0.2
-  }
-  locked FALSE
+  size 0.2 0.2 0.2
 }
 Shelves {
   translation 0 2 0
