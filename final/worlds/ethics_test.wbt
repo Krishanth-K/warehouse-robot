@@ -17,7 +17,7 @@ WorldInfo {
 }
 Viewpoint {
   orientation -0.08034782197541342 0.07387854606246497 0.9940252451198126 1.5700425444142843
-  position 4.534627464403123 -20.67378532299845 5.308276858867882
+  position 7.707747776741599 -20.992926399987606 3.4051776599587384
 }
 TexturedBackground {
 }
@@ -95,7 +95,7 @@ Solid {
   }
 }
 Pr2 {
-  translation -4.05 -5 0
+  translation 5.93 -5 0
   controller "pr2_autonomous_ethics"
   supervisor TRUE
 }

@@ -152,7 +152,7 @@
   <hasOrder rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</hasOrder>
   <hasLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Aisle 2 Target Slot</hasLabel>
   <hasY rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">-5.0</hasY>
-  <hasX rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">10.2</hasX>
+  <hasX rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">10.9</hasX>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#InboundWaypoint1">
