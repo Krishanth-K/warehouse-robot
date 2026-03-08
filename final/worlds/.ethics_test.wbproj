@@ -7,7 +7,7 @@ maximizedDockId: -1
 centralWidgetVisible: 1
 orthographicViewHeight: 1
 textFiles: -1
-globalOptionalRendering: LidarPointClouds::CameraFrustums
+globalOptionalRendering: LidarPointClouds::CameraFrustums::RangeFinderFrustums
 consoles: Console:All:All
 renderingDevicePerspectives: PR2:high_def_sensor;0;0.307317;0;0
 renderingDevicePerspectives: PR2:l_forearm_cam_sensor;0;0.65625;0.000724113;0
