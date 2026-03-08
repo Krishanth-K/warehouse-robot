@@ -45,6 +45,18 @@ WAYPOINTS_INBOUND  = load_waypoints(onto, "InboundWaypoint")
 def get_ind(name):
     return onto.search_one(iri=f"*{name}")
 
+def find_node_by_name(supervisor, target_name):
+    root = supervisor.getRoot()
+    children = root.getField("children")
+    for i in range(children.getCount()):
+        node = children.getMFNode(i)
+        if not node:
+            continue
+        name_field = node.getField("name")
+        if name_field and name_field.getSFString() == target_name:
+            return node
+    return None
+
 # Initial Authorization
 with ethics._lock:
     with onto:
@@ -63,6 +75,23 @@ clearance_timer = 0.0
 pickup_sequence_start = 0
 backup_start_step = 0
 did_backup = False
+box_attached = False
+
+box_node = find_node_by_name(robot, "mission_target_box")
+box_translation_field = box_node.getField("translation") if box_node else None
+right_gripper_node = None
+left_gripper_node = None
+if pr2_node:
+    for proto_def in ["r_gripper_palm_link", "r_gripper_tool_frame", "r_gripper_l_finger_link"]:
+        candidate = pr2_node.getFromProtoDef(proto_def)
+        if candidate:
+            right_gripper_node = candidate
+            break
+    for proto_def in ["l_gripper_palm_link", "l_gripper_tool_frame", "l_gripper_l_finger_link"]:
+        candidate = pr2_node.getFromProtoDef(proto_def)
+        if candidate:
+            left_gripper_node = candidate
+            break
 
 # --- Mission Context ---
 TARGET_SHELF_X = 11.0 
@@ -78,6 +107,22 @@ while robot.step(TIME_STEP) != -1:
     ethics.current_state = state
     elapsed = step_count - pickup_sequence_start if state == "PICKING_UP" else 0
     ethics.brakes_engaged = (state == "PICKING_UP" and elapsed >= 50)
+
+    if box_attached and box_translation_field:
+        if right_gripper_node and left_gripper_node:
+            r_pos = right_gripper_node.getPosition()
+            l_pos = left_gripper_node.getPosition()
+            mid = [
+                (r_pos[0] + l_pos[0]) * 0.5,
+                (r_pos[1] + l_pos[1]) * 0.5,
+                (r_pos[2] + l_pos[2]) * 0.5,
+            ]
+            box_translation_field.setSFVec3f(mid)
+        elif right_gripper_node:
+            grip_pos = right_gripper_node.getPosition()
+            box_translation_field.setSFVec3f([grip_pos[0], grip_pos[1], grip_pos[2] - 0.03])
+        else:
+            box_translation_field.setSFVec3f([pos[0] + 0.55 * math.cos(yaw), pos[1] + 0.55 * math.sin(yaw), 0.9])
 
     # 1. Perception & Tracking
     lidar = hw["lidar"]
@@ -188,6 +233,7 @@ while robot.step(TIME_STEP) != -1:
             # Ensure fingers are tight
             if hw["r_finger"]: hw["r_finger"].setPosition(0.0)
             if hw["l_finger"]: hw["l_finger"].setPosition(0.0)
+            box_attached = True
             with ethics._lock:
                 with onto:
                     held_fact = get_ind("Box_X_Is_Held_Fact")
