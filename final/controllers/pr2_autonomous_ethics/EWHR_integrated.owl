@@ -144,7 +144,7 @@
   <hasOrder rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</hasOrder>
   <hasLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Aisle 2 Entrance</hasLabel>
   <hasY rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">-5.0</hasY>
-  <hasX rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">5.0</hasX>
+  <hasX rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">7.37</hasX>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#OutboundWaypoint2">
@@ -160,7 +160,7 @@
   <hasOrder rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</hasOrder>
   <hasLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Aisle 2 Exit</hasLabel>
   <hasY rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">-5.0</hasY>
-  <hasX rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">5.0</hasX>
+  <hasX rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">7.37</hasX>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#InboundWaypoint2">
@@ -168,7 +168,7 @@
   <hasOrder rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</hasOrder>
   <hasLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Starting Position</hasLabel>
   <hasY rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">-5.0</hasY>
-  <hasX rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">-3.5</hasX>
+  <hasX rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">7.37</hasX>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#Authorized_Fact">

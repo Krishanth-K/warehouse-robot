@@ -20,21 +20,16 @@ ONTOLOGY_PATH = "EWHR_integrated.owl"
 robot = Supervisor()
 
 # SUPERVISOR OVERRIDE: Increase Physical Motor Limits
-# PR2 wheel motors are inside HingeJoints. We find the nodes and update maxVelocity.
 pr2_node = robot.getSelf()
 wheel_motor_names = ["fl_caster_l_wheel_joint","fl_caster_r_wheel_joint","fr_caster_l_wheel_joint","fr_caster_r_wheel_joint","bl_caster_l_wheel_joint","bl_caster_r_wheel_joint","br_caster_l_wheel_joint","br_caster_r_wheel_joint"]
 
 if pr2_node:
     for name in wheel_motor_names:
-        # getFromProtoDef is for internal PROTO nodes
         motor_node = pr2_node.getFromProtoDef(name)
         if motor_node:
             max_vel_field = motor_node.getField("maxVelocity")
             if max_vel_field:
                 max_vel_field.setSFFloat(25.0)
-        else:
-            # Fallback for standard nodes if not in PROTO (less likely for PR2)
-            pass
 
 hw = initialize_devices(robot, TIME_STEP)
 tuck_arms(hw["arms"])
@@ -171,13 +166,23 @@ while robot.step(TIME_STEP) != -1:
         if elapsed == 1:
             if hw["torso"]: hw["torso"].setPosition(torso_p)
         elif elapsed == 50:
+            # Deploy Right Arm
             if "r_shoulder_lift_joint" in hw["arms"]: hw["arms"]["r_shoulder_lift_joint"].setPosition(shoulder_p)
             if "r_elbow_flex_joint" in hw["arms"]: hw["arms"]["r_elbow_flex_joint"].setPosition(elbow_p)
             if "r_wrist_flex_joint" in hw["arms"]: hw["arms"]["r_wrist_flex_joint"].setPosition(wrist_p)
+            # Deploy Left Arm
+            if "l_shoulder_lift_joint" in hw["arms"]: hw["arms"]["l_shoulder_lift_joint"].setPosition(shoulder_p)
+            if "l_elbow_flex_joint" in hw["arms"]: hw["arms"]["l_elbow_flex_joint"].setPosition(elbow_p)
+            if "l_wrist_flex_joint" in hw["arms"]: hw["arms"]["l_wrist_flex_joint"].setPosition(wrist_p)
+            # Center shoulders slightly for dual grip
+            if "r_shoulder_pan_joint" in hw["arms"]: hw["arms"]["r_shoulder_pan_joint"].setPosition(-0.1)
+            if "l_shoulder_pan_joint" in hw["arms"]: hw["arms"]["l_shoulder_pan_joint"].setPosition(0.1)
         elif elapsed == 100:
             if hw["r_finger"]: hw["r_finger"].setPosition(0.5)
+            if hw["l_finger"]: hw["l_finger"].setPosition(0.5)
         elif elapsed == 150:
             if hw["r_finger"]: hw["r_finger"].setPosition(0.0)
+            if hw["l_finger"]: hw["l_finger"].setPosition(0.0)
             with ethics._lock:
                 with onto:
                     held_fact = get_ind("Box_X_Is_Held_Fact")
@@ -185,6 +190,7 @@ while robot.step(TIME_STEP) != -1:
                         robot_ind.establishes.append(held_fact)
         elif elapsed == 200:
             if "r_shoulder_lift_joint" in hw["arms"]: hw["arms"]["r_shoulder_lift_joint"].setPosition(retract_s)
+            if "l_shoulder_lift_joint" in hw["arms"]: hw["arms"]["l_shoulder_lift_joint"].setPosition(retract_s)
         elif elapsed == 250:
             state = "NAV_INBOUND"; checkpoint_index = 0
 

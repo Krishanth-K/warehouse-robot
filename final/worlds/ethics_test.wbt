@@ -95,7 +95,7 @@ Solid {
   }
 }
 Pr2 {
-  translation 5.93 -5 0
+  translation 7.37 -5 0
   controller "pr2_autonomous_ethics"
   supervisor TRUE
 }
