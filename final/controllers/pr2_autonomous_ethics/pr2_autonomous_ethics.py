@@ -13,6 +13,7 @@ SPEED_STOP = 0.0
 CHECKPOINT_MARGIN = 0.75    
 CLEARANCE_TIME = 1.5       
 TARGET_BOX_HEIGHT = 0.62  
+BACKUP_STEPS = 40
 
 ONTOLOGY_PATH = "EWHR_integrated.owl"
 
@@ -60,6 +61,8 @@ currently_tracking = False
 is_rotating = False
 clearance_timer = 0.0
 pickup_sequence_start = 0
+backup_start_step = 0
+did_backup = False
 
 # --- Mission Context ---
 TARGET_SHELF_X = 11.0 
@@ -120,6 +123,8 @@ while robot.step(TIME_STEP) != -1:
         else: ethics.set_active_situations(["Holding_Box_Sit"])
     elif state == "NAV_INBOUND":
         ethics.set_active_situations(["Holding_Box_Sit"])
+    elif state == "BACKING_UP":
+        ethics.set_active_situations(["Holding_Box_Sit"])
     elif state == "FINISHED":
         ethics.set_active_situations(["Mission_Complete_Sit"])
 
@@ -143,7 +148,7 @@ while robot.step(TIME_STEP) != -1:
                 target_speed = SPEED_STOP
             else:
                 set_caster_angles(hw["rotation"], 0, 0, 0, 0)
-                if state == "NAV_INBOUND" and checkpoint_index == 0:
+                if state == "NAV_INBOUND" and checkpoint_index == 0 and not did_backup:
                     target_speed = SPEED_BACKWARD
                 else:
                     target_speed = limit_speed
@@ -193,7 +198,16 @@ while robot.step(TIME_STEP) != -1:
             if hw["torso"]: hw["torso"].setPosition(torso_p + 0.05)
         elif elapsed == 250:
             # 4. RETRACT: Transition to backward movement
-            state = "NAV_INBOUND"; checkpoint_index = 0
+            state = "BACKING_UP"
+            backup_start_step = step_count
+
+    elif state == "BACKING_UP":
+        set_caster_angles(hw["rotation"], 0, 0, 0, 0)
+        target_speed = SPEED_BACKWARD
+        if step_count - backup_start_step >= BACKUP_STEPS:
+            did_backup = True
+            state = "NAV_INBOUND"
+            checkpoint_index = 0
 
     # 3. Actuation
     for m in hw["wheels"]:
