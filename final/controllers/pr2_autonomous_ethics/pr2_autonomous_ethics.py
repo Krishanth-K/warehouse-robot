@@ -14,6 +14,8 @@ CHECKPOINT_MARGIN = 0.75
 CLEARANCE_TIME = 1.5       
 TARGET_BOX_HEIGHT = 0.62  
 BACKUP_STEPS = 40
+HUMAN_SLOWDOWN_THRESHOLD = 1.8
+HUMAN_RELEASE_THRESHOLD = 2.4
 
 ONTOLOGY_PATH = "EWHR_integrated.owl"
 
@@ -137,13 +139,13 @@ while robot.step(TIME_STEP) != -1:
         if not currently_tracking:
             if hw["head_pan"]: hw["head_pan"].setPosition(0.0)
             prox_t = robot.getSelf().getField("proximity_threshold")
-            threshold = prox_t.getSFFloat() if prox_t else 3.0
+            threshold = prox_t.getSFFloat() if prox_t else HUMAN_SLOWDOWN_THRESHOLD
             if min_dist < threshold and abs(angle) < 0.5 and is_human_in_view(hw["camera"]):
                 currently_tracking = True; lidar_sees_human = True
         else:
             if hw["head_pan"]: hw["head_pan"].setPosition(angle)
             lidar_sees_human = True
-            if min_dist > 3.0 or abs(angle) > 1.45:
+            if min_dist > HUMAN_RELEASE_THRESHOLD or abs(angle) > 1.45:
                 currently_tracking = False; lidar_sees_human = False
                 if hw["head_pan"]: hw["head_pan"].setPosition(0.0)
                 clearance_timer = CLEARANCE_TIME
@@ -160,6 +162,9 @@ while robot.step(TIME_STEP) != -1:
     target_speed = SPEED_STOP
     current_rot_speed = 0.0
     active_waypoints = WAYPOINTS_OUTBOUND if state == "NAV_OUTBOUND" else WAYPOINTS_INBOUND
+    wp_label = "n/a"
+    dist_to_wp = float("nan")
+    angle_error = float("nan")
     
     if state == "NAV_OUTBOUND":
         ethics.set_active_situations(["At_Base_Station_Sit"])
@@ -176,6 +181,7 @@ while robot.step(TIME_STEP) != -1:
     if state in ["NAV_OUTBOUND", "NAV_INBOUND"]:
         if checkpoint_index < len(active_waypoints):
             wp = active_waypoints[checkpoint_index]
+            wp_label = wp.get("label", f"WP{checkpoint_index+1}")
             dist_to_wp = math.sqrt((wp['x'] - pos[0])**2 + (wp['y'] - pos[1])**2)
             target_yaw = math.atan2(wp['y'] - pos[1], wp['x'] - pos[0])
             angle_error = normalize_angle(target_yaw - yaw)
@@ -260,4 +266,7 @@ while robot.step(TIME_STEP) != -1:
         m.setVelocity(current_rot_speed if is_rotating else target_speed)
 
     if step_count % 100 == 0:
-        print(f"STATE: {state} | Speed: {target_speed:.1f}/{limit_speed:.1f}")
+        print(
+            f"STATE={state} | SPEED={target_speed:.1f}/{limit_speed:.1f} | "
+            f"{ethics.behavior_desc}"
+        )

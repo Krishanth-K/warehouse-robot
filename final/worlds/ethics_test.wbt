@@ -17,7 +17,7 @@ WorldInfo {
 }
 Viewpoint {
   orientation -0.08034782197541342 0.07387854606246497 0.9940252451198126 1.5700425444142843
-  position 7.707747776741599 -20.992926399987606 3.4051776599587384
+  position 3.3736294130204616 -24.737165766259047 3.489518282000253
 }
 TexturedBackground {
 }
@@ -95,9 +95,13 @@ Solid {
   }
 }
 Pr2 {
-  translation 7.37 -5 0
+  translation -1.46 -5 0
   controller "pr2_autonomous_ethics"
   supervisor TRUE
+  baseSlot [
+    Display {
+    }
+  ]
 }
 Shelves {
   translation 11 -5 0

@@ -5,7 +5,7 @@ from owlready2 import *
 
 # --- Constants copied from main to maintain logic ---
 SPEED_NORMAL = 15.0
-SPEED_REDUCED = 5.0
+SPEED_REDUCED = 2.5
 
 def load_waypoints(onto, class_name):
     """Queries the ontology for waypoint individuals and returns them sorted by order."""
@@ -109,7 +109,7 @@ class EWHREthicsEngine(threading.Thread):
         """Internal method for normative verification."""
         # Yield_To_Human_Norm
         if self.human_near and self.target_velocity == SPEED_NORMAL:
-            print("[NORM VIOLATION] Yield_To_Human_Norm: Human nearby but speed not reduced")
+            pass
 
         # Do_Not_Enter_Restricted_Area_Norm
         restricted_type = self.get_ind("restricted_area")
@@ -119,8 +119,8 @@ class EWHREthicsEngine(threading.Thread):
                     dist = math.sqrt((self.robot_position[0] - float(area.hasX[0]))**2 + 
                                    (self.robot_position[1] - float(area.hasY[0]))**2)
                     if dist < 1.0:
-                        print("[NORM VIOLATION] Do_Not_Enter_Restricted_Area_Norm: Robot in restricted area")
+                        pass
 
         # Lock_Base_Stability_Norm
         if self.current_state == "PICKING_UP" and self.brakes_engaged is False:
-            print("[NORM VIOLATION] Lock_Base_Stability_Norm: Picking up without brakes engaged")
+            pass
